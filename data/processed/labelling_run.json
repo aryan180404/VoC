@@ -1,0 +1,15 @@
+{
+  "engine": "rules",
+  "records_labelled": 4859,
+  "usage": {
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "failures": 0,
+    "by_model": {}
+  },
+  "label_sources": {
+    "rules": 5042,
+    "cleaning_rules": 195
+  }
+}

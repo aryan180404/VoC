@@ -1,0 +1,30 @@
+{
+  "files": [
+    {
+      "file": "zomato_voice_of_customer_raw_messy.csv",
+      "records": 5237
+    }
+  ],
+  "skipped_lines": {
+    "comment": 1,
+    "blank": 3,
+    "header": 4,
+    "malformed": 0
+  },
+  "raw_records": 5237,
+  "rule_noise": 195,
+  "duplicates": 183,
+  "personal_details_redacted": 121,
+  "date_quality": {
+    "exact": 4101,
+    "unix_timestamp": 433,
+    "ambiguous_day_month": 283,
+    "relative_estimate": 164,
+    "unparsed": 116,
+    "ambiguous_resolved_by_source": 74,
+    "year_inferred": 66
+  },
+  "ratings_present": 2669,
+  "platform_spellings_unified": 38,
+  "brand_spellings_unified": 14
+}

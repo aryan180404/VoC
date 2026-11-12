@@ -1,0 +1,6 @@
+release_date,name,area,notes
+2026-02-26,App version 19.1.0 - new coupon page,App,"INVENTED for the synthetic dataset. Matches planted incident A (coupon page crash, March 2026)."
+2026-05-01,New checkout flow,Checkout,"INVENTED control release. No planted incident, so the tool should find no clear change. Tests for false alarms."
+2026-06-01,Platform fee revision,Pricing,"INVENTED. Matches planted incident B (platform fee hike complaints, June 2026)."
+2026-07-01,Rain fee policy for monsoon,Pricing,"INVENTED. Matches planted incident C (monsoon delays plus rain fee, July 2026)."
+2026-09-01,Gold auto-renewal switched on by default,Membership,"INVENTED. Matches planted incident D (Gold auto-renewal without notice, September 2026)."
