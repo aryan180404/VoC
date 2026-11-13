@@ -11,7 +11,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 import streamlit as st
 
-from src import analytics, config, insights
+from src import analytics, chat, config, insights
 from src import ui
 from src.ui import SENT_COLORS, SERIES
 
@@ -53,6 +53,7 @@ ENGINE = str(ENR.engine.iloc[0]) if "engine" in ENR else "unknown"
 # ------------------------------------------------------------------ sidebar
 PAGES = {
     "Overview": "Overview",
+    "Ask": "Ask the copilot",
     "Hub": "Feedback Hub",
     "Pain": "Pain points",
     "Investigate": "Investigation",
@@ -175,6 +176,82 @@ if PAGE == "Overview":
             f"- Customer support appears in **{ref['share_of_negative_about_customer_support']:.0%}** of negative reviews "
             f"(the reference reported 43.7% on real data; this synthetic dataset was not built to match it).\n"
             f"- Reviews mentioning Gold are **{ref['gold_negative_share']:.0%}** negative (reference: 63%). Top Gold issue: **{ref['top_gold_issue']}**.")
+
+
+# ================================================================== ASK THE COPILOT (chat)
+elif PAGE == "Ask":
+    ui.page_header("Ask the copilot",
+                   "Chat with Gemini about this feedback: rankings, trends, releases, platforms, languages, quotes and accuracy. "
+                   "It answers from the numbers on this dashboard and the matching reviews, and uses the filters on the left.")
+    if not config.llm_available():
+        st.info("Gemini is off, so answers are search results only. Add GEMINI_API_KEY in the app's Secrets to switch it on.")
+    if "chat" not in st.session_state:
+        st.session_state.chat = []
+    filters = {"dates": f"{start} to {end}",
+               "platforms": "all" if set(platforms or all_platforms) == set(all_platforms) else list(platforms),
+               "languages": "all" if set(languages or all_langs) == set(all_langs) else list(languages)}
+
+    def render_answer(msg, key):
+        st.markdown(msg["content"])
+        res = msg.get("result") or {}
+        stats, checks = res.get("stats", {}), res.get("checks", {})
+        bits = []
+        if res.get("confidence"):
+            bits.append(ui.badge("Confidence " + str(res["confidence"]).lower(), "blue"))
+        if checks:
+            ok = checks.get("verified")
+            bits.append(ui.badge("Citations and numbers checked" if ok else "Check flagged something", "green" if ok else "red"))
+        if stats:
+            bits.append(f"{stats.get('matching_reviews', 0):,} matching reviews ({'; '.join(stats.get('how_matched', []))})")
+        if bits:
+            st.markdown(f"<div class='kpi-note'>{' '.join(bits)}</div>", unsafe_allow_html=True)
+        if checks.get("numbers_not_in_data"):
+            st.caption("These numbers were not found in the data and should not be trusted: " + ", ".join(checks["numbers_not_in_data"]))
+        if checks.get("invalid_citations_removed"):
+            st.caption("Removed citations to reviews that do not exist: " + ", ".join(checks["invalid_citations_removed"]))
+        ids = res.get("cited_record_ids", [])[:8]
+        if ids:
+            with st.expander(f"Reviews cited ({len(ids)})"):
+                show_quotes(records_by_id(ids), "sentiment")
+        follow = res.get("follow_up_questions", [])[:3]
+        if follow:
+            cols = st.columns(len(follow))
+            for i, (c, f) in enumerate(zip(cols, follow)):
+                if c.button(f, key=f"fu-{key}-{i}", width="stretch"):
+                    st.session_state.pending = f
+                    st.rerun()
+
+    typed = st.chat_input("Ask anything about the feedback, for example: what do Gold members complain about after renewal?")
+    question = typed or st.session_state.pop("pending", None)
+    AVATAR = {"user": ":material/person:", "assistant": ":material/forum:"}
+    if not st.session_state.chat and not question:
+        st.markdown("<div class='section-note'>Try one of these, or type your own question below.</div>", unsafe_allow_html=True)
+        cols = st.columns(3)
+        for i, q in enumerate(chat.STARTERS):
+            if cols[i % 3].button(q, key=f"start-{i}", width="stretch"):
+                st.session_state.pending = q
+                st.rerun()
+    for i, m in enumerate(st.session_state.chat):
+        with st.chat_message(m["role"], avatar=AVATAR[m["role"]]):
+            render_answer(m, i) if m["role"] == "assistant" else st.markdown(m["content"])
+
+    if question:
+        history = [{"role": m["role"], "content": m["content"]} for m in st.session_state.chat]
+        st.session_state.chat.append({"role": "user", "content": question})
+        with st.chat_message("user", avatar=AVATAR["user"]):
+            st.markdown(question)
+        with st.chat_message("assistant", avatar=AVATAR["assistant"]):
+            with st.spinner("Reading the numbers and the matching reviews ..."):
+                try:
+                    res = chat.answer(question, history, T, DATA, filters)
+                    msg = {"role": "assistant", "content": res["answer"], "result": res}
+                except Exception as exc:  # never crash the page; say what went wrong
+                    msg = {"role": "assistant", "content": f"Could not get an answer from Gemini: {str(exc)[:300]}", "result": {}}
+            render_answer(msg, len(st.session_state.chat))
+        st.session_state.chat.append(msg)
+    if st.session_state.chat and st.button("Clear conversation"):
+        st.session_state.chat = []
+        st.rerun()
 
 # ================================================================== FEEDBACK HUB
 elif PAGE == "Hub":
