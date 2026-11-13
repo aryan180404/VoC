@@ -1,7 +1,7 @@
 name: Run full pipeline with Gemini
 # Run this from the GitHub website: Actions tab -> "Run full pipeline with Gemini" -> Run workflow.
 # It labels every review with Gemini, writes insights, scores against the answer key,
-# and commits the results. Streamlit Cloud then redeploys the dashboard automatically.
+# and commits the results. Streamlit Cloud then redeploys the dashboard automatically.s
 on:
   workflow_dispatch:
     inputs:
