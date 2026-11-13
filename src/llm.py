@@ -17,6 +17,10 @@ class LLMUnavailable(RuntimeError):
     pass
 
 
+class QuotaExhausted(LLMUnavailable):
+    """Gemini refused because the key has no quota left. Retrying will not help, so stop."""
+
+
 @dataclass
 class UsageMeter:
     calls: int = 0
@@ -114,10 +118,18 @@ def generate_json(prompt: str, schema, *, model: str, system: str = "", temperat
         except Exception as exc:  # network, quota, safety block, invalid JSON
             last_error = exc
             USAGE.failures += 1
-            print(f"    [gemini attempt {attempt + 1}/{config.MAX_RETRIES} failed: {str(exc)[:300]}]", flush=True)
-            if fast and "thinking" in str(exc).lower():
-                fast = False
-                cfg.thinking_config = None
+            print(f"    [gemini attempt {attempt + 1}/{config.MAX_RETRIES} failed: {str(exc)[:1500]}]", flush=True)
+            low = str(exc).lower()
+            flat = low.replace(" ", "").replace("_", "")
+            if "resourceexhausted" in flat or "429" in low:
+                # A daily quota or a zero limit never clears during this run, so stop at once.
+                # A per-minute limit does clear, so wait a full minute and try again a few times.
+                if "perday" in flat or "limit: 0" in low or attempt >= 3:
+                    raise QuotaExhausted(
+                        "Gemini says this key has no quota left for this model. Check "
+                        "https://aistudio.google.com/rate-limit , pick another model with VOC_TAGGING_MODEL, "
+                        "turn on billing, or try again after the daily reset.") from exc
+                time.sleep(35)
             msg = str(exc).lower()
             if "api key" in msg or "permission" in msg or "not found" in msg and "model" in msg:
                 raise LLMUnavailable(str(exc)) from exc
