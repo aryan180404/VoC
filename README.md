@@ -1,96 +1,146 @@
-# Voice of Customer Copilot
+"""Tests for the guardrails, using a fake Gemini so they run offline and free.
 
-**Turns messy, multi-platform customer feedback into evidence-backed product decisions.**
-Built on a 5,237-record synthetic Zomato dataset covering Google Play, App Store, X, Reddit, YouTube, Quora, complaint forums, LinkedIn and news comments, in 8 languages.
+    python -m pytest -q
+"""
+from __future__ import annotations
 
-> Not an AI summariser. The model labels each review; code counts; every insight links to real reviews; a product manager makes the call.
+import pandas as pd
+import pytest
 
-## Six modules
+from src import config, enrich, insights, llm
+from src.ingest import parse_date, parse_rating, redact_personal_details, rule_noise
 
-| Module | What it answers |
-|---|---|
-| 1. Feedback Hub | What did we receive, and what did cleaning change? |
-| 2. Pain Points | What do customers complain about, where, and what do they praise? |
-| 3. Investigation | What patterns sit inside a problem, what might cause them, and what should we check or ask? |
-| 4. Trends & Releases | What is rising, spiking or declining? Did something change after a release? |
-| 5. Decision Engine | Which problem first, and why? Approve, modify or reject, then export to Jira or Notion and track the outcome |
-| 6. Evaluation Centre | How accurate is it, where does it fail, and do the dashboard numbers match the truth? |
 
-**Deploy it:** see [DEPLOY.md](DEPLOY.md) (GitHub + Streamlit Community Cloud, about 15 minutes).
+# ---------------- cleaning ----------------
+def test_ratings_in_every_format():
+    for raw, want in [("1", 1), ("1.0", 1), ("1/5", 1), ("★☆☆☆☆", 1), ("one", 1), ("1 star", 1), ("4 stars", 4), ("", None)]:
+        assert parse_rating(raw) == want
 
-## Quick start (laptop)
 
-```bash
-pip install -r requirements.txt
-cp .env.example .env            # then paste your Gemini key into .env
-python run_pipeline.py --trial 200   # optional: test Gemini on 200 records first
-python run_pipeline.py               # full run: clean → label → insights → evaluate
-streamlit run app.py
-```
+def test_dates_in_many_formats():
+    assert str(parse_date("Tue Jun 02 04:36:04 +0000 2026")[0]) == "2026-06-02"
+    assert str(parse_date("12/23/2025")[0]) == "2025-12-23"
+    assert str(parse_date("28/04/2026")[0]) == "2026-04-28"
+    assert parse_date("3 weeks ago")[1] == "relative_estimate"
+    assert parse_date("Mar 14")[0].year == 2026
 
-With no key, everything runs on the free rule-based baseline, so you can demo the tool offline.
-Labels are cached, so re-running costs nothing for reviews already labelled.
 
-**Daily refresh:** `python scripts/daily_refresh.py` picks up new files dropped into `data/inbox/`. The cron and GitHub Actions setup is described in the script.
+def test_personal_details_removed():
+    text, changed = redact_personal_details("Call me on 9876543210 or mail ananya75@example.com")
+    assert changed and "9876543210" not in text and "@example.com" not in text
 
-**Tests:** `python -m pytest -q` (12 guardrail tests, using a fake Gemini).
 
-## How it works
+def test_competitor_comparison_is_not_noise():
+    assert rule_noise("Food was cold. Switching to Swiggy.", "Zomato") is None
+    assert rule_noise("Swiggy One is better value than any other membership", "Swiggy") == "other_brand"
 
-```
-raw exports ──▶ cleaning (code) ──▶ labelling (Gemini Flash, one review at a time, validated)
-                                         │  fallback: rule-based classifier
-                                         ▼
-                 counts · rates · spikes · ranking (code) ──▶ insights (Gemini Pro writes, code verifies)
-                                         ▼
-                      dashboard ──▶ product manager decision ──▶ outcome tracking
-```
 
-## Results (rule-based baseline; Gemini results appear after your first run)
+# ---------------- labelling guardrails ----------------
+def test_invented_quote_is_dropped():
+    lab = enrich.validate_label({"l2_issues": ["Speed of Delivery"], "evidence_quote": "the food took forever", "confidence": 0.9},
+                                "Order stuck for 95 minutes due to rain.")
+    assert lab["evidence_quote"] == "" and lab["evidence_verified"] is False
 
-| | Score |
-|---|---|
-| Noise removal F1 | 0.99 |
-| Duplicates merged correctly (recall / precision) | 0.89 / 0.91 |
-| Personal details removed | 100% |
-| Sentiment accuracy, 70% holdout split | 87.2% |
-| Primary issue correct, holdout | 75.1% |
-| Planted incidents detected in the right month | 4 of 4 |
-| False alarm on the control release | None |
-| Monthly negative share versus truth | within 1.9 points on average |
-| Top-5 problems matching the truth | 2 of 5. The keyword baseline over-counts filler words. This is the gap Gemini should close |
 
-The answer key audit found **147 Hinglish rows with self-contradictory sentiment labels** (see `reports/answer_key_audit.csv`).
+def test_real_quote_is_kept():
+    lab = enrich.validate_label({"l2_issues": ["Speed of Delivery"], "evidence_quote": "stuck for 95 minutes", "confidence": 0.9},
+                                "Order stuck for 95 minutes due to rain.")
+    assert lab["evidence_verified"] is True
 
-## Portfolio deliverables
 
-| Deliverable | Where |
-|---|---|
-| Working demo | `streamlit run app.py` (deploy free on Streamlit Community Cloud) |
-| Loom video | Script in `docs/demo_video_script.md` |
-| Evaluation sheet | `reports/evaluation_sheet.xlsx` |
-| Real-user feedback | Kit and change log in `docs/user_validation_kit.md` |
-| Product requirements | `docs/product_requirements.md` |
+def test_unknown_issue_name_is_rejected():
+    lab = enrich.validate_label({"l2_issues": ["Vibes"], "confidence": 0.9}, "meh")
+    assert lab["l2_issues"] == ["No Specific Issue Stated"] and lab["confidence"] <= 0.3
 
-## Project map
 
-```
-app.py                      dashboard (six modules)
-run_pipeline.py             one-command pipeline
-src/ingest.py               cleaning, personal-detail removal, duplicates, noise
-src/taxonomy.py             locked category list
-src/enrich.py               Gemini labelling, prompt, validation, cache, fallback
-src/rules_classifier.py     baseline and fallback classifier
-src/llm.py                  Gemini client: model choice, pacing, retries, usage
-src/analytics.py            all numbers: rates, spikes, ranking, release impact
-src/insights.py             evidence packs, hypotheses, citation checks, "ask the data"
-src/evaluate.py             scoring, answer key audit, evaluation sheet
-scripts/daily_refresh.py    scheduled job
-data/context/releases.csv   release dates (INVENTED, matching the planted incidents)
-data/eval/                  answer key (synthetic; read only by evaluate.py, never by the labeller)
-.github/workflows/          Gemini pipeline run (manual) and daily refresh (scheduled)
-```
+def _fake_batch_answer(prompt, schema, **kw):
+    """Fake Gemini: labels every record except the last one, and invents one extra record ID."""
+    import json
+    import re
 
-## Data note
+    items = json.loads(prompt.split("\n\n", 1)[1])
+    labels = []
+    for it in items[:-1]:
+        labels.append({"record_id": it["record_id"], "is_relevant": True, "noise_type": "none", "sentiment": "Negative",
+                       "l2_issues": ["Speed of Delivery"], "is_feature_request": False, "feature_request_text": "",
+                       "severity": 2, "journey_stage": "Delivery", "churn_risk": False, "is_sarcastic": False,
+                       "evidence_quote": it["text"][:15], "confidence": 0.8})
+    if labels:
+        labels.append({**labels[0], "record_id": "R99999"})
+    return {"labels": labels}
 
-All records are synthetic. The layout and categories are modelled on [Pp2k05/ZOMATO-ECOSYSTEM-ANALYSIS](https://github.com/Pp2k05/ZOMATO-ECOSYSTEM-ANALYSIS). The four incidents and the release dates are invented, not real Zomato events.
+
+def test_missing_records_fall_back_and_invented_ids_ignored(monkeypatch, tmp_path):
+    monkeypatch.setattr(config, "CACHE_DIR", tmp_path)
+    monkeypatch.setattr(llm, "resolve_model", lambda m, f: "fake-model")
+    monkeypatch.setattr(llm, "generate_json", _fake_batch_answer)
+    df = pd.DataFrame({"record_id": ["R00001", "R00002", "R00003"], "platform": "Reddit", "rating": [None, 1.0, 5.0],
+                       "text": ["Order took 90 minutes", "Food was cold", "Great app, love it"]})
+    out = enrich.label_with_gemini(df)
+    assert set(out) == {"R00001", "R00002", "R00003"}           # nobody left unlabelled
+    assert "R99999" not in out                                    # invented ID ignored
+    assert out["R00001"]["label_source"].startswith("gemini")
+    assert out["R00003"]["label_source"] == "rules_fallback"     # the skipped record was retried, then fell back
+
+
+def test_gemini_outage_falls_back_to_rules(monkeypatch, tmp_path):
+    monkeypatch.setattr(config, "CACHE_DIR", tmp_path)
+    monkeypatch.setattr(llm, "resolve_model", lambda m, f: "fake-model")
+
+    def down(*a, **k):
+        raise llm.LLMUnavailable("quota exceeded")
+    monkeypatch.setattr(llm, "generate_json", down)
+    df = pd.DataFrame({"record_id": ["R00001", "R00002"], "platform": "Reddit", "rating": [None, None],
+                       "text": ["Platform fee hiked again to ₹17!", "App crashes on the coupon page"]})
+    out = enrich.label_with_gemini(df)
+    assert {v["label_source"] for v in out.values()} == {"rules_fallback"}
+    assert out["R00001"]["l2_issues"] == ["Fees & Surcharges"]
+
+
+# ---------------- insight guardrails ----------------
+PACK = {"issue": "Speed of Delivery", "negative_mentions": 565, "negative_feedback_total": 3293, "share_of_negative_pct": 17.2,
+        "quotes": [{"record_id": "R00010", "text": "a"}, {"record_id": "R00011", "text": "b"}], "contradicting_quotes": []}
+
+
+def test_invented_number_in_headline_is_caught():
+    draft = {"headline": "742 customers complained about delivery", "hypotheses": []}
+    assert insights.verify(draft, PACK)["numbers_verified"] is False
+
+
+def test_true_numbers_pass():
+    draft = {"headline": "565 of 3293 negative reviews (17.2%) describe late delivery", "hypotheses": []}
+    assert insights.verify(draft, PACK)["numbers_verified"] is True
+
+
+def test_invented_citation_is_removed():
+    draft = {"headline": "565 reviews", "hypotheses": [{"statement": "Riders are scarce at peak", "supporting_record_ids": ["R00010", "R77777"]}]}
+    check = insights.verify(draft, PACK)
+    assert draft["hypotheses"][0]["supporting_record_ids"] == ["R00010"]
+    assert check["citations_verified"] is False
+
+
+if __name__ == "__main__":
+    raise SystemExit(pytest.main([__file__, "-q"]))
+
+
+# ---------------------------------------------------------------- chat
+def test_chat_removes_invented_citations_and_flags_invented_numbers():
+    from src import chat
+    res = {"answer": "Delivery has 565 complaints [R00001] [R99999]; about 4,321 customers left.", "cited_record_ids": ["R00001"]}
+    out = chat.check(res, '{"negative_mentions": 565}', {"R00001"}, "what should we fix?")
+    assert "R99999" not in out["answer"]
+    assert out["checks"]["invalid_citations_removed"] == ["R99999"]
+    assert out["checks"]["numbers_not_in_data"] == ["4321"]
+    assert out["checks"]["verified"] is False
+
+
+def test_chat_follow_up_keeps_platform():
+    import pandas as pd
+    from src import chat
+    b = pd.DataFrame({"record_id": [f"R{i:05d}" for i in range(20)], "text": ["late delivery"] * 20,
+                      "platform": ["Reddit"] * 10 + ["Google Play"] * 10, "language": ["English"] * 20,
+                      "month": ["2026-09"] * 20, "is_negative": [True] * 20, "sentiment": ["Negative"] * 20,
+                      "primary_issue": ["Speed of Delivery"] * 20, "churn_risk": [False] * 20,
+                      "is_feature_request": [False] * 20, "confidence": [0.9] * 20, "likes": [0] * 20})
+    pool, stats = chat.focus_slice("why?", [{"role": "user", "content": "What do Reddit users complain about?"}], b)
+    assert set(pool.platform) == {"Reddit"}
