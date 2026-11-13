@@ -15,7 +15,7 @@ from src import analytics, chat, config, insights
 from src import ui
 from src.ui import SENT_COLORS, SERIES
 
-st.set_page_config(page_title="Voice of Customer Copilot", page_icon="📣", layout="wide", initial_sidebar_state="expanded")
+st.set_page_config(page_title="Voice of Customer Copilot", page_icon="📣", layout="wide", initial_sidebar_state="auto")
 ui.inject()
 
 
@@ -71,11 +71,16 @@ with st.sidebar:
     ask_txt = "Gemini questions on" if config.llm_available() else "Gemini questions off (no key)"
     st.markdown(
         "<div class='side-name'>Voice of Customer Copilot</div><div class='side-sub'>Zomato customer feedback</div>"
-        f"<div class='side-status'><span class='dot' style='background:{ui.GOOD if ENGINE == 'gemini' else ui.WARN}'></span>{labels_txt}<br>"
-        f"<span class='dot' style='background:{ui.GOOD if config.llm_available() else ui.NEU}'></span>{ask_txt}</div>",
+        f"<div class='side-status'><span class='dot' aria-hidden='true' style='background:{ui.GOOD if ENGINE == 'gemini' else ui.WARN}'></span>{labels_txt}<br>"
+        f"<span class='dot' aria-hidden='true' style='background:{ui.GOOD if config.llm_available() else ui.NEU}'></span>{ask_txt}</div>",
         unsafe_allow_html=True)
     st.divider()
-    PAGE = st.radio("Navigate", list(PAGES), format_func=PAGES.get, label_visibility="collapsed")
+    # The open page lives in the address bar (?page=Trends), so a shared link opens the same page.
+    _start = st.query_params.get("page", "Overview")
+    PAGE = st.radio("Navigate", list(PAGES), index=list(PAGES).index(_start) if _start in PAGES else 0,
+                    format_func=PAGES.get, label_visibility="collapsed")
+    if st.query_params.get("page") != PAGE:
+        st.query_params["page"] = PAGE
     st.divider()
     st.markdown("<div class='side-head'>Filters</div>", unsafe_allow_html=True)
     dr = st.date_input("Date range", (config.WINDOW_START, config.WINDOW_END), min_value=config.WINDOW_START, max_value=config.WINDOW_END)
@@ -196,6 +201,8 @@ elif PAGE == "Ask":
         res = msg.get("result") or {}
         stats, checks = res.get("stats", {}), res.get("checks", {})
         bits = []
+        if str(res.get("source", "")).startswith("gemini"):
+            bits.append(ui.badge("Written by Gemini", "ai"))
         if res.get("confidence"):
             bits.append(ui.badge("Confidence " + str(res["confidence"]).lower(), "blue"))
         if checks:
@@ -221,7 +228,7 @@ elif PAGE == "Ask":
                     st.session_state.pending = f
                     st.rerun()
 
-    typed = st.chat_input("Ask anything about the feedback, for example: what do Gold members complain about after renewal?")
+    typed = st.chat_input("Ask about the feedback, for example: what do Gold members complain about after renewal…")
     question = typed or st.session_state.pop("pending", None)
     AVATAR = {"user": ":material/person:", "assistant": ":material/forum:"}
     if not st.session_state.chat and not question:
@@ -241,17 +248,30 @@ elif PAGE == "Ask":
         with st.chat_message("user", avatar=AVATAR["user"]):
             st.markdown(question)
         with st.chat_message("assistant", avatar=AVATAR["assistant"]):
-            with st.spinner("Reading the numbers and the matching reviews ..."):
+            with st.spinner("Reading the numbers and the matching reviews…"):
                 try:
                     res = chat.answer(question, history, T, DATA, filters)
                     msg = {"role": "assistant", "content": res["answer"], "result": res}
                 except Exception as exc:  # never crash the page; say what went wrong
-                    msg = {"role": "assistant", "content": f"Could not get an answer from Gemini: {str(exc)[:300]}", "result": {}}
+                    msg = {"role": "assistant", "result": {},
+                           "content": (f"Gemini did not answer: {str(exc)[:240]}\n\nTry again in a minute. If it keeps failing, "
+                                       "check that GEMINI_API_KEY in the app's Secrets is correct and that the model has quota left.")}
             render_answer(msg, len(st.session_state.chat))
         st.session_state.chat.append(msg)
-    if st.session_state.chat and st.button("Clear conversation"):
-        st.session_state.chat = []
-        st.rerun()
+    if st.session_state.chat:
+        if st.session_state.get("confirm_clear"):
+            st.markdown("<div class='section-note'>Clear all questions and answers on this page? This cannot be undone.</div>",
+                        unsafe_allow_html=True)
+            k1, k2, _ = st.columns([2, 2, 3])
+            if k1.button("Yes, clear conversation", type="primary"):
+                st.session_state.chat, st.session_state.confirm_clear = [], False
+                st.rerun()
+            if k2.button("Keep conversation"):
+                st.session_state.confirm_clear = False
+                st.rerun()
+        elif st.button("Clear conversation"):
+            st.session_state.confirm_clear = True
+            st.rerun()
 
 # ================================================================== FEEDBACK HUB
 elif PAGE == "Hub":
@@ -289,7 +309,7 @@ elif PAGE == "Hub":
             fig.update_yaxes(categoryorder="total ascending", title=None).update_xaxes(title=None)
             chart(fig, 340, title)
     ui.section("Record explorer", "Search any word, in any language, and compare the raw row with the cleaned one.")
-    q = st.text_input("Search reviews", placeholder="e.g. rain fee, refund, Gold, खाना", label_visibility="collapsed")
+    q = st.text_input("Search reviews", placeholder="Search reviews, for example rain fee, refund, Gold or खाना…", label_visibility="collapsed")
     view = ENR if not q else ENR[ENR.text.str.contains(q, case=False, regex=False)]
     cols = ["record_id", "raw_platform", "platform", "raw_date", "date", "raw_rating", "rating", "raw_text", "text",
             "is_relevant", "noise_type", "is_duplicate", "duplicate_of", "language", "sentiment", "primary_issue", "label_source"]
@@ -348,9 +368,11 @@ elif PAGE == "Investigate":
     ins = ins_list[names.index(choice)]
     pack, v = ins["evidence_pack"], ins["verification"]
     st.markdown(f"<div class='headline'><div class='headline-text'>{ui.e(ins['headline'])}</div>"
-                f"<div class='headline-meta'>Wording by {ui.e(ins['source'])}. Numbers counted by code.</div></div>", unsafe_allow_html=True)
+                f"<div class='headline-meta'>"
+                f"{ui.badge('Written by Gemini', 'ai') if str(ins['source']).startswith('gemini') else ui.badge('Written by template', 'grey')}"
+                f"Numbers counted by code.</div></div>", unsafe_allow_html=True)
     if not (v["numbers_verified"] and v["citations_verified"]):
-        st.warning("Guardrail flags: " + " · ".join(v["notes"]))
+        st.warning("The checks flagged this insight: " + "; ".join(v["notes"]) + ". The numbers shown come from code and are unaffected.")
     contra = pack["positive_mentions"] / max(pack["positive_mentions"] + pack["negative_mentions"], 1)
     conf = pack["label_confidence_avg"]
     st.markdown("<div class='rel-grid'>" + "".join([
@@ -361,7 +383,8 @@ elif PAGE == "Investigate":
         ui.rel_tile("Contradicting", f"{contra:.0%}", "mid" if contra >= 0.25 else ""),
         ui.rel_tile("Data sufficiency", pack["evidence_level"], {"High": "ok", "Medium": "mid", "Low": "bad"}[pack["evidence_level"]]),
     ]) + "</div>", unsafe_allow_html=True)
-    st.caption("Label confidence is fixed at 0.50 for the rules baseline; Gemini reports its own.")
+    if ENGINE != "gemini":
+        st.caption("Label confidence is fixed at 0.50 for the rules baseline; Gemini reports its own.")
     c1, c2 = st.columns([3, 2], gap="medium")
     with c1:
         ui.section("Recurring patterns", "Groups of similar complaints. Open one to read the reviews.")
@@ -371,7 +394,7 @@ elif PAGE == "Investigate":
         ui.section("Hypotheses to investigate")
         for h in ins["hypotheses"]:
             with st.expander(h["statement"]):
-                st.markdown(ui.badge(h.get("label", "Hypothesis"), "amber"), unsafe_allow_html=True)
+                st.markdown(ui.badge(h.get("label", "Hypothesis"), "ai" if "Gemini" in h.get("label", "") else "amber"), unsafe_allow_html=True)
                 if h.get("what_would_confirm_it"):
                     st.markdown(f"**What would confirm it:** {h['what_would_confirm_it']}")
                 show_quotes(records_by_id(h["supporting_record_ids"]))
@@ -397,10 +420,10 @@ elif PAGE == "Investigate":
     if not config.llm_available():
         st.info("Gemini questions are off, so this box only searches. Add GEMINI_API_KEY to Streamlit Secrets to turn them on.")
     with st.form("ask"):
-        qtext = st.text_input("Question", placeholder="What do Gold members complain about most after renewal?", label_visibility="collapsed")
+        qtext = st.text_input("Question", placeholder="For example: what do Gold members complain about after renewal…", label_visibility="collapsed")
         asked = st.form_submit_button("Ask", type="primary")
     if asked and qtext:
-        with st.spinner("Reading the feedback ..."):
+        with st.spinner("Reading the feedback…"):
             try:
                 res = insights.ask(qtext, B)
             except Exception as exc:
@@ -510,10 +533,10 @@ elif PAGE == "Decide":
         })
     edited = edited.merge(o[["issue", "monthly_reach", "why"]], on="issue")
     edited["priority"] = (edited.monthly_reach * edited.impact_1_to_3 * edited.confidence_pct / 100 / edited.effort_person_weeks).round(1)
-    c1, c2, c3 = st.columns([1, 1, 3])
+    c1, c2, c3 = st.columns([1.1, 1.4, 3])
     if c1.button("Save decisions", type="primary"):
         edited.drop(columns=["monthly_reach", "why"]).to_csv(log_path, index=False)
-        st.toast("Decisions saved")
+        st.toast("Decisions saved to the decision log")
     approved = edited[edited.decision.isin(["Approve", "Modify"])]
     export = pd.DataFrame({
         "Summary": approved.suggested_opportunity.where(approved.suggested_opportunity != "", approved.issue),
@@ -582,7 +605,7 @@ elif PAGE == "Eval":
         pi = pd.DataFrame(r["per_issue"]).sort_values("f1")
         fig = px.bar(pi, x="f1", y="issue", orientation="h", custom_data=["precision", "recall", "support"])
         fig.update_traces(marker_color=[ui.NEG if f < 0.6 else ui.WARN if f < 0.8 else SERIES[0] for f in pi.f1],
-                          hovertemplate="%{y}<br>F1 %{x:.2f} · precision %{customdata[0]:.2f} · recall %{customdata[1]:.2f}"
+                          hovertemplate="%{y}<br>F1 %{x:.2f}, precision %{customdata[0]:.2f}, recall %{customdata[1]:.2f}"
                                         "<br>%{customdata[2]} true mentions<extra></extra>")
         fig.update_yaxes(title=None).update_xaxes(title=None, range=[0, 1])
         chart(fig, 640, f"F1 by issue ({active})")
