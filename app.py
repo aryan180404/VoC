@@ -114,7 +114,7 @@ def records_by_id(ids):
 
 
 def chart(fig, height=360, title=None):
-    st.plotly_chart(ui.style_fig(fig, height, title), width="stretch", config={"displayModeBar": False})
+    st.plotly_chart(ui.style_fig(fig, height, title), width="stretch", theme=None, config={"displayModeBar": False})
 
 
 # ================================================================== OVERVIEW
