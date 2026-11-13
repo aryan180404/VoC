@@ -1,7 +1,7 @@
 name: Run full pipeline with Gemini
 # Run this from the GitHub website: Actions tab -> "Run full pipeline with Gemini" -> Run workflow.
 # It labels every review with Gemini, writes insights, scores against the answer key,
-# and commits the results. Streamlit Cloud then redeploys the dashboard automatically.s
+# and commits the results. Streamlit Cloud then redeploys the dashboard automatically.
 on:
   workflow_dispatch:
     inputs:
@@ -27,9 +27,9 @@ jobs:
         run: |
           if [ -z "$GEMINI_API_KEY" ]; then echo "::error::Add GEMINI_API_KEY under Settings > Secrets and variables > Actions"; exit 1; fi
           if [ -n "${{ github.event.inputs.trial }}" ]; then
-            python run_pipeline.py --engine gemini --trial ${{ github.event.inputs.trial }}
+            python -u run_pipeline.py --engine gemini --trial ${{ github.event.inputs.trial }}
           else
-            python run_pipeline.py --engine gemini
+            python -u run_pipeline.py --engine gemini
           fi
       - name: Commit results
         if: always()
