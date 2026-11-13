@@ -12,7 +12,7 @@ import argparse
 import json
 import time
 
-from src import config, enrich, evaluate, ingest, insights
+from src import config, enrich, evaluate, ingest, insights, llm
 
 
 def main() -> None:
@@ -34,7 +34,11 @@ def main() -> None:
     if engine == "auto":
         engine = "gemini" if config.llm_available() else "rules"
     print(f"2/4 Labelling with: {engine}" + ("" if config.llm_available() else "  (no GEMINI_API_KEY found, using the rules baseline)"))
-    df = enrich.run(engine, a.trial, progress=lambda d, n: print(f"    {d}/{n} labelled", end="\r"))
+    try:
+        df = enrich.run(engine, a.trial, progress=lambda d, n: print(f"    {d}/{n} labelled", end="\r"))
+    except llm.FatalLLMError as exc:
+        print(f"\nSTOPPED: {exc}")
+        raise SystemExit(1)
     print(f"\n    label sources: {df.label_source.value_counts().to_dict()}")
     if a.trial:
         print("Trial finished. Results saved to data/processed/enriched_trial_*.parquet; full results unchanged.")

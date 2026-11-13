@@ -17,8 +17,16 @@ class LLMUnavailable(RuntimeError):
     pass
 
 
-class QuotaExhausted(LLMUnavailable):
-    """Gemini refused because the key has no quota left. Retrying will not help, so stop."""
+class FatalLLMError(LLMUnavailable):
+    """An error that retrying cannot fix (wrong model, bad key, no quota). The run stops at once."""
+
+
+class QuotaExhausted(FatalLLMError):
+    """Gemini refused because the key has no quota left."""
+
+
+class ModelNotAvailable(FatalLLMError):
+    """The chosen model does not exist or is closed to this account."""
 
 
 @dataclass
@@ -118,7 +126,7 @@ def generate_json(prompt: str, schema, *, model: str, system: str = "", temperat
         except Exception as exc:  # network, quota, safety block, invalid JSON
             last_error = exc
             USAGE.failures += 1
-            print(f"    [gemini attempt {attempt + 1}/{config.MAX_RETRIES} failed: {str(exc)[:1500]}]", flush=True)
+            print(f"    [gemini attempt {attempt + 1}/{config.MAX_RETRIES} failed: {str(exc)[:1500}]", flush=True)
             low = str(exc).lower()
             flat = low.replace(" ", "").replace("_", "")
             if "resourceexhausted" in flat or "429" in low:
@@ -131,7 +139,12 @@ def generate_json(prompt: str, schema, *, model: str, system: str = "", temperat
                         "turn on billing, or try again after the daily reset.") from exc
                 time.sleep(35)
             msg = str(exc).lower()
-            if "api key" in msg or "permission" in msg or "not found" in msg and "model" in msg:
-                raise LLMUnavailable(str(exc)) from exc
+            if "not_found" in msg or "no longer available" in msg or "404" in msg[:12]:
+                raise ModelNotAvailable(
+                    f"Gemini says the model '{model}' is not available to this account. "
+                    "Set the repository variable VOC_TAGGING_MODEL (and VOC_REASONING_MODEL) to a model "
+                    "listed on https://aistudio.google.com/rate-limit . Gemini's message: " + str(exc)[:300]) from exc
+            if "api key" in msg or "permission_denied" in msg or "api_key_invalid" in msg:
+                raise FatalLLMError("Gemini rejected the key: " + str(exc)[:300]) from exc
             time.sleep(min(60, (2 ** attempt) + random.random() * 2))
     raise LLMUnavailable(f"Gemini failed after {config.MAX_RETRIES} attempts: {last_error}")

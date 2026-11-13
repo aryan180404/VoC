@@ -75,7 +75,7 @@ For irrelevant records use sentiment Neutral, l2_issues ["No Specific Issue Stat
 
 # Step 3. Sentiment of the customer's experience
 - Judge the text. Use star_rating only to break a tie on a very short or ambiguous text. When text and rating
-  disagree, the text wins.
+disagree, the text wins.
 - Negative: a complaint, including sarcasm (praise words wrapped around a bad outcome).
 - Positive: praise, including a problem that was resolved well.
 - Neutral: a pure feature request or question; "average", "okay", "nothing special"; or a balanced mix of one
@@ -216,6 +216,8 @@ def label_with_gemini(todo: pd.DataFrame, progress=None) -> dict[str, dict]:
         batch = queue.pop(0)
         try:
             got = _label_batch_with_gemini(batch, model)
+        except llm.FatalLLMError:
+            raise  # stop the whole run instead of quietly labelling everything with keyword rules
         except llm.LLMUnavailable:
             got = {}
             if len(batch) > 1:  # split and retry smaller pieces before giving up
