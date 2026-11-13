@@ -51,7 +51,7 @@ GEMINI_API_KEY = _read_key()
 # If your account does not have an alias, put an exact model name here instead.
 TAGGING_MODEL = os.getenv("VOC_TAGGING_MODEL", "gemini-flash-latest")
 REASONING_MODEL = os.getenv("VOC_REASONING_MODEL", "gemini-pro-latest")
-BATCH_SIZE = int(os.getenv("VOC_BATCH_SIZE", "25"))
+BATCH_SIZE = int(os.getenv("VOC_BATCH_SIZE", "10"))
 REQUESTS_PER_MINUTE = int(os.getenv("VOC_REQUESTS_PER_MINUTE", "8"))
 MAX_RETRIES = int(os.getenv("VOC_MAX_RETRIES", "5"))
 PROMPT_VERSION = "tagging-v4"          # bump when the prompt changes; invalidates the cache
