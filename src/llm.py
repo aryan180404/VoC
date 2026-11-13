@@ -51,7 +51,10 @@ def client():
             raise LLMUnavailable("GEMINI_API_KEY is not set. Add it to the .env file.")
         from google import genai
 
-        _client = genai.Client(api_key=config.GEMINI_API_KEY)
+        from google.genai import types as _t
+
+        # Stop waiting on any single call after 90 seconds so a stalled connection is retried.
+        _client = genai.Client(api_key=config.GEMINI_API_KEY, http_options=_t.HttpOptions(timeout=90_000))
     return _client
 
 
