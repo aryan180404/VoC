@@ -126,7 +126,7 @@ def generate_json(prompt: str, schema, *, model: str, system: str = "", temperat
         except Exception as exc:  # network, quota, safety block, invalid JSON
             last_error = exc
             USAGE.failures += 1
-            print(f"    [gemini attempt {attempt + 1}/{config.MAX_RETRIES} failed: {str(exc)[:1500}]", flush=True)
+            print(f"    [gemini attempt {attempt + 1}/{config.MAX_RETRIES} failed: {str(exc)[:1500]}]", flush=True)
             low = str(exc).lower()
             flat = low.replace(" ", "").replace("_", "")
             if "resourceexhausted" in flat or "429" in low:
