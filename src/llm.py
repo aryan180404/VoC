@@ -54,6 +54,7 @@ USAGE = UsageMeter()
 _client = None
 _resolved: dict[str, str] = {}
 _last_call = 0.0
+_working_level: dict[str, int] = {}  # remembers which request settings each model accepts
 
 
 def client():
@@ -105,14 +106,34 @@ def generate_json(prompt: str, schema, *, model: str, system: str = "", temperat
     """Call Gemini and return the parsed JSON object, with retries and backoff."""
     from google.genai import types
 
-    cfg = types.GenerateContentConfig(
-        temperature=temperature,
-        response_mime_type="application/json",
-        response_schema=schema,
-        system_instruction=system or None,
-        # Labelling is a simple sorting job: switching off extended thinking makes it far faster.
-        thinking_config=types.ThinkingConfig(thinking_budget=0) if fast else None,
-    )
+    # Request settings, simplest last. If Gemini rejects a request as an invalid argument,
+    # the next level drops the setting this model may not support.
+    #   level 0: structured schema + thinking switched off (fastest)
+    #   level 1: structured schema, default thinking
+    #   level 2: plain JSON schema format, default thinking
+    #   level 3: JSON output only; the schema is checked here in Python instead
+    level = max(0 if fast else 1, _working_level.get(model, 0))
+
+    def build(lvl):
+        kw = dict(temperature=temperature, response_mime_type="application/json",
+                  system_instruction=system or None)
+        if lvl == 0:
+            kw["response_schema"] = schema
+            kw["thinking_config"] = types.ThinkingConfig(thinking_budget=0)
+        elif lvl == 1:
+            kw["response_schema"] = schema
+        elif lvl == 2 and hasattr(schema, "model_json_schema"):
+            kw["response_json_schema"] = schema.model_json_schema()
+        return types.GenerateContentConfig(**kw)
+
+    def from_text(text):
+        text = (text or "").strip()
+        data = json.loads(text[text.find("{"):text.rfind("}") + 1])
+        if hasattr(schema, "model_validate"):
+            return schema.model_validate(data).model_dump()
+        return data
+
+    cfg = build(level)
     last_error = None
     for attempt in range(config.MAX_RETRIES):
         _pace()
@@ -122,12 +143,18 @@ def generate_json(prompt: str, schema, *, model: str, system: str = "", temperat
             if getattr(resp, "parsed", None) is not None:
                 parsed = resp.parsed
                 return parsed.model_dump() if hasattr(parsed, "model_dump") else parsed
-            return json.loads(resp.text)
+            return from_text(resp.text)
         except Exception as exc:  # network, quota, safety block, invalid JSON
             last_error = exc
             USAGE.failures += 1
             print(f"    [gemini attempt {attempt + 1}/{config.MAX_RETRIES} failed: {str(exc)[:1500]}]", flush=True)
             low = str(exc).lower()
+            if ("invalid_argument" in low or low.startswith("400")) and level < 3:
+                level += 1
+                _working_level[model] = level
+                cfg = build(level)
+                print(f"    [switching to simpler request settings, level {level} of 3]", flush=True)
+                continue
             flat = low.replace(" ", "").replace("_", "")
             if "resourceexhausted" in flat or "429" in low:
                 # A daily quota or a zero limit never clears during this run, so stop at once.
