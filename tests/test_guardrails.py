@@ -121,3 +121,26 @@ def test_invented_citation_is_removed():
 
 if __name__ == "__main__":
     raise SystemExit(pytest.main([__file__, "-q"]))
+
+
+# ---------------------------------------------------------------- chat
+def test_chat_removes_invented_citations_and_flags_invented_numbers():
+    from src import chat
+    res = {"answer": "Delivery has 565 complaints [R00001] [R99999]; about 4,321 customers left.", "cited_record_ids": ["R00001"]}
+    out = chat.check(res, '{"negative_mentions": 565}', {"R00001"}, "what should we fix?")
+    assert "R99999" not in out["answer"]
+    assert out["checks"]["invalid_citations_removed"] == ["R99999"]
+    assert out["checks"]["numbers_not_in_data"] == ["4321"]
+    assert out["checks"]["verified"] is False
+
+
+def test_chat_follow_up_keeps_platform():
+    import pandas as pd
+    from src import chat
+    b = pd.DataFrame({"record_id": [f"R{i:05d}" for i in range(20)], "text": ["late delivery"] * 20,
+                      "platform": ["Reddit"] * 10 + ["Google Play"] * 10, "language": ["English"] * 20,
+                      "month": ["2026-09"] * 20, "is_negative": [True] * 20, "sentiment": ["Negative"] * 20,
+                      "primary_issue": ["Speed of Delivery"] * 20, "churn_risk": [False] * 20,
+                      "is_feature_request": [False] * 20, "confidence": [0.9] * 20, "likes": [0] * 20})
+    pool, stats = chat.focus_slice("why?", [{"role": "user", "content": "What do Reddit users complain about?"}], b)
+    assert set(pool.platform) == {"Reddit"}
