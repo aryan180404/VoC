@@ -137,8 +137,55 @@ div[data-testid="stExpander"] {{ background: {SURFACE}; border: 1px solid {LINE}
 div[data-testid="stExpander"] summary p {{ font-size: 0.9rem; color: {INK}; }}
 div[data-testid="stDataFrame"], div[data-testid="stDataEditor"] {{ border: 1px solid {LINE}; border-radius: 8px; overflow: hidden; }}
 div[data-testid="stPlotlyChart"] {{ background: {SURFACE}; border: 1px solid {LINE}; border-radius: 8px; padding: 4px 6px; }}
-.stButton button, .stDownloadButton button, .stFormSubmitButton button {{ border-radius: 6px; font-weight: 500; }}
-div[data-testid="stAlert"] {{ border-radius: 8px; }}
+/* Theme-proof widgets: the dashboard is designed for a light theme, so every control is coloured here
+   explicitly. If a viewer's browser or Streamlit setting asks for dark mode, nothing turns dark-on-dark. */
+:root, .stApp {{ color-scheme: light; }}
+.stApp h1, .stApp h2, .stApp h3, .stApp h4, .stApp label, .stApp label p,
+[data-testid="stWidgetLabel"] p, [data-testid="stCaptionContainer"], .stApp small {{ color: {INK_2} !important; }}
+.stButton button, .stDownloadButton button, .stFormSubmitButton button {{
+  border-radius: 6px; font-weight: 500; background: {SURFACE} !important; color: {INK} !important;
+  border: 1px solid #d3d9df !important; box-shadow: none !important; }}
+.stButton button p, .stDownloadButton button p, .stFormSubmitButton button p {{ color: inherit !important; }}
+.stButton button:hover, .stDownloadButton button:hover, .stFormSubmitButton button:hover {{
+  border-color: {ACCENT} !important; color: {ACCENT} !important; background: #fbfcfc !important; }}
+.stButton button[kind="primary"], .stFormSubmitButton button[kind="primary"], .stDownloadButton button[kind="primary"],
+button[data-testid="stBaseButton-primary"], button[data-testid="stBaseButton-primaryFormSubmit"] {{
+  background: {ACCENT} !important; color: #ffffff !important; border-color: {ACCENT} !important; }}
+.stButton button[kind="primary"]:hover, button[data-testid="stBaseButton-primary"]:hover {{ background: #285f63 !important; color: #fff !important; }}
+button:focus-visible {{ outline: 2px solid #9fc0c2 !important; outline-offset: 1px; }}
+div[data-testid="stAlert"] {{ border-radius: 8px; background: #eaf2f6 !important; border: 1px solid #d4e3ec !important; }}
+div[data-testid="stAlert"] p, div[data-testid="stAlert"] div {{ color: {INK} !important; }}
+/* text, number, date, select and multiselect inputs */
+[data-baseweb="input"], [data-baseweb="base-input"], [data-baseweb="textarea"], [data-baseweb="select"] > div,
+.stDateInput > div > div, .stTextInput > div > div, .stNumberInput > div > div {{
+  background: {SURFACE} !important; border-color: #d3d9df !important; }}
+[data-baseweb="input"] input, [data-baseweb="base-input"] input, [data-baseweb="textarea"] textarea,
+[data-baseweb="select"] input, [data-baseweb="select"] div, .stDateInput input {{ color: {INK} !important; background: transparent !important; }}
+input::placeholder, textarea::placeholder {{ color: {INK_3} !important; opacity: 1; }}
+[data-baseweb="popover"] ul, [data-baseweb="popover"] [role="listbox"], [data-baseweb="menu"], [data-baseweb="calendar"],
+[data-baseweb="popover"] > div {{ background: {SURFACE} !important; color: {INK} !important; }}
+[data-baseweb="popover"] li, [data-baseweb="calendar"] div, [data-baseweb="calendar"] button {{ color: {INK} !important; }}
+[data-baseweb="popover"] li:hover, [data-baseweb="popover"] li[aria-selected="true"] {{ background: {ACCENT_SOFT} !important; }}
+[data-testid="stSlider"] [data-testid="stTickBarMin"], [data-testid="stSlider"] [data-testid="stTickBarMax"],
+[data-testid="stSliderThumbValue"] {{ color: {INK_2} !important; }}
+div[data-testid="stExpander"] details, div[data-testid="stExpander"] summary {{ background: {SURFACE} !important; color: {INK} !important; }}
+div[data-testid="stExpander"] summary:hover p {{ color: {ACCENT} !important; }}
+.stTabs [data-baseweb="tab"] p {{ color: {INK_2}; }} .stTabs [aria-selected="true"] p {{ color: {ACCENT}; font-weight: 600; }}
+/* chat */
+[data-testid="stBottom"], [data-testid="stBottom"] > div, [data-testid="stBottomBlockContainer"] {{ background: {CANVAS} !important; }}
+[data-testid="stChatInput"] {{ background: {SURFACE} !important; border: 1px solid #d3d9df !important; border-radius: 10px !important; }}
+[data-testid="stChatInput"] > div {{ background: {SURFACE} !important; }}
+[data-testid="stChatInput"] textarea {{ color: {INK} !important; background: {SURFACE} !important; }}
+[data-testid="stChatInput"] button {{ background: {ACCENT} !important; color: #fff !important; border-radius: 8px !important; }}
+[data-testid="stChatInput"] button:disabled {{ background: #dfe4e8 !important; color: {INK_3} !important; }}
+[data-testid="stChatMessage"] {{ background: transparent !important; padding: 10px 4px; }}
+[data-testid="stChatMessage"]:has([data-testid="stChatMessageAvatarCustom"]) {{ border-radius: 10px; }}
+[data-testid="stChatMessageAvatarCustom"], [data-testid^="stChatMessageAvatar"] {{
+  background: {ACCENT_SOFT} !important; color: {ACCENT} !important; border-radius: 8px; }}
+[data-testid="stChatMessageContent"] p, [data-testid="stChatMessageContent"] li {{ color: {INK} !important; line-height: 1.6; }}
+[data-testid="stSpinner"] p, [data-testid="stSpinner"] div {{ color: {INK_2} !important; }}
+.stButton button {{ height: auto; min-height: 42px; padding-top: 8px; padding-bottom: 8px; }}
+.stButton button p {{ white-space: normal !important; line-height: 1.35; }}
 @media (max-width: 900px) {{
   .stats, .rel-grid {{ grid-template-columns: repeat(2, 1fr) !important; }}
   .kpi, .rel {{ border-left: none; border-top: 1px solid {LINE}; }}
