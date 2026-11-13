@@ -2,11 +2,11 @@
   {
     "issue": "Gold Hidden Fees/Platform Charges",
     "source": "gemini:gemini-3.5-flash-lite",
-    "headline": "3379 negative reviews describe the problem, representing 7.3 percent of negative feedback, and the trend is Rising.",
+    "headline": "Customers reported Gold Hidden Fees/Platform Charges with 250 negative mentions representing 7.4 percent of negative feedback, and the trend status is Rising.",
     "patterns": [
       {
-        "name": "Charged extra fees despite having free delivery membership",
-        "count": 119,
+        "name": "Charged extra fees despite having a membership",
+        "count": 107,
         "record_ids": [
           "R00257",
           "R02181",
@@ -15,7 +15,17 @@
         "example": "Half the restaurants in my area show 'not delivering to your location' even though they are 3 km away. Plus, Took Gold for free delivery and I am still being charged platform fee and 'distance fee'. Misleading."
       },
       {
-        "name": "Membership renewed automatically without sending any reminder",
+        "name": "Membership renewed automatically without explicit agreement",
+        "count": 59,
+        "record_ids": [
+          "R00078",
+          "R00096",
+          "R00264"
+        ],
+        "example": "Never agreed to auto renewal of Gold. ₹399 gone from my account."
+      },
+      {
+        "name": "Subscription charged unexpectedly without prior reminder",
         "count": 44,
         "record_ids": [
           "R00157",
@@ -25,17 +35,7 @@
         "example": "Gold membership auto renewed without any reminder, ₹399 debited. I want a refund."
       },
       {
-        "name": "Subscription renewed automatically without prior agreement",
-        "count": 42,
-        "record_ids": [
-          "R00078",
-          "R00096",
-          "R00155"
-        ],
-        "example": "Never agreed to auto renewal of Gold. ₹399 gone from my account."
-      },
-      {
-        "name": "Automatic renewal occurred without notice and cancellation is difficult",
+        "name": "Unable to find a simple cancellation path",
         "count": 40,
         "record_ids": [
           "R00033",
@@ -47,50 +47,53 @@
     ],
     "hypotheses": [
       {
-        "statement": "The membership checkout flow may obscure the default selection for automatic renewal, causing customers to be enrolled unwittingly.",
+        "statement": "The membership checkout flow may obscure auto-renewal terms, causing users to be enrolled without realizing it.",
         "supporting_record_ids": [
+          "R02455",
           "R03963",
-          "R04276"
+          "R02217"
         ],
-        "what_would_confirm_it": "Checkout funnel logs showing toggle placement rates and opt-out counts.",
+        "what_would_confirm_it": "Payment gateway logs showing high opt-in rates via pre-checked consent boxes during promotional checkouts.",
         "label": "Hypothesis (Gemini)"
       },
       {
-        "statement": "Reminder notifications for upcoming subscription renewals may fail to send due to scheduling errors in the notification service.",
+        "statement": "The reminder notification service may fail to dispatch renewal alerts prior to charging saved payment methods.",
         "supporting_record_ids": [
           "R01979",
-          "R01054"
+          "R01054",
+          "R00908"
         ],
-        "what_would_confirm_it": "Notification dispatch logs showing failure rates for subscription reminder messages.",
+        "what_would_confirm_it": "Notification delivery logs indicating unsent or failed push notifications and emails on the scheduled renewal date.",
         "label": "Hypothesis (Gemini)"
       },
       {
-        "statement": "Free delivery benefits may exclude certain operational surcharges like distance or surge fees, which confuses customers expecting total fee waivers.",
+        "statement": "Distance and surge fees may apply automatically at checkout even for premium members due to rule engine limits.",
         "supporting_record_ids": [
           "R01530",
-          "R05193"
+          "R01906",
+          "R04402"
         ],
-        "what_would_confirm_it": "Customer support ticket tags related to fee disputes alongside membership status records.",
+        "what_would_confirm_it": "Order database records showing distance and surge fee line items applied to active membership checkouts.",
         "label": "Hypothesis (Gemini)"
       }
     ],
     "data_to_check": [
-      "Subscription auto-renewal opt-in conversion rates during checkout",
-      "Scheduled notification dispatch success and failure logs prior to renewal dates",
-      "Customer service contact volume regarding unexpected subscription renewals and delivery surcharges"
+      "Auto-renewal opt-in and opt-out rates by platform version",
+      "Scheduled reminder notification success and failure logs",
+      "Membership checkout fee application error logs"
     ],
     "interview_questions": [
-      "Tell me about what you saw on the screen when you last purchased your membership.",
-      "Walk me through what happened when you realized your subscription had renewed.",
-      "Tell me about the last time you tried to find out why extra fees were added to your order.",
-      "Describe what you did when you tried to turn off automatic renewal in your account settings."
+      "Tell me about the last time you noticed a fee on your order while using your membership.",
+      "Walk me through what happened when your membership renewal was processed.",
+      "Show me where you looked when you tried to cancel your membership.",
+      "Tell me about what you saw on the screen when you purchased your membership."
     ],
     "opportunity": {
-      "title": "Clear Membership Terms and Transparent Renewals",
-      "description": "Helps members understand fee exclusions upfront and gives them clear control over subscription renewals, so they can manage their spending without unexpected charges.",
-      "success_metric": "Decrease in unexpected auto-renewal complaints and increase in renewal management page interactions."
+      "title": "Transparent Membership Terms and Fee Application",
+      "description": "Helps members by providing clear visibility into delivery fee limits and explicit consent controls for renewals, changing unexpected charges into predictable billing.",
+      "success_metric": "Decrease in unexpected renewal charge complaints and support tickets regarding hidden fees"
     },
-    "contradicting_evidence": "There are no contradicting quotes or positive mentions in the evidence pack.",
+    "contradicting_evidence": "There are no contradicting quotes in the evidence pack.",
     "verification": {
       "numbers_verified": true,
       "headline_numbers_ok": true,
@@ -102,12 +105,12 @@
       "category": "Value & Pricing",
       "analysed_feedback": 4839,
       "negative_feedback_total": 3379,
-      "negative_mentions": 245,
-      "share_of_negative_pct": 7.3,
+      "negative_mentions": 250,
+      "share_of_negative_pct": 7.4,
       "positive_mentions": 0,
       "churn_risk_mentions": 30,
       "platforms": {
-        "Google Play": 97,
+        "Google Play": 102,
         "Reddit": 33,
         "X (Twitter)": 28,
         "Apple App Store": 24,
@@ -120,11 +123,11 @@
       },
       "languages": {
         "English": 233,
-        "Hinglish": 12
+        "Hinglish": 17
       },
       "monthly_negative_mentions": {
-        "2025-12": 15,
-        "2026-01": 17,
+        "2025-12": 16,
+        "2026-01": 18,
         "2026-02": 7,
         "2026-03": 10,
         "2026-04": 14,
@@ -132,7 +135,7 @@
         "2026-06": 6,
         "2026-07": 7,
         "2026-08": 12,
-        "2026-09": 128,
+        "2026-09": 131,
         "2026-10": 11
       },
       "trend": {
@@ -147,20 +150,30 @@
           "2026-10"
         ],
         "earlier_rate_pct": 1.92,
-        "recent_rate_pct": 15.94,
-        "change_pct": 731.0
+        "recent_rate_pct": 16.28,
+        "change_pct": 749.0
       },
       "rank": 1,
       "sub_patterns": [
         {
           "pattern": "fee, delivery, free, free delivery",
-          "count": 119,
+          "count": 107,
           "record_ids": [
             "R00257",
             "R02181",
             "R00490"
           ],
           "example": "Half the restaurants in my area show 'not delivering to your location' even though they are 3 km away. Plus, Took Gold for free delivery and I am still being charged platform fee and 'distance fee'. Misleading."
+        },
+        {
+          "pattern": "renewal, renewal gold, agreed, gold gone",
+          "count": 59,
+          "record_ids": [
+            "R00078",
+            "R00096",
+            "R00264"
+          ],
+          "example": "Never agreed to auto renewal of Gold. ₹399 gone from my account."
         },
         {
           "pattern": "reminder, reminder debited, want, renewed reminder",
@@ -171,16 +184,6 @@
             "R00595"
           ],
           "example": "Gold membership auto renewed without any reminder, ₹399 debited. I want a refund."
-        },
-        {
-          "pattern": "renewal, renewal gold, agreed, gold gone",
-          "count": 42,
-          "record_ids": [
-            "R00078",
-            "R00096",
-            "R00155"
-          ],
-          "example": "Never agreed to auto renewal of Gold. ₹399 gone from my account."
         },
         {
           "pattern": "cancel, way, way cancel, notification easy",
@@ -194,9 +197,9 @@
         }
       ],
       "co_occurring_issues": {
-        "Refund & Policy Disputes": 44,
+        "Refund & Policy Disputes": 46,
+        "Promotions & Loyalty": 22,
         "Fees & Surcharges": 21,
-        "Promotions & Loyalty": 16,
         "Competitor Comparisons": 12
       },
       "quotes": [
@@ -219,16 +222,16 @@
           "text": "Anyone else? Zomato Gold renewed automatically, no notification, no easy way to cancel."
         },
         {
+          "record_id": "R04790",
+          "platform": "Google Play",
+          "date": "2026-01-06",
+          "text": "Gold lene ka koi fayda nahi, offers sab fake hai."
+        },
+        {
           "record_id": "R02217",
           "platform": "Google Play",
           "date": "2026-09-08",
           "text": "ZOMATO GOLD RENEWED AUTOMATICALLY, NO NOTIFICATION, NO EASY WAY TO CANCEL."
-        },
-        {
-          "record_id": "R02801",
-          "platform": "Google Play",
-          "date": "2026-09-18",
-          "text": "zomato gold renewed automatically, no notification, no easy way to cancel."
         },
         {
           "record_id": "R03963",
@@ -329,31 +332,21 @@
   {
     "issue": "Refund & Policy Disputes",
     "source": "gemini:gemini-3.5-flash-lite",
-    "headline": "Out of 3379 negative reviews, 391 describe refund and policy disputes, accounting for 11.6 percent of negative feedback with a rising trend.",
+    "headline": "Customers reported Refund & Policy Disputes in 393 mentions, representing 11.6 percent of negative feedback, and the trend is Rising.",
     "patterns": [
       {
-        "name": "Missing refunds not reaching bank accounts",
-        "count": 294,
+        "name": "Delayed or missing bank refunds for cancelled or late orders",
+        "count": 297,
         "record_ids": [
-          "R05188",
-          "R00480",
-          "R00483"
+          "R00149",
+          "R00220",
+          "R00771"
         ],
-        "example": "रिफंड अभी तक नहीं मिला, कस्टमर केयर कोई जवाब नहीं देता।"
+        "example": "डिलिव्हरी खूप उशिरा आली, पैसे परत मिळाले नाहीत #zomato"
       },
       {
-        "name": "Account blocks triggered after requesting multiple refunds",
-        "count": 39,
-        "record_ids": [
-          "R00219",
-          "R00361",
-          "R00399"
-        ],
-        "example": "My account got blocked after I asked for refunds twice. Treating genuine customers like fraudsters."
-      },
-      {
-        "name": "Gold membership auto renewed without prior reminders",
-        "count": 37,
+        "name": "Automatic subscription renewals occurring without prior warning or reminder",
+        "count": 40,
         "record_ids": [
           "R00157",
           "R00418",
@@ -362,62 +355,73 @@
         "example": "Gold membership auto renewed without any reminder, ₹399 debited. I want a refund."
       },
       {
-        "name": "Full charges applied for immediate cancellations",
-        "count": 21,
+        "name": "Encountering friction and resistance when requesting compensation for missing items",
+        "count": 34,
         "record_ids": [
-          "R02012",
-          "R03068",
-          "R03039"
+          "R00687",
+          "R01894",
+          "R01346"
         ],
-        "example": "Honestly fed up. I cancelled within 1 minute and they still charged full amount saying 'restaurant has started preparing'. 1 star is too much."
+        "example": "Reply: Not happy at all. Swiggy refunds missing items instantly, Zomato makes you fight for every rupee. Switching. 1 star is too much."
+      },
+      {
+        "name": "Extended waiting periods for refund processing with unresponsive support",
+        "count": 22,
+        "record_ids": [
+          "R00229",
+          "R00487",
+          "R00950"
+        ],
+        "example": "Refund abhi tak nahi aaya, 5 din ho gaye."
       }
     ],
     "hypotheses": [
       {
-        "statement": "Payment gateway or payout reconciliation delays could be causing processed refunds to take weeks to reflect in customer bank accounts.",
+        "statement": "Payment gateway or bank payout integrations may fail to transmit refund settlement files reliably, causing transactions to show as processed internally while never reaching customer bank accounts.",
         "supporting_record_ids": [
           "R02982",
           "R02985"
         ],
-        "what_would_confirm_it": "Logs from the payment processor showing timestamp gaps between internal status updates and actual bank transfer acknowledgments.",
+        "what_would_confirm_it": "Payment gateway webhook logs showing status discrepancies between internal transaction markers and bank acknowledgment timestamps.",
         "label": "Hypothesis (Gemini)"
       },
       {
-        "statement": "Automated fraud detection rules could be overly sensitive, automatically blocking accounts that request refunds past a certain frequency threshold.",
+        "statement": "Subscription management workflows might omit advance renewal reminder notifications due to notification service failures, leading users to believe renewals were unauthorized.",
+        "supporting_record_ids": [
+          "R01979",
+          "R00595"
+        ],
+        "what_would_confirm_it": "Notification dispatch logs and cron job execution records for upcoming membership renewal alerts.",
+        "label": "Hypothesis (Gemini)"
+      },
+      {
+        "statement": "Customer support automation rules may automatically flag and block accounts of users who request multiple refunds within a specific timeframe, treating legitimate complaints as fraudulent activity.",
         "supporting_record_ids": [
           "R02532",
           "R00664"
         ],
-        "what_would_confirm_it": "Risk system configuration rules and the frequency of automated account suspensions triggered by consecutive support tickets.",
-        "label": "Hypothesis (Gemini)"
-      },
-      {
-        "statement": "Subscription management services might fail to trigger advance renewal notification emails due to scheduled job failures.",
-        "supporting_record_ids": [
-          "R01979",
-          "R01896",
-          "R00595"
-        ],
-        "what_would_confirm_it": "Notification dispatch logs for recurring subscription renewals indicating whether reminder emails were successfully queued and sent.",
+        "what_would_confirm_it": "Risk engine rule configuration history and audit trails for account suspension triggers following refund requests.",
         "label": "Hypothesis (Gemini)"
       }
     ],
     "data_to_check": [
-      "Average payout settlement duration across different banking partners",
-      "Subscription renewal notification email delivery success rates",
-      "Automated account suspension rates tied to refund requests"
+      "Payment gateway settlement success rate and webhook failure logs",
+      "Notification delivery success rates for membership auto-renewal reminders",
+      "Automated account suspension rates tied to refund request frequency",
+      "Average time to resolution for support tickets involving missing item claims"
     ],
     "interview_questions": [
-      "Tell me about the last time you requested a refund and how you tracked its progress.",
-      "Walk me through what happened right before you noticed your subscription renewed.",
-      "Tell me about what you saw on your screen when you tried to cancel your recent order."
+      "Tell me about the last time you requested a refund for an order; what steps did you take and what did you see on your screen?",
+      "Walk me through what happened when you noticed your membership had renewed; what notifications did you receive beforehand?",
+      "Tell me about a time an item was missing from your delivery; how did you raise the issue and what response did you get?",
+      "What did you do when you saw the refund status listed as processed but the funds had not arrived in your account?"
     ],
     "opportunity": {
-      "title": "Streamline Refund Visibility and Subscription Transparency",
-      "description": "It helps customers seeking clarity on their money by providing real-time bank transfer tracking and advance renewal notifications before charges occur.",
-      "success_metric": "Decrease in refund support ticket volume and increase in successful automated subscription renewal satisfaction scores."
+      "title": "Streamline Refund Settlement Transparency and Subscription Notifications",
+      "description": "Helps customers who experience delayed refunds or unexpected renewals by providing clear real-time tracking of bank payouts and advance notices before subscriptions renew.",
+      "success_metric": "Decrease in negative mentions regarding Refund & Policy Disputes"
     },
-    "contradicting_evidence": "The contradicting quotes and positive mentions show that some customers experience fast automated refunds within minutes and proactive delivery fee refunds for delayed orders.",
+    "contradicting_evidence": "The contradicting quotes and positive mentions show that some customers experienced fast resolutions, receiving full refunds for missing items within minutes or proactive delivery fee refunds for delayed orders.",
     "verification": {
       "numbers_verified": true,
       "headline_numbers_ok": true,
@@ -429,15 +433,15 @@
       "category": "Customer Support & Resolution",
       "analysed_feedback": 4839,
       "negative_feedback_total": 3379,
-      "negative_mentions": 391,
+      "negative_mentions": 393,
       "share_of_negative_pct": 11.6,
-      "positive_mentions": 163,
+      "positive_mentions": 161,
       "churn_risk_mentions": 82,
       "platforms": {
         "Google Play": 129,
         "Apple App Store": 68,
-        "Reddit": 57,
-        "X (Twitter)": 50,
+        "Reddit": 58,
+        "X (Twitter)": 51,
         "YouTube": 38,
         "Quora": 25,
         "Consumer Complaints Forum": 10,
@@ -446,7 +450,7 @@
         "LinkedIn": 3
       },
       "languages": {
-        "English": 286,
+        "English": 288,
         "Hinglish": 39,
         "Marathi": 33,
         "Hindi": 31,
@@ -463,7 +467,7 @@
         "2026-06": 24,
         "2026-07": 30,
         "2026-08": 45,
-        "2026-09": 58,
+        "2026-09": 60,
         "2026-10": 30
       },
       "trend": {
@@ -478,34 +482,24 @@
           "2026-10"
         ],
         "earlier_rate_pct": 7.59,
-        "recent_rate_pct": 10.09,
-        "change_pct": 33.0
+        "recent_rate_pct": 10.32,
+        "change_pct": 36.0
       },
       "rank": 2,
       "sub_patterns": [
         {
-          "pattern": "refund, bank, received, missing",
-          "count": 294,
+          "pattern": "refund, got, account, bank",
+          "count": 297,
           "record_ids": [
-            "R05188",
-            "R00480",
-            "R00483"
+            "R00149",
+            "R00220",
+            "R00771"
           ],
-          "example": "रिफंड अभी तक नहीं मिला, कस्टमर केयर कोई जवाब नहीं देता।"
-        },
-        {
-          "pattern": "asked refunds, treating, twice treating, treating genuine",
-          "count": 39,
-          "record_ids": [
-            "R00219",
-            "R00361",
-            "R00399"
-          ],
-          "example": "My account got blocked after I asked for refunds twice. Treating genuine customers like fraudsters."
+          "example": "डिलिव्हरी खूप उशिरा आली, पैसे परत मिळाले नाहीत #zomato"
         },
         {
           "pattern": "debited want, auto renewed, membership auto, reminder",
-          "count": 37,
+          "count": 40,
           "record_ids": [
             "R00157",
             "R00418",
@@ -514,18 +508,28 @@
           "example": "Gold membership auto renewed without any reminder, ₹399 debited. I want a refund."
         },
         {
-          "pattern": "charged, cancelled minute, charged saying, minute charged",
-          "count": 21,
+          "pattern": "makes fight, instantly, makes, missing items",
+          "count": 34,
           "record_ids": [
-            "R02012",
-            "R03068",
-            "R03039"
+            "R00687",
+            "R01894",
+            "R01346"
           ],
-          "example": "Honestly fed up. I cancelled within 1 minute and they still charged full amount saying 'restaurant has started preparing'. 1 star is too much."
+          "example": "Reply: Not happy at all. Swiggy refunds missing items instantly, Zomato makes you fight for every rupee. Switching. 1 star is too much."
+        },
+        {
+          "pattern": "din ho, din, refund abhi, tak nahi",
+          "count": 22,
+          "record_ids": [
+            "R00229",
+            "R00487",
+            "R00950"
+          ],
+          "example": "Refund abhi tak nahi aaya, 5 din ho gaye."
         }
       ],
       "co_occurring_issues": {
-        "Gold Hidden Fees/Platform Charges": 44,
+        "Gold Hidden Fees/Platform Charges": 46,
         "Competitor Comparisons": 43,
         "Agent Helpfulness": 43,
         "Account & Login": 42
@@ -686,21 +690,21 @@
   {
     "issue": "Speed of Delivery",
     "source": "gemini:gemini-3.5-flash-lite",
-    "headline": "A total of 3379 negative reviews describe delivery speed problems, representing 18.1 percent of negative feedback, and the trend is Declining.",
+    "headline": "Speed of Delivery received 612 negative mentions accounting for 18.1 percent of negative feedback, and the trend is Declining.",
     "patterns": [
       {
-        "name": "Food arrived late and cold",
+        "name": "Food arrives significantly later than expected",
         "count": 451,
         "record_ids": [
-          "R04387",
-          "R04818",
-          "R00139"
+          "R00139",
+          "R00528",
+          "R00480"
         ],
-        "example": "Rant: खाना बहुत देर से आया और ठंडा था। बहुत खराब सर्विस।"
+        "example": "ಡೆಲಿವರಿ ತುಂಬಾ ತಡವಾಗಿ ಬಂತು"
       },
       {
-        "name": "Paid extra platform fees while waiting long durations",
-        "count": 79,
+        "name": "Paying platform fees while waiting long hours",
+        "count": 80,
         "record_ids": [
           "R00034",
           "R00207",
@@ -709,7 +713,7 @@
         "example": "@zomatocare Love paying ₹14 platform fee for the privilege of waiting an hour. Thanks Zomato!! #zomato"
       },
       {
-        "name": "Orders got stuck during bad weather while rain fees applied",
+        "name": "Charged a weather fee while orders remain stuck",
         "count": 43,
         "record_ids": [
           "R00272",
@@ -719,7 +723,7 @@
         "example": "Order stuck for 95 minutes due to rain, rain fee still charged. #zomato"
       },
       {
-        "name": "Heavy rain surcharges charged despite extreme delivery delays",
+        "name": "Heavy weather used as an excuse for long delays",
         "count": 38,
         "record_ids": [
           "R00359",
@@ -731,52 +735,53 @@
     ],
     "hypotheses": [
       {
-        "statement": "Estimated delivery time calculations may be overly optimistic during peak hours or adverse weather conditions, leading to frustrated customers.",
+        "statement": "Estimated delivery times shown in the app may be underestimated during peak weather conditions, causing customer frustration when actual times exceed predictions.",
         "supporting_record_ids": [
-          "R05114",
           "R03836",
-          "R04516"
+          "R02315",
+          "R00556"
         ],
-        "what_would_confirm_it": "Compare predicted delivery timestamps with actual delivery timestamps segmented by weather condition logs.",
+        "what_would_confirm_it": "Compare predicted delivery durations against actual completion times segmented by weather status and geographical zones.",
         "label": "Hypothesis (Gemini)"
       },
       {
-        "statement": "Delivery partners may be experiencing batching issues or taking multiple orders simultaneously, causing significant delays and cold food.",
+        "statement": "Delivery partners may experience prolonged idle times or route bottlenecks that the dispatch system fails to account for in real time.",
         "supporting_record_ids": [
-          "R05114",
-          "R03177",
-          "R03721"
+          "R01557",
+          "R04120"
         ],
-        "what_would_confirm_it": "Review delivery partner dispatch logs and route histories showing multi-order assignments during delayed deliveries.",
+        "what_would_confirm_it": "Analyze rider GPS stationary duration logs and dispatch reassignment frequency during delayed orders.",
         "label": "Hypothesis (Gemini)"
       },
       {
-        "statement": "Additional fees like rain or platform fees applied during delayed orders may disproportionately trigger negative public complaints.",
+        "statement": "Surcharges such as platform fees or weather fees may continue to apply automatically even when delivery service level agreements are breached.",
         "supporting_record_ids": [
           "R03836",
-          "R04418",
-          "R03380"
+          "R02598",
+          "R04418"
         ],
-        "what_would_confirm_it": "Analyze customer support ticket volume regarding fee disputes correlated with late delivery orders.",
+        "what_would_confirm_it": "Review billing logs to check if service fee refunds are triggered automatically when orders exceed late thresholds.",
         "label": "Hypothesis (Gemini)"
       }
     ],
     "data_to_check": [
-      "Average preparation time versus delivery transit time per zone",
-      "Percentage of orders exceeding estimated time of arrival during rain events",
-      "Customer support ticket categorization volume for fee disputes and late delivery"
+      "Average estimated versus actual delivery duration variance by city and weather condition",
+      "Frequency of automated delivery fee refunds issued for delayed orders",
+      "Rider stationary duration logs on the map tracking screen during active deliveries",
+      "Customer support ticket escalation rates linked to late order complaints"
     ],
     "interview_questions": [
-      "Tell me about the last time you placed an order and noticed it took longer than expected.",
-      "Walk me through what you saw on the order tracking map while you were waiting for your delivery.",
-      "Tell me about what happened when you noticed extra fees added to your delayed order."
+      "Tell me about the last time you placed an order where the delivery time was much later than what the app predicted.",
+      "Walk me through what you saw on the tracking screen while you were waiting for your order to arrive.",
+      "Tell me about what happened when you tried to check on the status of your order through customer support or the app.",
+      "Tell me about how you decided whether to pay additional fees when placing your order during bad weather."
     ],
     "opportunity": {
-      "title": "Transparent Delivery Estimates and Proactive Fee Adjustments",
-      "description": "Helps hungry customers manage expectations by providing accurate delivery timelines during bad weather and automatically adjusting extra fees when delays occur.",
-      "success_metric": "Reduction in negative feedback mentions related to delivery speed and fee disputes"
+      "title": "Improve delivery time accuracy and transparent fee handling",
+      "description": "It helps customers placing orders during high-demand or bad weather conditions by providing realistic arrival estimates and automatically waiving extra fees when significant delays occur.",
+      "success_metric": "Increase the percentage of orders delivered within estimated time windows while reducing negative mentions related to delivery speed."
     },
-    "contradicting_evidence": "Some customers reported positive experiences where orders arrived hot within minutes or where support proactively refunded delivery fees after a delay.",
+    "contradicting_evidence": "Some customers reported positive experiences where orders arrived very quickly within minutes while food remained hot, and others noted that Zomato proactively refunded delivery fees when delays occurred.",
     "verification": {
       "numbers_verified": true,
       "headline_numbers_ok": true,
@@ -788,24 +793,24 @@
       "category": "Fulfillment & Logistics",
       "analysed_feedback": 4839,
       "negative_feedback_total": 3379,
-      "negative_mentions": 611,
+      "negative_mentions": 612,
       "share_of_negative_pct": 18.1,
-      "positive_mentions": 222,
-      "churn_risk_mentions": 40,
+      "positive_mentions": 220,
+      "churn_risk_mentions": 41,
       "platforms": {
-        "Google Play": 232,
+        "Google Play": 234,
         "Apple App Store": 97,
         "Reddit": 76,
         "X (Twitter)": 73,
         "YouTube": 52,
-        "Quora": 33,
+        "Quora": 32,
         "Consumer Complaints Forum": 15,
         "MouthShut": 12,
         "News Site Comments": 11,
         "LinkedIn": 10
       },
       "languages": {
-        "English": 501,
+        "English": 502,
         "Kannada": 33,
         "Marathi": 33,
         "Hindi": 31,
@@ -814,12 +819,12 @@
       "monthly_negative_mentions": {
         "2025-12": 55,
         "2026-01": 54,
-        "2026-02": 52,
+        "2026-02": 53,
         "2026-03": 47,
-        "2026-04": 44,
+        "2026-04": 45,
         "2026-05": 39,
         "2026-06": 38,
-        "2026-07": 142,
+        "2026-07": 141,
         "2026-08": 50,
         "2026-09": 33,
         "2026-10": 45
@@ -835,25 +840,25 @@
           "2026-09",
           "2026-10"
         ],
-        "earlier_rate_pct": 17.64,
+        "earlier_rate_pct": 17.56,
         "recent_rate_pct": 8.94,
         "change_pct": -49.0
       },
       "rank": 3,
       "sub_patterns": [
         {
-          "pattern": "minutes, late, great, job",
+          "pattern": "minutes, late, great, great job",
           "count": 451,
           "record_ids": [
-            "R04387",
-            "R04818",
-            "R00139"
+            "R00139",
+            "R00528",
+            "R00480"
           ],
-          "example": "Rant: खाना बहुत देर से आया और ठंडा था। बहुत खराब सर्विस।"
+          "example": "ಡೆಲಿವರಿ ತುಂಬಾ ತಡವಾಗಿ ಬಂತು"
         },
         {
-          "pattern": "fee privilege, thanks, love paying, privilege waiting",
-          "count": 79,
+          "pattern": "paying platform, love paying, waiting, waiting hour",
+          "count": 80,
           "record_ids": [
             "R00034",
             "R00207",
@@ -862,7 +867,7 @@
           "example": "@zomatocare Love paying ₹14 platform fee for the privilege of waiting an hour. Thanks Zomato!! #zomato"
         },
         {
-          "pattern": "rain, fee charged, stuck, rain rain",
+          "pattern": "rain, stuck, fee charged, rain rain",
           "count": 43,
           "record_ids": [
             "R00272",
@@ -872,7 +877,7 @@
           "example": "Order stuck for 95 minutes due to rain, rain fee still charged. #zomato"
         },
         {
-          "pattern": "rain, charge, charge rain, minutes late",
+          "pattern": "rain, excuse, excuse charge, fee deliver",
           "count": 38,
           "record_ids": [
             "R00359",
@@ -883,10 +888,10 @@
         }
       ],
       "co_occurring_issues": {
-        "Fees & Surcharges": 209,
-        "Food Quality (Stale/Cold)": 130,
+        "Fees & Surcharges": 210,
+        "Food Quality (Stale/Cold)": 129,
         "Refund & Policy Disputes": 40,
-        "Order Tracking Accuracy": 25
+        "Order Tracking Accuracy": 26
       },
       "quotes": [
         {
@@ -1044,20 +1049,20 @@
   {
     "issue": "Fees & Surcharges",
     "source": "gemini:gemini-3.5-flash-lite",
-    "headline": "A total of 3379 negative reviews describe fees and surcharges, making up 17.9 percent of negative feedback, and the trend is Declining.",
+    "headline": "Customers experienced Fees & Surcharges with 603 negative mentions (17.8% of negative feedback), showing a Declining trend.",
     "patterns": [
       {
-        "name": "Charged a rain fee while orders arrived late",
-        "count": 334,
+        "name": "Charged a rain fee while delivery was severely delayed",
+        "count": 333,
         "record_ids": [
           "R02572",
-          "R00624",
-          "R00439"
+          "R04493",
+          "R04131"
         ],
         "example": "Late again. Order stuck for 80 minutes due to rain, rain fee still charged."
       },
       {
-        "name": "Platform fees increased frequently across orders",
+        "name": "Encountered new and unexpected platform fees on orders",
         "count": 131,
         "record_ids": [
           "R00065",
@@ -1067,7 +1072,7 @@
         "example": "New platform fee of ₹15 on every order. Daylight robbery. 🤡 #ZomatoFail"
       },
       {
-        "name": "Paying platform fees while experiencing long delivery wait times",
+        "name": "Paid platform fees while waiting long hours for delivery",
         "count": 80,
         "record_ids": [
           "R00034",
@@ -1077,7 +1082,7 @@
         "example": "@zomatocare Love paying ₹14 platform fee for the privilege of waiting an hour. Thanks Zomato!! #zomato"
       },
       {
-        "name": "Frequent platform fee hikes happening repeatedly",
+        "name": "Faced repeated platform fee hikes throughout the year",
         "count": 59,
         "record_ids": [
           "R00011",
@@ -1089,50 +1094,42 @@
     ],
     "hypotheses": [
       {
-        "statement": "Automated surcharge algorithms may trigger rain fees during minor weather events or normal delivery delays, causing customer frustration.",
+        "statement": "Automated bad weather triggers may apply rain surcharges based strictly on meteorological forecasts rather than actual local delivery conditions or delivery partner speeds.",
         "supporting_record_ids": [
           "R03836",
+          "R00920",
           "R02849"
         ],
-        "what_would_confirm_it": "Reviewing weather API trigger logs alongside surcharge application timestamps by city.",
+        "what_would_confirm_it": "Reviewing weather alert API logs against live order delivery timestamps and surcharge application logs in specific delivery zones.",
         "label": "Hypothesis (Gemini)"
       },
       {
-        "statement": "Frequent platform fee adjustments may be rolled out without clear advance communication, leading customers to perceive the increases as arbitrary.",
+        "statement": "Incremental base platform fee updates may be rolled out dynamically by region without providing advance notice to frequent customers.",
         "supporting_record_ids": [
+          "R03844",
           "R00884",
           "R03245"
         ],
-        "what_would_confirm_it": "Analyzing pricing update deployment schedules against customer support ticket spikes regarding billing.",
-        "label": "Hypothesis (Gemini)"
-      },
-      {
-        "statement": "Service level degradation during peak hours may amplify dissatisfaction with baseline platform and service charges.",
-        "supporting_record_ids": [
-          "R00402",
-          "R00920"
-        ],
-        "what_would_confirm_it": "Correlating average delivery time metrics with fee-related complaint volume per hour of day.",
+        "what_would_confirm_it": "Auditing regional pricing configuration release history alongside customer support ticket logs regarding fee transparency.",
         "label": "Hypothesis (Gemini)"
       }
     ],
     "data_to_check": [
-      "Surcharge trigger logs and local weather station data during flagged rain fee intervals",
-      "Customer support contact rates categorized by fee inquiries and complaints",
-      "Order conversion rates immediately following platform fee update rollouts"
+      "Frequency of rain surcharge application versus real-time delivery times and courier availability metrics",
+      "Support ticket categorization logs related to unexpected fee complaints",
+      "Checkout fee breakdown view abandonment rates before and after order placement"
     ],
     "interview_questions": [
-      "Tell me about the last time you noticed extra fees on your order summary before checking out.",
-      "Walk me through what happened the last time you paid a bad weather surcharge on an order.",
-      "Tell me about how you usually find out about changes to service or platform fees.",
-      "Walk me through what you did the last time an order took longer than expected while you had paid extra service charges."
+      "Tell me about the last time you noticed extra charges like a rain fee or platform fee on your order summary.",
+      "Walk me through what happened from the moment you added items to your cart until you saw the final fee breakdown on your last order.",
+      "Tell me about a recent delivery that took longer than expected and how you checked for any service credits or fee adjustments."
     ],
     "opportunity": {
-      "title": "Transparent and Contextual Surcharges",
-      "description": "Helps customers understand why extra fees are applied and ensures charges align with actual delivery performance, reducing surprise and perceived unfairness.",
-      "success_metric": "Decrease in fee-related support contacts and negative reviews"
+      "title": "Transparent and Condition-Aware Surcharges",
+      "description": "Helps customers placing orders during bad weather or high-demand periods by ensuring surcharges are waived or clearly explained when delivery times are severely impacted.",
+      "success_metric": "Reduction in fee-related customer support contacts"
     },
-    "contradicting_evidence": "The contradicting quotes show that some customers experienced proactive delivery fee refunds when their orders were delayed, indicating that compensatory processes do exist in certain cases. Additionally, one comment requests transparent fee breakdowns earlier in the checkout flow rather than objecting to the fees themselves.",
+    "contradicting_evidence": "There are positive mentions and contradicting quotes showing instances where orders were delayed and delivery fees were proactively refunded by customer support.",
     "verification": {
       "numbers_verified": true,
       "headline_numbers_ok": true,
@@ -1144,12 +1141,12 @@
       "category": "Value & Pricing",
       "analysed_feedback": 4839,
       "negative_feedback_total": 3379,
-      "negative_mentions": 604,
-      "share_of_negative_pct": 17.9,
-      "positive_mentions": 4,
+      "negative_mentions": 603,
+      "share_of_negative_pct": 17.8,
+      "positive_mentions": 3,
       "churn_risk_mentions": 70,
       "platforms": {
-        "Google Play": 232,
+        "Google Play": 231,
         "Apple App Store": 87,
         "Reddit": 79,
         "X (Twitter)": 79,
@@ -1161,13 +1158,13 @@
         "LinkedIn": 6
       },
       "languages": {
-        "English": 589,
+        "English": 588,
         "Hinglish": 15
       },
       "monthly_negative_mentions": {
         "2025-12": 38,
         "2026-01": 31,
-        "2026-02": 34,
+        "2026-02": 33,
         "2026-03": 19,
         "2026-04": 30,
         "2026-05": 27,
@@ -1196,11 +1193,11 @@
       "sub_patterns": [
         {
           "pattern": "rain, rain fee, minutes, delivery",
-          "count": 334,
+          "count": 333,
           "record_ids": [
             "R02572",
-            "R00624",
-            "R00439"
+            "R04493",
+            "R04131"
           ],
           "example": "Late again. Order stuck for 80 minutes due to rain, rain fee still charged."
         },
@@ -1236,7 +1233,7 @@
         }
       ],
       "co_occurring_issues": {
-        "Speed of Delivery": 209,
+        "Speed of Delivery": 210,
         "Competitor Comparisons": 46,
         "Gold Hidden Fees/Platform Charges": 21,
         "Agent Helpfulness": 15
@@ -1365,11 +1362,6 @@
       ],
       "contradicting_quotes": [
         {
-          "record_id": "R03919",
-          "platform": "Google Play",
-          "text": "Please show the full fee breakdown before I add items, not at the last step."
-        },
-        {
           "record_id": "R03909",
           "platform": "X (Twitter)",
           "text": "Honestly Order got delayed and Zomato proactively refunded the delivery fee. Nice gesture. #ZomatoFail order id 4997805305"
@@ -1392,10 +1384,10 @@
   {
     "issue": "Account & Login",
     "source": "gemini:gemini-3.5-flash-lite",
-    "headline": "A total of 147 negative reviews representing 4.4 percent of negative feedback describe account and login issues, showing a rising trend.",
+    "headline": "Account & Login received 147 negative mentions, representing 4.4 percent of negative feedback, and the trend is Rising.",
     "patterns": [
       {
-        "name": "One-time password never arrives preventing login",
+        "name": "One time passwords fail to arrive during login attempts",
         "count": 64,
         "record_ids": [
           "R00669",
@@ -1405,7 +1397,7 @@
         "example": "Sorry but OTP never arrives, cannot log in at all. Also, Status jumped from 'preparing' to 'delivered' without anyone coming to my door. Very poor."
       },
       {
-        "name": "Account blocked after asking for refunds",
+        "name": "Accounts get blocked after requesting multiple refunds",
         "count": 55,
         "record_ids": [
           "R00219",
@@ -1415,7 +1407,7 @@
         "example": "My account got blocked after I asked for refunds twice. Treating genuine customers like fraudsters."
       },
       {
-        "name": "Frequent forced logouts followed by login failure",
+        "name": "Frequent automatic logouts followed by broken login codes",
         "count": 24,
         "record_ids": [
           "R00938",
@@ -1425,7 +1417,7 @@
         "example": "Sorry but App logs me out every other day and then the OTP doesn't come. #ZomatoFail Is this happening to everyone or just me?"
       },
       {
-        "name": "Loyal members experience poor support and login failures",
+        "name": "Long term members experience login failures alongside standard support",
         "count": 4,
         "record_ids": [
           "R04369",
@@ -1437,53 +1429,52 @@
     ],
     "hypotheses": [
       {
-        "statement": "SMS gateway delivery failures or network timeouts may prevent one-time passwords from reaching customers during login attempts.",
+        "statement": "SMS gateway delivery failures may be preventing login verification codes from reaching customers",
         "supporting_record_ids": [
           "R02309",
           "R01846",
           "R02203"
         ],
-        "what_would_confirm_it": "SMS delivery success rates and API latency logs from the authentication service provider during peak hours.",
+        "what_would_confirm_it": "SMS delivery success rates and latency metrics from the third party messaging provider during peak hours",
         "label": "Hypothesis (Gemini)"
       },
       {
-        "statement": "Automated fraud detection rules may be overly aggressive, automatically blocking accounts after a low threshold of refund requests.",
+        "statement": "Automated fraud detection rules may be overly sensitive and block accounts after a low threshold of refund requests",
         "supporting_record_ids": [
           "R02532",
           "R00664",
           "R02063"
         ],
-        "what_would_confirm_it": "Risk engine trigger logs showing the exact rule IDs and threshold counts that caused customer accounts to be suspended.",
+        "what_would_confirm_it": "Risk engine trigger logs showing the exact rule parameters that led to customer account suspensions",
         "label": "Hypothesis (Gemini)"
       },
       {
-        "statement": "App session token expiration policies may be misconfigured, causing recurring forced logouts on client devices.",
+        "statement": "App session token expiration bugs may be forcing recurring logouts across mobile devices",
         "supporting_record_ids": [
           "R02309",
           "R03115",
           "R02883"
         ],
-        "what_would_confirm_it": "Client-side crash and session management logs indicating token revocation frequency across mobile operating systems.",
+        "what_would_confirm_it": "Client side crash and session invalidation error logs from mobile application telemetry",
         "label": "Hypothesis (Gemini)"
       }
     ],
     "data_to_check": [
-      "SMS gateway delivery failure rates and carrier-specific drop logs",
-      "Fraud detection system rule execution logs for account blocks",
-      "Client session token expiration and refresh failure error rates"
+      "SMS delivery failure rates by telecommunication carrier",
+      "Account suspension volumes tied to automated refund thresholds",
+      "Session token revocation frequency in mobile application error logs"
     ],
     "interview_questions": [
-      "Tell me about the last time you tried to log in and what happened on your screen.",
-      "Walk me through what you did right before your account became blocked.",
-      "How often do you find yourself needing to re-enter your details to access the app?",
-      "What steps did you take when the verification code failed to show up?"
+      "Tell me about what happened the last time you tried to open the app and sign in",
+      "Walk me through what steps you took when your verification code did not appear",
+      "Tell me about what you were trying to do in the app right before your account became inaccessible"
     ],
     "opportunity": {
-      "title": "Streamline Authentication and Account Recovery",
-      "description": "Helps customers access their accounts reliably without experiencing unexpected logouts or missing verification codes, and prevents wrongful account blocks.",
-      "success_metric": "Increase successful login rate on first attempt and reduce account lockout complaints."
+      "title": "Reliable Authentication and Fair Account Access",
+      "description": "Helps customers sign in without missing verification codes and prevents automatic account blocks for frequent refund requesters, ensuring uninterrupted access to their profiles.",
+      "success_metric": "Increase successful login rate and decrease account lockout volume"
     },
-    "contradicting_evidence": "There are no contradicting quotes or positive mentions in the evidence pack.",
+    "contradicting_evidence": "There is no contradicting evidence available in the pack.",
     "verification": {
       "numbers_verified": true,
       "headline_numbers_ok": true,
@@ -1721,10 +1712,10 @@
   {
     "issue": "Food Safety (Foreign Object)",
     "source": "gemini:gemini-3.5-flash-lite",
-    "headline": "Out of 3379 negative feedback records, 178 describe food safety issues involving foreign objects or spoiled items, accounting for 5.3 percent of negative feedback with a stable trend.",
+    "headline": "Customers reported Food Safety (Foreign Object) in 180 negative mentions, representing 5.3 percent of negative feedback, and the trend is stable.",
     "patterns": [
       {
-        "name": "Finding hair in meals and receiving small value coupons",
+        "name": "Found hair and received small coupon",
         "count": 72,
         "record_ids": [
           "R02838",
@@ -1734,7 +1725,7 @@
         "example": "@zomato Very disappointed. Found a hair in my thali. Sent photos, got a ₹30 coupon. Disgusting. #ZomatoFail #ZomatoFail"
       },
       {
-        "name": "Finding plastic pieces in meals while support closes tickets automatically",
+        "name": "Found plastic piece and support closed ticket",
         "count": 42,
         "record_ids": [
           "R00010",
@@ -1744,7 +1735,7 @@
         "example": "very disappointed. there was a plastic piece inside my food. zomato said 'restaurant will be informed' and closed the ticket. very poor."
       },
       {
-        "name": "Finding insects in food and receiving low value coupons",
+        "name": "Found insect and rejected coupon compensation",
         "count": 35,
         "record_ids": [
           "R00907",
@@ -1754,50 +1745,53 @@
         "example": "found an insect in the rolls. this is a health issue, not a coupon issue. 😡😡 #ZomatoFail"
       },
       {
-        "name": "Consuming stale food leading to physical illness",
-        "count": 29,
+        "name": "Ate stale food leading to illness",
+        "count": 31,
         "record_ids": [
           "R00494",
-          "R01030",
-          "R01652"
+          "R01652",
+          "R01387"
         ],
         "example": "Good experience. Khana basi tha, pet kharab ho gaya."
       }
     ],
     "hypotheses": [
       {
-        "statement": "Partner restaurants may lack proper hygiene controls during meal preparation, leading to foreign objects or spoiled items reaching customers.",
+        "statement": "Support agents may be using automated macros to close foreign object complaints with standard low-value coupons without reviewing safety implications.",
         "supporting_record_ids": [
           "R01507",
-          "R00273"
+          "R04898",
+          "R02974"
         ],
-        "what_would_confirm_it": "Restaurant audit logs and historical health inspection scores linked to specific merchant IDs.",
+        "what_would_confirm_it": "Support ticket audit logs showing high rates of automated macro closures and coupon issuance for safety-flagged tags.",
         "label": "Hypothesis (Gemini)"
       },
       {
-        "statement": "Automated support workflows may be prematurely closing customer service tickets after issuing low value compensation without investigating food safety reports.",
+        "statement": "Partner restaurants may lack basic kitchen hygiene standards or tamper-evident packaging, allowing debris or insects to enter meals during preparation.",
         "supporting_record_ids": [
+          "R00273",
           "R00845",
-          "R03415"
+          "R03750"
         ],
-        "what_would_confirm_it": "Customer support routing logs showing automatic ticket closures and refund issuance rules.",
+        "what_would_confirm_it": "Restaurant quality audit scores and historical hygiene violation rates grouped by vendor.",
         "label": "Hypothesis (Gemini)"
       }
     ],
     "data_to_check": [
-      "Support ticket categorization logs for foreign object reports",
-      "Merchant quality ratings and historical complaint rates per restaurant",
-      "Automated resolution rule configurations for safety complaints"
+      "Support ticket resolution logs for safety tags",
+      "Customer service automation macro usage rates",
+      "Restaurant quality audit and vendor penalty logs"
     ],
     "interview_questions": [
-      "Tell me about the last time you found something unexpected in your delivery order and what you did next.",
-      "Walk me through what happened when you contacted support about your meal.",
-      "What specific response or resolution did you expect from the support team when you submitted your photos?"
+      "Tell me about the last time you found something unexpected in your meal delivery.",
+      "Walk me through what you did immediately after discovering the issue in your food.",
+      "Show me the steps you took when contacting customer support about this order.",
+      "Tell me about how the support team responded to your report."
     ],
     "opportunity": {
-      "title": "Streamlined Safety Incident Resolution",
-      "description": "Helps customers who receive contaminated or spoiled food by ensuring their safety reports trigger immediate human review, proper merchant investigations, and appropriate resolutions instead of automated dismissals.",
-      "success_metric": "Increase in safety ticket resolution satisfaction score and decrease in repeat complaints per merchant."
+      "title": "Improved Food Safety Incident Resolution",
+      "description": "Helps customers who encounter foreign objects or spoiled meals by routing safety reports to specialized human agents who can investigate restaurants and issue appropriate resolutions instead of automated coupons.",
+      "success_metric": "Increase in safety ticket satisfaction score and reduction in customer churn following reported food safety incidents."
     },
     "contradicting_evidence": "There are no contradicting quotes or positive mentions in the evidence pack.",
     "verification": {
@@ -1811,37 +1805,37 @@
       "category": "Product & Service Quality",
       "analysed_feedback": 4839,
       "negative_feedback_total": 3379,
-      "negative_mentions": 178,
+      "negative_mentions": 180,
       "share_of_negative_pct": 5.3,
       "positive_mentions": 0,
       "churn_risk_mentions": 39,
       "platforms": {
-        "Google Play": 64,
+        "Google Play": 66,
         "Reddit": 27,
         "X (Twitter)": 25,
         "Apple App Store": 22,
-        "Quora": 11,
+        "Quora": 10,
         "YouTube": 10,
         "Consumer Complaints Forum": 9,
-        "MouthShut": 7,
+        "MouthShut": 8,
         "News Site Comments": 2,
         "LinkedIn": 1
       },
       "languages": {
-        "English": 178
+        "English": 180
       },
       "monthly_negative_mentions": {
         "2025-12": 19,
         "2026-01": 14,
-        "2026-02": 27,
+        "2026-02": 29,
         "2026-03": 8,
         "2026-04": 11,
         "2026-05": 19,
         "2026-06": 16,
-        "2026-07": 15,
+        "2026-07": 14,
         "2026-08": 9,
         "2026-09": 14,
-        "2026-10": 19
+        "2026-10": 20
       },
       "trend": {
         "status": "Stable",
@@ -1854,14 +1848,14 @@
           "2026-09",
           "2026-10"
         ],
-        "earlier_rate_pct": 3.07,
-        "recent_rate_pct": 3.78,
-        "change_pct": 23.0
+        "earlier_rate_pct": 2.99,
+        "recent_rate_pct": 3.9,
+        "change_pct": 30.0
       },
       "rank": 6,
       "sub_patterns": [
         {
-          "pattern": "got, sent, sent photos, photos",
+          "pattern": "got, sent photos, photos, photos got",
           "count": 72,
           "record_ids": [
             "R02838",
@@ -1871,7 +1865,7 @@
           "example": "@zomato Very disappointed. Found a hair in my thali. Sent photos, got a ₹30 coupon. Disgusting. #ZomatoFail #ZomatoFail"
         },
         {
-          "pattern": "ticket, said, plastic, piece",
+          "pattern": "ticket, said, piece inside, piece",
           "count": 42,
           "record_ids": [
             "R00010",
@@ -1881,7 +1875,7 @@
           "example": "very disappointed. there was a plastic piece inside my food. zomato said 'restaurant will be informed' and closed the ticket. very poor."
         },
         {
-          "pattern": "issue, issue coupon, health issue, insect",
+          "pattern": "issue, issue coupon, insect, health issue",
           "count": 35,
           "record_ids": [
             "R00907",
@@ -1891,18 +1885,18 @@
           "example": "found an insect in the rolls. this is a health issue, not a coupon issue. 😡😡 #ZomatoFail"
         },
         {
-          "pattern": "tha, tha pet, pet, pet kharab",
-          "count": 29,
+          "pattern": "tha pet, tha, pet, pet kharab",
+          "count": 31,
           "record_ids": [
             "R00494",
-            "R01030",
-            "R01652"
+            "R01652",
+            "R01387"
           ],
           "example": "Good experience. Khana basi tha, pet kharab ho gaya."
         }
       ],
       "co_occurring_issues": {
-        "Food Quality (Stale/Cold)": 44,
+        "Food Quality (Stale/Cold)": 48,
         "Agent Helpfulness": 35,
         "Refund & Policy Disputes": 18,
         "Competitor Comparisons": 9
@@ -1993,16 +1987,16 @@
           "text": "Hidden charges. Sorry but butter chicken tasted like it was made yesterday. Got stomach upset after eating. Never ordering again."
         },
         {
+          "record_id": "R01387",
+          "platform": "MouthShut",
+          "date": "2026-02-04",
+          "text": "khana basi tha, pet kharab ho gaya."
+        },
+        {
           "record_id": "R00737",
           "platform": "MouthShut",
           "date": "2026-02-06",
           "text": "Worst experience ever. cake tasted like it was made yesterday. Got stomach upset after eating."
-        },
-        {
-          "record_id": "R00010",
-          "platform": "MouthShut",
-          "date": "2026-07-16",
-          "text": "very disappointed. there was a plastic piece inside my food. zomato said 'restaurant will be informed' and closed the ticket. very poor."
         },
         {
           "record_id": "R02195",
@@ -2037,10 +2031,10 @@
   {
     "issue": "Competitor Comparisons",
     "source": "gemini:gemini-3.5-flash-lite",
-    "headline": "A total of 3379 negative reviews describe competitor comparisons, representing 6.8 percent of negative feedback, and the trend is stable.",
+    "headline": "Competitor Comparisons was mentioned in 231 negative mentions, accounting for 6.8 percent of negative feedback, and showing a stable trend.",
     "patterns": [
       {
-        "name": "Switching platforms due to delivery and packaging issues",
+        "name": "Switching to alternative platforms due to delivery and packaging issues",
         "count": 123,
         "record_ids": [
           "R00194",
@@ -2050,7 +2044,7 @@
         "example": "Sorry but Seal on teh package was broken when it arrived. How do I know nobody tampered with it? Switching to Swiggy."
       },
       {
-        "name": "Leaving for competitors over difficult refund processes",
+        "name": "Frustration over difficult refund processes and missing items",
         "count": 38,
         "record_ids": [
           "R00948",
@@ -2060,7 +2054,7 @@
         "example": "Sorry but Seal on teh package was broken when it arrived. How do I know nobody tampered with it? Also, Swiggy refunds missing items instantly, Zomato makes you fight for every rupee. Switching. Very poor."
       },
       {
-        "name": "Moving to alternative platforms because fees are too high",
+        "name": "Frustration over high platform fees compared to alternative services",
         "count": 38,
         "record_ids": [
           "R00118",
@@ -2070,7 +2064,7 @@
         "example": "Moving to ONDC/Magicpin, Zomato fees are out of control."
       },
       {
-        "name": "Finding identical orders more expensive than on competitors",
+        "name": "Higher item prices and fewer discounts compared to competitors",
         "count": 32,
         "record_ids": [
           "R01042",
@@ -2082,50 +2076,49 @@
     ],
     "hypotheses": [
       {
-        "statement": "Customers may encounter higher basket totals than competitors due to differing restaurant commission structures or additional platform fees passed on selectively.",
+        "statement": "Customers may experience higher final cart prices than competitors due to differences in restaurant commission structures and added platform fees.",
         "supporting_record_ids": [
           "R03766",
           "R01042",
           "R00017"
         ],
-        "what_would_confirm_it": "Comparing item-level catalog prices, packaging fees, and taxes between platforms for identical carts at checkout.",
+        "what_would_confirm_it": "Comparing item-level menu prices and applied platform fees across identical carts on competing apps for the same user segments.",
         "label": "Hypothesis (Gemini)"
       },
       {
-        "statement": "Customers could face friction during dispute resolution because automated support flows deflect missing item complaints back to the restaurant.",
+        "statement": "Customers may encounter friction in obtaining refunds for missing items because automated support workflows lack human escalation paths.",
         "supporting_record_ids": [
           "R04950",
           "R04221",
           "R03520"
         ],
-        "what_would_confirm_it": "Reviewing chat logs to measure the frequency of automated chatbot deflection versus agent escalation on missing item reports.",
+        "what_would_confirm_it": "Reviewing customer support chat logs for drop-off rates and escalation frequencies regarding missing item complaints.",
         "label": "Hypothesis (Gemini)"
       },
       {
-        "statement": "Customers may experience sudden increases in service charges or delivery fees that make alternatives like open networks or rival apps appear more economical.",
+        "statement": "Customers may perceive fees as excessive because additional charges are displayed late in the checkout funnel rather than upfront.",
         "supporting_record_ids": [
           "R00982",
           "R04434"
         ],
-        "what_would_confirm_it": "Analyzing historical fee additions per order across user segments and geographical zones.",
+        "what_would_confirm_it": "Analyzing funnel drop-off rates at the checkout screen immediately following fee disclosures.",
         "label": "Hypothesis (Gemini)"
       }
     ],
     "data_to_check": [
-      "Cart price variance logs comparing competitor basket totals for identical merchant items",
-      "Customer support escalation rates and refund approval times for missing or damaged items",
-      "Platform fee and surge charge breakdown per order over time"
+      "Checkout funnel drop-off rates by fee display variant",
+      "Customer support ticket escalation rates for missing items",
+      "Cart price comparison parity logs against competitor applications"
     ],
     "interview_questions": [
       "Tell me about the last time you compared prices on multiple delivery apps before placing an order.",
-      "Walk me through what happened when you tried to report a missing or incorrect item to customer support.",
-      "Tell me about a time you decided to use an alternative delivery service instead of this app.",
-      "Walk me through what you saw on the checkout screen regarding fees and discounts before you completed your last order."
+      "Walk me through what happened when you tried to get help for a missing or damaged item on your last order.",
+      "Tell me about how you decided to try an alternative delivery service recently."
     ],
     "opportunity": {
-      "title": "Transparent Pricing and Frictionless Refunds",
-      "description": "Helps price-sensitive and dissatisfied customers by ensuring competitive basket costs and instant, hassle-free resolutions for missing items, reducing churn to rival platforms.",
-      "success_metric": "Customer churn rate and competitor-mention support tickets"
+      "title": "Transparent Pricing and Simplified Refund Resolution",
+      "description": "Helps budget-conscious customers and those experiencing order discrepancies by aligning pricing transparency with competitors and providing instant automated refunds for missing items, reducing churn to rival platforms.",
+      "success_metric": "Increase in checkout conversion rate and decrease in customer churn rate"
     },
     "contradicting_evidence": "There are no contradicting quotes or positive mentions in the evidence pack.",
     "verification": {
@@ -2366,20 +2359,30 @@
   {
     "issue": "Checkout & Payment Process",
     "source": "gemini:gemini-3.5-flash-lite",
-    "headline": "A total of 184 negative reviews describe Checkout & Payment Process issues, representing 5.4 percent of negative feedback, and the trend is Stable.",
+    "headline": "Customers experienced Checkout & Payment Process issues in 185 negative mentions, representing 5.5 percent of negative feedback.",
     "patterns": [
       {
-        "name": "Charged twice or had shopping cart cleared",
-        "count": 80,
+        "name": "UPI payments timing out during checkout",
+        "count": 59,
+        "record_ids": [
+          "R00607",
+          "R00822",
+          "R02502"
+        ],
+        "example": "Disappointed. Worst experience ever. UPI payment keeps timing out at checkout. #ZomatoFail"
+      },
+      {
+        "name": "Getting charged twice and cart clearing randomly",
+        "count": 53,
         "record_ids": [
           "R03946",
-          "R01277",
-          "R01061"
+          "R01061",
+          "R02085"
         ],
         "example": "Not happy at all. Payment was charged twice for the same order. Also, Cart got cleared randomly twice while I was paying. Fix this asap."
       },
       {
-        "name": "Money debited from account when payment failed",
+        "name": "Money debited when payment fails and order not placed",
         "count": 42,
         "record_ids": [
           "R00008",
@@ -2389,18 +2392,8 @@
         "example": "very disappointed. payment failed but money got debited. order not placed. disappointed 😡"
       },
       {
-        "name": "UPI payment times out during checkout",
-        "count": 32,
-        "record_ids": [
-          "R00607",
-          "R00822",
-          "R01632"
-        ],
-        "example": "Disappointed. Worst experience ever. UPI payment keeps timing out at checkout. #ZomatoFail"
-      },
-      {
-        "name": "App crashes on the payment page",
-        "count": 30,
+        "name": "App crashing on the payment page after updates",
+        "count": 31,
         "record_ids": [
           "R00070",
           "R00167",
@@ -2411,53 +2404,54 @@
     ],
     "hypotheses": [
       {
-        "statement": "Gateway timeout thresholds may be set too low, causing transactions to drop and fail while banks still process the debit.",
+        "statement": "Payment gateway integration timeouts may be dropping webhook responses, causing the app to fail the order while the bank still processes the debit.",
         "supporting_record_ids": [
           "R04696",
           "R03411",
-          "R02462"
+          "R03861"
         ],
-        "what_would_confirm_it": "Payment gateway error logs showing high frequency of gateway timeout responses immediately preceding customer debit events.",
+        "what_would_confirm_it": "Gateway error logs showing webhook timeout responses coinciding with successful bank debit callbacks.",
         "label": "Hypothesis (Gemini)"
       },
       {
-        "statement": "Recent app version updates may contain memory management defects that trigger sudden crashes specifically on the checkout screen.",
+        "statement": "Recent mobile app client updates may contain memory leaks or unhandled exceptions on the checkout view controller, leading to crashes during state persistence.",
         "supporting_record_ids": [
           "R05063",
           "R05141",
           "R00070",
           "R01945"
         ],
-        "what_would_confirm_it": "Crash analytics reports showing a spike in uncaught exceptions tied to the payment activity class following version releases.",
+        "what_would_confirm_it": "Client-side crashlytics logs filtering by version showing a spike in fatal exceptions on the payment activity class.",
         "label": "Hypothesis (Gemini)"
       },
       {
-        "statement": "State management scripts may reset session tokens during slow network conditions, resulting in cleared shopping carts.",
+        "statement": "Session token expiration during slow third-party UPI authentication may cause the shopping cart state to clear before order placement completes.",
         "supporting_record_ids": [
           "R01235",
           "R03524",
           "R05168"
         ],
-        "what_would_confirm_it": "Frontend telemetry tracking user session expiration events during the active checkout state.",
+        "what_would_confirm_it": "API server access logs showing session validation failures immediately preceding cart deletion events during active checkouts.",
         "label": "Hypothesis (Gemini)"
       }
     ],
     "data_to_check": [
-      "Payment gateway error logs for timeout rates by provider",
-      "Application crash rate metrics segmented by app version and screen name",
-      "API failure rates and latency metrics during the checkout flow"
+      "Payment gateway timeout frequency per third-party provider",
+      "Client crash reports filtered by app version and payment screen path",
+      "Cart session persistence success rates during external app redirection"
     ],
     "interview_questions": [
-      "Tell me about the last time you tried to pay for an order and what happened on your screen.",
-      "Walk me through what you saw when your payment went through or failed.",
-      "What did you do after your cart cleared or the app closed unexpectedly?"
+      "Tell me about the last time you tried to pay for an order and what payment method you selected.",
+      "Walk me through what happened on your screen right before the payment failed or the app closed.",
+      "Tell me what you saw when you checked your bank account after the checkout error occurred.",
+      "What steps did you take after your cart cleared while you were trying to pay?"
     ],
     "opportunity": {
-      "title": "Reliable Checkout and Payment Processing",
-      "description": "It helps customers trying to pay for food by ensuring their transactions complete securely without unexpected app crashes, cleared carts, or duplicate charges.",
-      "success_metric": "Successful checkout conversion rate"
+      "title": "Reliable and Resilient Checkout Flow",
+      "description": "Helps customers complete food orders smoothly by preventing unexpected app crashes, duplicate charges, and lost cart states during payment.",
+      "success_metric": "Increase checkout completion rate and decrease payment failure error reports."
     },
-    "contradicting_evidence": "There are no contradicting quotes or positive mentions in the evidence pack.",
+    "contradicting_evidence": "There are no contradicting quotes in the evidence pack.",
     "verification": {
       "numbers_verified": true,
       "headline_numbers_ok": true,
@@ -2469,12 +2463,12 @@
       "category": "Ease of Use & Digital Experience",
       "analysed_feedback": 4839,
       "negative_feedback_total": 3379,
-      "negative_mentions": 184,
-      "share_of_negative_pct": 5.4,
+      "negative_mentions": 185,
+      "share_of_negative_pct": 5.5,
       "positive_mentions": 0,
       "churn_risk_mentions": 37,
       "platforms": {
-        "Google Play": 83,
+        "Google Play": 84,
         "X (Twitter)": 24,
         "Reddit": 23,
         "Apple App Store": 19,
@@ -2486,13 +2480,13 @@
         "News Site Comments": 2
       },
       "languages": {
-        "English": 184
+        "English": 185
       },
       "monthly_negative_mentions": {
         "2025-12": 15,
         "2026-01": 15,
         "2026-02": 19,
-        "2026-03": 49,
+        "2026-03": 50,
         "2026-04": 22,
         "2026-05": 10,
         "2026-06": 5,
@@ -2519,12 +2513,22 @@
       "rank": 8,
       "sub_patterns": [
         {
-          "pattern": "twice, charged, payment charged, charged twice",
-          "count": 80,
+          "pattern": "cash, checkout, cash delivery, keeps",
+          "count": 59,
+          "record_ids": [
+            "R00607",
+            "R00822",
+            "R02502"
+          ],
+          "example": "Disappointed. Worst experience ever. UPI payment keeps timing out at checkout. #ZomatoFail"
+        },
+        {
+          "pattern": "twice, payment charged, charged twice, charged",
+          "count": 53,
           "record_ids": [
             "R03946",
-            "R01277",
-            "R01061"
+            "R01061",
+            "R02085"
           ],
           "example": "Not happy at all. Payment was charged twice for the same order. Also, Cart got cleared randomly twice while I was paying. Fix this asap."
         },
@@ -2539,18 +2543,8 @@
           "example": "very disappointed. payment failed but money got debited. order not placed. disappointed 😡"
         },
         {
-          "pattern": "keeps, upi, timing checkout, timing",
-          "count": 32,
-          "record_ids": [
-            "R00607",
-            "R00822",
-            "R01632"
-          ],
-          "example": "Disappointed. Worst experience ever. UPI payment keeps timing out at checkout. #ZomatoFail"
-        },
-        {
           "pattern": "app crashes, payment page, crashes, crashes payment",
-          "count": 30,
+          "count": 31,
           "record_ids": [
             "R00070",
             "R00167",
@@ -2560,7 +2554,7 @@
         }
       ],
       "co_occurring_issues": {
-        "App Stability & Bugs": 34,
+        "App Stability & Bugs": 35,
         "Agent Helpfulness": 10,
         "Speed of Delivery": 8,
         "Refund & Policy Disputes": 7

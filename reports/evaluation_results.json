@@ -39,18 +39,18 @@
       "classification_holdout": {
         "records": 3545,
         "sentiment_accuracy": 0.97,
-        "sentiment_macro_f1": 0.959,
+        "sentiment_macro_f1": 0.96,
         "sentiment_per_class": {
           "Positive": {
-            "precision": 0.976,
-            "recall": 0.901,
-            "f1": 0.937,
+            "precision": 0.983,
+            "recall": 0.897,
+            "f1": 0.938,
             "support": 767
           },
           "Neutral": {
-            "precision": 0.974,
-            "recall": 0.944,
-            "f1": 0.959,
+            "precision": 0.966,
+            "recall": 0.955,
+            "f1": 0.961,
             "support": 359
           },
           "Negative": {
@@ -61,36 +61,36 @@
           }
         },
         "issue_micro": {
-          "precision": 0.748,
-          "recall": 0.952,
-          "f1": 0.838,
+          "precision": 0.744,
+          "recall": 0.95,
+          "f1": 0.834,
           "support": 4001
         },
-        "primary_issue_correct": 0.893,
-        "any_issue_correct": 0.962,
-        "category_set_exact": 0.751,
+        "primary_issue_correct": 0.892,
+        "any_issue_correct": 0.959,
+        "category_set_exact": 0.746,
         "feature_request": {
-          "precision": 0.962,
+          "precision": 0.966,
           "recall": 0.861,
-          "f1": 0.909,
+          "f1": 0.911,
           "support": 266
         }
       },
       "classification_all": {
         "records": 5021,
-        "sentiment_accuracy": 0.968,
-        "sentiment_macro_f1": 0.956,
+        "sentiment_accuracy": 0.969,
+        "sentiment_macro_f1": 0.958,
         "sentiment_per_class": {
           "Positive": {
-            "precision": 0.974,
-            "recall": 0.899,
-            "f1": 0.935,
+            "precision": 0.981,
+            "recall": 0.896,
+            "f1": 0.937,
             "support": 1104
           },
           "Neutral": {
-            "precision": 0.973,
-            "recall": 0.931,
-            "f1": 0.952,
+            "precision": 0.966,
+            "recall": 0.947,
+            "f1": 0.956,
             "support": 506
           },
           "Negative": {
@@ -101,36 +101,36 @@
           }
         },
         "issue_micro": {
-          "precision": 0.746,
-          "recall": 0.949,
-          "f1": 0.835,
+          "precision": 0.742,
+          "recall": 0.947,
+          "f1": 0.832,
           "support": 5652
         },
-        "primary_issue_correct": 0.89,
-        "any_issue_correct": 0.958,
-        "category_set_exact": 0.749,
+        "primary_issue_correct": 0.888,
+        "any_issue_correct": 0.956,
+        "category_set_exact": 0.744,
         "feature_request": {
-          "precision": 0.953,
+          "precision": 0.958,
           "recall": 0.845,
-          "f1": 0.896,
+          "f1": 0.898,
           "support": 381
         }
       },
       "classification_holdout_excluding_suspect_key_rows": {
         "records": 3443,
-        "sentiment_accuracy": 0.988,
-        "sentiment_macro_f1": 0.983,
+        "sentiment_accuracy": 0.987,
+        "sentiment_macro_f1": 0.982,
         "sentiment_per_class": {
           "Positive": {
-            "precision": 0.997,
-            "recall": 0.954,
-            "f1": 0.975,
+            "precision": 0.999,
+            "recall": 0.951,
+            "f1": 0.974,
             "support": 719
           },
           "Neutral": {
-            "precision": 0.983,
-            "recall": 0.983,
-            "f1": 0.983,
+            "precision": 0.977,
+            "recall": 0.985,
+            "f1": 0.981,
             "support": 343
           },
           "Negative": {
@@ -141,18 +141,18 @@
           }
         },
         "issue_micro": {
-          "precision": 0.748,
-          "recall": 0.952,
-          "f1": 0.838,
+          "precision": 0.745,
+          "recall": 0.949,
+          "f1": 0.835,
           "support": 3899
         },
-        "primary_issue_correct": 0.894,
-        "any_issue_correct": 0.962,
-        "category_set_exact": 0.745,
+        "primary_issue_correct": 0.893,
+        "any_issue_correct": 0.959,
+        "category_set_exact": 0.739,
         "feature_request": {
-          "precision": 0.962,
+          "precision": 0.966,
           "recall": 0.861,
-          "f1": 0.909,
+          "f1": 0.911,
           "support": 266
         }
       },
@@ -160,7 +160,7 @@
         "Bengali": 1.0,
         "English": 0.996,
         "Hindi": 1.0,
-        "Hinglish": 0.489,
+        "Hinglish": 0.504,
         "Kannada": 1.0,
         "Marathi": 1.0,
         "Tamil": 1.0,
@@ -168,13 +168,13 @@
       },
       "by_language_issue": {
         "Bengali": 1.0,
-        "English": 0.897,
-        "Hindi": 0.869,
-        "Hinglish": 0.889,
+        "English": 0.893,
+        "Hindi": 0.909,
+        "Hinglish": 0.882,
         "Kannada": 0.972,
         "Marathi": 0.0,
         "Tamil": 0.97,
-        "Telugu": 0.786
+        "Telugu": 0.857
       },
       "sarcasm_sentiment_accuracy": 1.0,
       "rating_text_mismatch_sentiment_accuracy": 0.934,
@@ -182,41 +182,41 @@
         {
           "issue": "Agent Helpfulness",
           "category": "Customer Support & Resolution",
-          "precision": 0.649,
-          "recall": 0.827,
-          "f1": 0.728,
+          "precision": 0.64,
+          "recall": 0.824,
+          "f1": 0.72,
           "support": 255
         },
         {
           "issue": "Self-Service & Bot Effectiveness",
           "category": "Customer Support & Resolution",
-          "precision": 0.744,
+          "precision": 0.738,
           "recall": 1.0,
-          "f1": 0.853,
+          "f1": 0.849,
           "support": 203
         },
         {
           "issue": "Refund & Policy Disputes",
           "category": "Customer Support & Resolution",
-          "precision": 0.594,
+          "precision": 0.591,
           "recall": 0.991,
-          "f1": 0.743,
+          "f1": 0.741,
           "support": 347
         },
         {
           "issue": "Premium/Gold Support Failure",
           "category": "Customer Support & Resolution",
-          "precision": 0.964,
+          "precision": 0.978,
           "recall": 1.0,
-          "f1": 0.982,
+          "f1": 0.989,
           "support": 133
         },
         {
           "issue": "Speed of Delivery",
           "category": "Fulfillment & Logistics",
-          "precision": 0.664,
+          "precision": 0.663,
           "recall": 0.971,
-          "f1": 0.789,
+          "f1": 0.788,
           "support": 619
         },
         {
@@ -262,17 +262,17 @@
         {
           "issue": "Food Quality (Stale/Cold)",
           "category": "Product & Service Quality",
-          "precision": 0.714,
-          "recall": 0.931,
-          "f1": 0.808,
+          "precision": 0.715,
+          "recall": 0.936,
+          "f1": 0.811,
           "support": 375
         },
         {
           "issue": "Food Safety (Foreign Object)",
           "category": "Product & Service Quality",
-          "precision": 0.651,
+          "precision": 0.644,
           "recall": 1.0,
-          "f1": 0.788,
+          "f1": 0.783,
           "support": 121
         },
         {
@@ -286,9 +286,9 @@
         {
           "issue": "Fees & Surcharges",
           "category": "Value & Pricing",
-          "precision": 0.635,
+          "precision": 0.626,
           "recall": 0.998,
-          "f1": 0.776,
+          "f1": 0.769,
           "support": 416
         },
         {
@@ -302,41 +302,41 @@
         {
           "issue": "Promotions & Loyalty",
           "category": "Value & Pricing",
-          "precision": 0.94,
-          "recall": 0.987,
-          "f1": 0.963,
+          "precision": 0.929,
+          "recall": 0.993,
+          "f1": 0.96,
           "support": 304
         },
         {
           "issue": "Gold Hidden Fees/Platform Charges",
           "category": "Value & Pricing",
-          "precision": 0.939,
+          "precision": 0.922,
           "recall": 0.992,
-          "f1": 0.965,
+          "f1": 0.956,
           "support": 249
         },
         {
           "issue": "App Stability & Bugs",
           "category": "Ease of Use & Digital Experience",
-          "precision": 0.963,
+          "precision": 0.968,
           "recall": 0.789,
-          "f1": 0.867,
+          "f1": 0.87,
           "support": 228
         },
         {
           "issue": "Checkout & Payment Process",
           "category": "Ease of Use & Digital Experience",
-          "precision": 0.672,
+          "precision": 0.668,
           "recall": 1.0,
-          "f1": 0.804,
+          "f1": 0.801,
           "support": 127
         },
         {
           "issue": "App/Website Navigation",
           "category": "Ease of Use & Digital Experience",
-          "precision": 0.858,
-          "recall": 0.689,
-          "f1": 0.764,
+          "precision": 0.838,
+          "recall": 0.693,
+          "f1": 0.759,
           "support": 254
         },
         {
@@ -350,9 +350,9 @@
         {
           "issue": "Feature Request",
           "category": "Ease of Use & Digital Experience",
-          "precision": 0.803,
-          "recall": 0.918,
-          "f1": 0.857,
+          "precision": 0.802,
+          "recall": 0.857,
+          "f1": 0.828,
           "support": 231
         },
         {
@@ -366,9 +366,9 @@
         {
           "issue": "No Specific Issue Stated",
           "category": "Uncategorized/General Feedback",
-          "precision": 0.842,
+          "precision": 0.832,
           "recall": 0.928,
-          "f1": 0.883,
+          "f1": 0.877,
           "support": 498
         }
       ]
@@ -746,7 +746,7 @@
       "expected_issue": "App Stability & Bugs",
       "expected_month": "2026-03",
       "detected": true,
-      "detected_lift": 15.55
+      "detected_lift": 16.32
     },
     {
       "incident": "INC-B platform fee hike",
@@ -760,14 +760,14 @@
       "expected_issue": "Speed of Delivery",
       "expected_month": "2026-07",
       "detected": true,
-      "detected_lift": 3.68
+      "detected_lift": 3.63
     },
     {
       "incident": "INC-D Gold renewal auto-debit",
       "expected_issue": "Gold Hidden Fees/Platform Charges",
       "expected_month": "2026-09",
       "detected": true,
-      "detected_lift": 15.56
+      "detected_lift": 15.93
     }
   ],
   "reference_findings": {
@@ -796,7 +796,7 @@
       },
       {
         "month": "2026-02",
-        "negative_share_copilot": 0.655,
+        "negative_share_copilot": 0.653,
         "negative_share_truth": 0.625
       },
       {
@@ -811,7 +811,7 @@
       },
       {
         "month": "2026-05",
-        "negative_share_copilot": 0.672,
+        "negative_share_copilot": 0.675,
         "negative_share_truth": 0.66
       },
       {
@@ -841,7 +841,7 @@
       }
     ],
     "issue_share_mean_abs_error_points": 0.81,
-    "issue_share_max_abs_error_points": 2.28,
+    "issue_share_max_abs_error_points": 2.29,
     "issue_with_largest_error": "Refund & Policy Disputes",
     "top5_copilot": [
       "Speed of Delivery",
@@ -915,6 +915,10 @@
       ]
     ],
     "spikes_copilot": [
+      [
+        "Food Safety (Foreign Object)",
+        "2026-02"
+      ],
       [
         "App Stability & Bugs",
         "2026-03"
