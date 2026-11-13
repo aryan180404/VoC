@@ -89,7 +89,7 @@ def _pace() -> None:
     _last_call = time.time()
 
 
-def generate_json(prompt: str, schema, *, model: str, system: str = "", temperature: float = 0.0):
+def generate_json(prompt: str, schema, *, model: str, system: str = "", temperature: float = 0.0, fast: bool = False):
     """Call Gemini and return the parsed JSON object, with retries and backoff."""
     from google.genai import types
 
@@ -98,6 +98,8 @@ def generate_json(prompt: str, schema, *, model: str, system: str = "", temperat
         response_mime_type="application/json",
         response_schema=schema,
         system_instruction=system or None,
+        # Labelling is a simple sorting job: switching off extended thinking makes it far faster.
+        thinking_config=types.ThinkingConfig(thinking_budget=0) if fast else None,
     )
     last_error = None
     for attempt in range(config.MAX_RETRIES):
@@ -112,6 +114,10 @@ def generate_json(prompt: str, schema, *, model: str, system: str = "", temperat
         except Exception as exc:  # network, quota, safety block, invalid JSON
             last_error = exc
             USAGE.failures += 1
+            print(f"    [gemini attempt {attempt + 1}/{config.MAX_RETRIES} failed: {str(exc)[:300]}]", flush=True)
+            if fast and "thinking" in str(exc).lower():
+                fast = False
+                cfg.thinking_config = None
             msg = str(exc).lower()
             if "api key" in msg or "permission" in msg or "not found" in msg and "model" in msg:
                 raise LLMUnavailable(str(exc)) from exc
