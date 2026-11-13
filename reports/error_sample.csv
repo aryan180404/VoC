@@ -1,81 +1,81 @@
 record_id,text,predicted_sentiment,true_sentiment,predicted_issues,true_issues,language,messiness,label_source
-R04941,"Have to say, Item was missing, raised it in the app and got a full refund in 2 minutes. Great support.",Negative,Positive,Order Accuracy (Missing/Wrong); Agent Helpfulness,Refund & Policy Disputes,English,,rules
-R00397,Anyone else? Need an option to give special instructions to the rider separately from the restaurant.,Neutral,Neutral,Staff Professionalism,Feature Request,English,,rules
-R01100,Interesting case study from a product lens. Heavy rain is not an excuse to charge rain fee AND deliver 158 minutes late. Curious what others think.,Negative,Negative,Fees & Surcharges,Speed of Delivery,English,,rules
-R03076,Fast delivery. Updating my review: Order got delayed and Zomato proactively refunded the delivery fee. Nice gesture.,Positive,Positive,Speed of Delivery; Fees & Surcharges,Refund & Policy Disputes,English,,rules
-R04221,"Swiggy refunds missing items instantly, Zomato makes you fight for every rupee. Switching. 1 star is too much.",Negative,Negative,Order Accuracy (Missing/Wrong); Refund & Policy Disputes,Competitor Comparisons,English,whitespace,rules
-R02292,Always on time in my area. Never had a late order. ❤️ 😡😡 #zomato,Negative,Positive,Speed of Delivery,Speed of Delivery,English,"typos, emoji",rules
-R00044,"Compared the same order on Swiggy and Zomato, Zomato was ₹58 more expensive. Shame on you Zomato.",Neutral,Negative,Price & Affordability; Competitor Comparisons,Competitor Comparisons,English,,rules
-R02886,"Sorry but Compared the same order on Swiggy and Zomato, Zomato was ₹59 more expensive. Switching to Swiggy. !!!",Neutral,Negative,Price & Affordability; Competitor Comparisons,Competitor Comparisons,English,emoji,rules
-R04628,"Q: Why is Zomato so expensive now? A: Service is fine, nothing special.",Negative,Neutral,Price & Affordability,No Specific Issue Stated,English,,rules
-R02474,"சாப்பாடு லேட்டா வந்துச்சு, ஆனா டேஸ்ட் நல்லா இருந்துச்சு",Neutral,Neutral,Food Quality (Stale/Cold),Speed of Delivery,Tamil,,rules
-R04803,Honestly fed up. I cancelled within 1 minute and they still charged full amount saying 'restaurant has started preparing'. 1 star is too much. I'd love to see a direct call option for support.,Neutral,Negative,Feature Request,Refund & Policy Disputes,English,,rules
-R02453,"too many ads and banners on the home screen, i can't find the restaurants i want. #zomatofail",Negative,Negative,No Specific Issue Stated,App/Website Navigation,English,lowercase,rules
-R05215,"Khana basi tha, pet kharab ho gaya. Is this happening to everyone or just me?",Negative,Positive,Food Quality (Stale/Cold); Food Safety (Foreign Object),Food Quality (Stale/Cold),Hinglish,typos,rules
-R03686,"Late again. third time this month. quality of food from 'top rated' restaurants is going down, ratings on zomato are clearly not reliable. never ordering again.",Negative,Negative,No Specific Issue Stated,Food Quality (Stale/Cold),English,lowercase,rules
-R01183,Comment on 'I tried Zomato 10 minute food': Add a dark mode please.,Neutral,Neutral,Speed of Delivery,Feature Request,English,,rules
-R01647,Fix the app. Monsoon + Zomato = 2 hour delivery and a rain fee on top.,Negative,Negative,Fees & Surcharges,Speed of Delivery,English,,rules
-R05135,"Reader comment: not happy at all. zomato doesn't serve my town properly, very few options after 10pm. #zomatofail i'd love to see a direct call option for support.",Positive,Negative,Location & City Availability,Location & City Availability,English,lowercase,rules
-R02256,mast app hai 👍,Positive,Neutral,No Specific Issue Stated,No Specific Issue Stated,Hinglish,typos,rules
-R00596,"Service is fine, nothing special.",Negative,Neutral,No Specific Issue Stated,No Specific Issue Stated,English,typos,rules
-R04432,"சாப்பாடு லேட்டா வந்துச்சு, ஆனா டேஸ்ட் நல்லா இருந்துச்சு #productmanagement",Neutral,Neutral,Food Quality (Stale/Cold),Speed of Delivery,Tamil,,rules
-R03933,[r/zomato] mast app hai 👍,Positive,Neutral,No Specific Issue Stated,No Specific Issue Stated,Hinglish,,rules
-R01239,[r/gurgaon] mast app hai 👍,Positive,Neutral,No Specific Issue Stated,No Specific Issue Stated,Hinglish,exact_duplicate,rules
-R00975,bekaar app hai bhai,Negative,Positive,No Specific Issue Stated,No Specific Issue Stated,Hinglish,typos,rules
-R01488,monsoon + zomato = 2 hour delivery and a rain fee on top.,Neutral,Negative,Fees & Surcharges,Speed of Delivery,English,"typos, lowercase",rules
-R01753,can you add a filter to hide restaurants with packaging charges? Is this happening to everyone or just me?,Neutral,Neutral,Item Condition & Packaging; App/Website Navigation,Feature Request,English,lowercase,rules
-R01342,Updating my review: Always on time in my area. Never had a late order.,Negative,Positive,Speed of Delivery,Speed of Delivery,English,,rules
-R03742,Fast delivery. Updating my review: good Thanks Zomato.,Positive,Positive,Speed of Delivery,No Specific Issue Stated,English,,rules
-R04786,"Worth it. ITEM WAS MISSING, RAISED IT IN THE APP AND GOT A FULL REFUND IN 2 MINUTES. GREAT SUPPORT.",Positive,Positive,Order Accuracy (Missing/Wrong); Agent Helpfulness,Refund & Policy Disputes,English,all_caps,rules
-R01563,"Feature request. Service is fine, nothing special.",Neutral,Neutral,Feature Request,No Specific Issue Stated,English,,rules
-R00114,Rant: Support agent Priya just copy pasted the same apology 4 times and closed the chat. Fix this asap.,Neutral,Negative,Agent Helpfulness,Agent Helpfulness,English,,rules
-R00622,@zomato third time this month. same vada pav is ₹179 in the restaurant and ₹316 on zomato. menu prices are inflated. shame on you zomato.,Neutral,Negative,Price & Affordability,Price & Affordability,English,lowercase,rules
-R03480,"Fix the app. Not happy at all. App is so slow, menus take forever to load even on wifi. Disappointed 😡",Negative,Negative,No Specific Issue Stated,App Stability & Bugs,English,,rules
-R03913,"Have to say, Item was missing, raised it in the app and got a full refund in 2 minutes. Great support. 👍",Positive,Positive,Order Accuracy (Missing/Wrong); Agent Helpfulness,Refund & Policy Disputes,English,,rules
-R00909,Reply: I pay for Gold and was told I get priority support. Waited 83 minutes in the chat queue. What is the priority?,Neutral,Negative,Speed of Delivery; Premium/Gold Support Failure,Premium/Gold Support Failure,English,encoding_garbage,rules
-R04347,Heavy rain is not an excuse to charge rain fee AND deliver 123 minutes late.,Negative,Negative,Fees & Surcharges,Speed of Delivery,English,,rules
-R02767,Heavy rain is not an excuse to charge rain fee AND deliver 131 minutes late.,Negative,Negative,Fees & Surcharges,Speed of Delivery,English,,rules
-R05229,Monsoon + Zomato = 2 hour delivery and a rain fee on top.,Neutral,Negative,Fees & Surcharges,Speed of Delivery,English,,rules
-R04190,"Anyone else? சாப்பாடு லேட்டா வந்துச்சு, ஆனா டேஸ்ட் நல்லா இருந்துச்சு",Neutral,Neutral,Food Quality (Stale/Cold),Speed of Delivery,Tamil,,rules
-R02347,"sorry but customer support is useless. they ask for photos, then say 'we have escalated this' and nothing happens. 1 star is too much. Is this happening to everyone or just me?",Negative,Negative,No Specific Issue Stated,Agent Helpfulness,English,"lowercase, whitespace",rules
-R00116,"Khana basi tha, pet kharab ho gaya. 😭",Negative,Positive,Food Quality (Stale/Cold); Food Safety (Foreign Object),Food Quality (Stale/Cold),Hinglish,"whitespace, emoji",rules
-R01034,Q: Is Zomato Gold worth it in 2026? A: Sorry but I cancelled within 1 minute and they still charged full amount saying 'restaurant has started preparing'. Shame on you Zomato.,Positive,Negative,No Specific Issue Stated,Refund & Policy Disputes,English,,rules
-R01973,"Zomato pls fix this. Compared the same order on Swiggy and Zomato, Zomato was ₹27 more expensive.",Neutral,Negative,Price & Affordability; Competitor Comparisons,Competitor Comparisons,English,,rules
-R04234,"Khana basi tha, pet kharab ho gaya.",Negative,Positive,Food Quality (Stale/Cold); Food Safety (Foreign Object),Food Quality (Stale/Cold),Hinglish,typos,rules
-R02001,delivery time 30 min dikhaya aur aaya 46 min mein. kya bakwas hai.,Negative,Positive,Speed of Delivery,Speed of Delivery,Hinglish,lowercase,rules
-R04222,Anyone else? Can you add a filter to hide restaurants with packaging charges?,Neutral,Neutral,Item Condition & Packaging; App/Website Navigation,Feature Request,English,,rules
-R02012,Honestly fed up. I cancelled within 1 minute and they still charged full amount saying 'restaurant has started preparing'. 1 star is too much.,Negative,Negative,No Specific Issue Stated,Refund & Policy Disputes,English,,rules
-R01864,"Unbelievable. Gold member for 2 years. Support treats me the same as everyone else, so what exactly am I paying for?",Neutral,Negative,Premium/Gold Support Failure,Premium/Gold Support Failure,English,,rules
-R04259,Always on time in my area. Never had a late order. 👍 #zomato #fooddelivery,Neutral,Positive,Speed of Delivery,Speed of Delivery,English,,rules
-R03246,[r/AskIndia] super app ??,Neutral,Positive,No Specific Issue Stated,No Specific Issue Stated,English,emoji,rules
-R04973,Can u add a filter to hide restaurants with packaging charges?,Negative,Neutral,Item Condition & Packaging; App/Website Navigation,Feature Request,English,typos,rules
-R04635,"Rant: burger order kiya tha, kuch aur hi aa gaya.",Neutral,Negative,Order Accuracy (Missing/Wrong),Order Accuracy (Missing/Wrong),Hinglish,,rules
-R03823,"As a product person, Delivery time 35 min dikhaya aur aaya 128 min mein. Kya bakwas hai. contact: [email removed] / [phone removed] #zomato",Negative,Positive,Speed of Delivery,Speed of Delivery,Hinglish,,rules
-R01185,Need an option to give special instructions to the rider separately from the restaurant. 🙏.,Positive,Neutral,Staff Professionalism,Feature Request,English,near_duplicate_reexport,rules
-R00054,Reply: would be great to have group ordering where friends can add items to one cart.,Positive,Neutral,No Specific Issue Stated,Feature Request,English,"typos, lowercase",rules
-R04807,Third time this month. Gold says free delivery but only within 5 km. Most restaurants I order from are outside that. Feels like a trap. Shame on you Zomato.,Neutral,Negative,Location & City Availability; Gold Hidden Fees/Platform Charges,Gold Hidden Fees/Platform Charges,English,,rules
-R04707,Rant: Need an option to give special instructions to the rider separately from the restaurant.,Neutral,Neutral,Staff Professionalism,Feature Request,English,typos,rules
-R03233,@zomato @zomatocare Third time this week a restaurant cancelled my order after accepting it. Why show them as open? 1 star is too much.,Neutral,Negative,Restaurant Acceptance Issues,Restaurant Acceptance Issues,English,,rules
-R04836,Not happy at all. The delivery partner picked up my order and went to deliver 2 other orders first. Batching is ruining the experience. Uninstalling.,Negative,Negative,Staff Professionalism,Speed of Delivery,English,,rules
-R02954,"service is fine, nothing special.",Negative,Neutral,No Specific Issue Stated,No Specific Issue Stated,English,lowercase,rules
-R02733,"Terrible support. third time this month. quality of food from 'top rated' restaurants is going down, ratings on zomato are clearly not reliable. why is there a 'small cart fee' on a ₹119 order? i am paying for a single meal. #zomatofail please bring back a customer care number.",Neutral,Negative,Feature Request,Food Quality (Stale/Cold); Fees & Surcharges,English,lowercase,rules
-R04017,Monsoon + Zomato = 2 hour delivery and a rain fee on top.,Neutral,Negative,Fees & Surcharges,Speed of Delivery,English,,rules
-R00826,"Anyone else? Item was missing, raised it in the app and got a full refund in 2 minutes. Great support. Keep it up!",Neutral,Positive,Order Accuracy (Missing/Wrong); Agent Helpfulness,Refund & Policy Disputes,English,,rules
-R04695,"Item was missing, raised it in the app and got a full refund in 2 minutes. Great support. 👍",Neutral,Positive,Order Accuracy (Missing/Wrong); Agent Helpfulness,Refund & Policy Disputes,English,,rules
-R02499,Worst service. Very disappointed. App logs me out every other day and then the OTP doesn't come. Fix this asap.,Negative,Negative,Account & Login,App Stability & Bugs,English,,rules
-R00689,heavy rain is not an excuse to charge rain fee and deliver 131 minutes late.,Negative,Negative,Fees & Surcharges,Speed of Delivery,English,lowercase,rules
-R02458,Q: Is Zomato Gold worth it in 2026? A: ಡೆಲಿವರಿ ತುಂಬಾ ತಡವಾಗಿ ಬಂತು,Neutral,Negative,Speed of Delivery,Speed of Delivery,Kannada,"lowercase, whitespace",rules
-R02143,Monsoon + Zomato = 2 hour delivery and a rain fee on top. #ZomatoFail,Neutral,Negative,Fees & Surcharges,Speed of Delivery,English,"typos, encoding_garbage",rules
-R01158,Can you add a filter to hide restaurants with packaging charges?,Neutral,Neutral,Item Condition & Packaging; App/Website Navigation,Feature Request,English,,rules
-R05059,"very disappointed. too many ads and banners on the home screen, i can't find the restaurants i want. shame on you zomato.",Negative,Negative,No Specific Issue Stated,App/Website Navigation,English,"typos, lowercase",rules
-R00896,Unbelievable. Gold member but still paying ₹25 'surge delivery fee' when it rains. What's the point of Gold then? #ZomatoFail,Neutral,Negative,Gold Hidden Fees/Platform Charges,Gold Hidden Fees/Platform Charges,English,,rules
-R05005,"சாப்பாடு லேட்டா வந்துச்சு, ஆனா டேஸ்ட் நல்லா இருந்துச்சு",Negative,Neutral,Food Quality (Stale/Cold),Speed of Delivery,Tamil,,rules
-R01312,"Item was missing, raised it in the app and got a full refund in 2 minutes. Great support. #zomato",Negative,Positive,Order Accuracy (Missing/Wrong); Agent Helpfulness,Refund & Policy Disputes,English,,rules
-R03464,"Customer care wale kuch help nahi karte, bas sorry bolte rehte hai. Order ID [phone removed], registered mobile [phone removed].",Negative,Positive,Agent Helpfulness,Agent Helpfulness,Hinglish,,rules
-R00784,"Rant: monsoon + zomato = 2 hour delivery and a rain fee on top. order id [phone removed], registered mobile [phone removed].",Neutral,Negative,Fees & Surcharges,Speed of Delivery,English,"typos, all_caps, lowercase",rules
-R00183,"Support se baat karo toh sirf 'we understand your concern' bolte hai, solution zero.",Neutral,Negative,Agent Helpfulness,Agent Helpfulness,Hinglish,,rules
-R00357,Sorry but Support agent Rahul just copy pasted the same apology 4 times and closed the chat. Switching to Swiggy.,Neutral,Negative,Agent Helpfulness; Competitor Comparisons,Agent Helpfulness,English,,rules
-R02747,"Sorry but Customer support is useless. They ask for photos, then say 'we have escalated this' and nothing happens. Never ordering again.",Negative,Negative,No Specific Issue Stated,Agent Helpfulness,English,,rules
-R01404,need an option to give special instructions to the rider separately from the restaurant. Is this happening to everyone or just me?,Neutral,Neutral,Staff Professionalism,Feature Request,English,"lowercase, whitespace",rules
-R03074,"@zomato @zomatocare Not happy at all. Paid for extra cheese and extra raita, got neither. Disappointed 😡 #zomato order id [phone removed]",Negative,Negative,No Specific Issue Stated,Order Accuracy (Missing/Wrong),English,,rules
-R02932,Monsoon + Zomato = 2 hour delivery and a rain fee on top.,Negative,Negative,Fees & Surcharges,Speed of Delivery,English,,rules
+R03099,[r/bangalore] mast app hai 👍,Positive,Neutral,No Specific Issue Stated,No Specific Issue Stated,Hinglish,lowercase,gemini:gemini-3.5-flash-lite
+R01025,"Fast delivery. Khana basi tha, pet kharab ho gaya.",Negative,Positive,Food Quality (Stale/Cold); Food Safety (Foreign Object),Food Quality (Stale/Cold),Hinglish,whitespace,gemini:gemini-3.5-flash-lite
+R05189,Order got delayed and Zomato proactively refunded the delivery fee. Nice gesture. Keep it up!,Neutral,Positive,Speed of Delivery; Refund & Policy Disputes,Refund & Policy Disputes,English,rating_text_mismatch,gemini:gemini-3.5-flash-lite
+R01284,Honestly The new 'schedule order' feature is great for office lunch.,Positive,Positive,No Specific Issue Stated,App/Website Navigation,English,exact_duplicate,gemini:gemini-3.5-flash-lite
+R04967,"@zomato Refund abhi tak nahi aaya, 24 din ho gaye. #zomato #fooddelivery",Negative,Positive,Refund & Policy Disputes,Refund & Policy Disputes,Hinglish,,gemini:gemini-3.5-flash-lite
+R04840,"Support se baat karo toh sirf 'we understand your concern' bolte hai, solution zero.",Negative,Positive,Agent Helpfulness,Agent Helpfulness,Hinglish,typos,gemini:gemini-3.5-flash-lite
+R04492,Not worth it. Honestly fed up. Never using again. Switching to Swiggy.,Negative,Negative,Competitor Comparisons,No Specific Issue Stated,English,line_break,gemini:gemini-3.5-flash-lite
+R01696,Zomato notifications are hilarious 😂 best marketing team. 👍,Positive,Positive,No Specific Issue Stated,App/Website Navigation,English,,gemini:gemini-3.5-flash-lite
+R04975,Reader comment: bekaar app hai bhai,Negative,Neutral,No Specific Issue Stated,No Specific Issue Stated,Hinglish,typos,gemini:gemini-3.5-flash-lite
+R04320,"Khana basi tha, pet kharab ho gaya.",Negative,Positive,Food Safety (Foreign Object); Food Quality (Stale/Cold),Food Quality (Stale/Cold),Hinglish,,gemini:gemini-3.5-flash-lite
+R03073,Zomato notifications are hilarious 😂 best marketing team. #zomato,Positive,Positive,No Specific Issue Stated,App/Website Navigation,English,,gemini:gemini-3.5-flash-lite
+R02798,"refund abhi tak nahi aaya, 6 din ho gaye.",Negative,Positive,Refund & Policy Disputes,Refund & Policy Disputes,Hinglish,cross_posted_duplicate,gemini:gemini-3.5-flash-lite
+R01423,mast app hai 👍,Positive,Neutral,No Specific Issue Stated,No Specific Issue Stated,Hinglish,,gemini:gemini-3.5-flash-lite
+R00246,"Have to say, The new 'schedule order' feature is great for office lunch.",Positive,Positive,Feature Request,App/Website Navigation,English,,gemini:gemini-3.5-flash-lite
+R04790,"Gold lene ka koi fayda nahi, offers sab fake hai.",Negative,Positive,Promotions & Loyalty,Promotions & Loyalty,Hinglish,,gemini:gemini-3.5-flash-lite
+R03542,the new 'schedule order' feature is great for office lunch.,Positive,Positive,No Specific Issue Stated,App/Website Navigation,English,lowercase,gemini:gemini-3.5-flash-lite
+R02764,Updating my review: Zomato notifications are hilarious 😂 best marketing team. 👍,Positive,Positive,No Specific Issue Stated,App/Website Navigation,English,typos,gemini:gemini-3.5-flash-lite
+R03143,Honestly fed up. Cart got cleared randomly twice while I was paying. Disappointed 😡,Negative,Negative,Checkout & Payment Process,App Stability & Bugs,English,exact_duplicate,gemini:gemini-3.5-flash-lite
+R05211,mast app hai 👍 Is this happening to everyone or just me?,Positive,Neutral,No Specific Issue Stated,No Specific Issue Stated,Hinglish,,gemini:gemini-3.5-flash-lite
+R00042,"Feature request. Service is fine, nothing special.",Neutral,Neutral,Feature Request,No Specific Issue Stated,English,,gemini:gemini-3.5-flash-lite
+R01408,"surprisingly good support today, refund processed without arguments.",Positive,Positive,Refund & Policy Disputes,Agent Helpfulness,English,lowercase,gemini:gemini-3.5-flash-lite
+R00501,The new 'schedule order' feature is great for office lunch. #zomato #fooddelivery,Positive,Positive,No Specific Issue Stated,App/Website Navigation,English,,gemini:gemini-3.5-flash-lite
+R04337,Q: Why is Zomato so expensive now? A: Worst app. Disappointed 😡,Negative,Negative,Price & Affordability,No Specific Issue Stated,English,exact_duplicate,gemini:gemini-3.5-flash-lite
+R02832,Delivery boy ne bahut rude baat ki aur upar aane se mana kar diya. Is this happening to everyone or just me?,Negative,Positive,Staff Professionalism,Staff Professionalism,Hinglish,,gemini:gemini-3.5-flash-lite
+R01571,"Updating my review: Surprisingly good support today, refund processed without arguments. Will order again.",Positive,Positive,Refund & Policy Disputes,Agent Helpfulness,English,,gemini:gemini-3.5-flash-lite
+R01178,Fast delivery. Love Zomato ❤️ Thanks Zomato.,Positive,Positive,Speed of Delivery,No Specific Issue Stated,English,,gemini:gemini-3.5-flash-lite
+R05203,"Gold lene ka koi fayda nahi, offers sab fake hai.",Negative,Positive,Promotions & Loyalty; Gold Hidden Fees/Platform Charges,Promotions & Loyalty,Hinglish,,gemini:gemini-3.5-flash-lite
+R01793,mast app hai 👍,Positive,Negative,No Specific Issue Stated,No Specific Issue Stated,Hinglish,lowercase,gemini:gemini-3.5-flash-lite
+R03941,"Surprisingly good support today, refund processed without arguments.",Positive,Positive,Refund & Policy Disputes,Agent Helpfulness,English,,gemini:gemini-3.5-flash-lite
+R00527,sab theek hai Is this happening to everyone or just me?,Neutral,Positive,No Specific Issue Stated,No Specific Issue Stated,Hinglish,lowercase,gemini:gemini-3.5-flash-lite
+R03830,"Surprisingly good support today, refund processed without arguments.",Positive,Positive,Refund & Policy Disputes,Agent Helpfulness,English,,gemini:gemini-3.5-flash-lite
+R01400,"Q: Why is Zomato so expensive now? A: Please show the full fee breakdown before I add items, not at the last step.",Negative,Neutral,Fees & Surcharges; App/Website Navigation,Feature Request,English,,gemini:gemini-3.5-flash-lite
+R04181,Reply: mast app hai 👍,Positive,Neutral,No Specific Issue Stated,No Specific Issue Stated,Hinglish,,gemini:gemini-3.5-flash-lite
+R01903,Delivery boy ne bahut rude baat ki aur upar aane se mana kar diya.,Negative,Positive,Staff Professionalism,Staff Professionalism,Hinglish,,gemini:gemini-3.5-flash-lite
+R03896,"Great app. SUPPORT SE BAAT KARO TOH SIRF 'WE UNDERSTAND YOUR CONCERN' BOLTE HAI, SOLUTION ZERO.",Negative,Positive,Agent Helpfulness,Agent Helpfulness,Hinglish,all_caps,gemini:gemini-3.5-flash-lite
+R05019,"Q: Why is Zomato so expensive now? A: Customer care wale kuch help nahi karte, bas sorry bolte rehte hai.",Negative,Positive,Agent Helpfulness; Price & Affordability,Agent Helpfulness,Hinglish,typos,gemini:gemini-3.5-flash-lite
+R03863,Q: Is Zomato Gold worth it in 2026? A: Delivery boy ne bahut rude baat ki aur upar aane se mana kar diya.,Negative,Positive,Staff Professionalism,Staff Professionalism,Hinglish,,gemini:gemini-3.5-flash-lite
+R04208,"Q: Why are Zomato orders always late? A: it's okay, sometimes good sometimes bad.",Neutral,Neutral,Speed of Delivery,No Specific Issue Stated,English,lowercase,gemini:gemini-3.5-flash-lite
+R03502,Q: How do I get a refund from Zomato for a missing item? A: Updating my review: Clean and easy app. Ordering takes less than a minute. Will order again.,Positive,Positive,No Specific Issue Stated,App/Website Navigation,English,,gemini:gemini-3.5-flash-lite
+R04219,Delivery boy ne bahut rude baat ki aur upar aane se mana kar diya.,Negative,Positive,Staff Professionalism,Staff Professionalism,Hinglish,,gemini:gemini-3.5-flash-lite
+R04632,please allow cancelling within 2 minutes without penalty. 😭,Neutral,Neutral,Refund & Policy Disputes,Feature Request,English,"lowercase, emoji",gemini:gemini-3.5-flash-lite
+R04248,"@zomato updating my review: food was fresh and hot, packaging was excellent. 😡😡 #zomato",Negative,Positive,Food Quality (Stale/Cold); Item Condition & Packaging,Food Quality (Stale/Cold),English,"lowercase, emoji",gemini:gemini-3.5-flash-lite
+R04001,Honestly Zomato notifications are hilarious 😂 best marketing team.,Positive,Positive,No Specific Issue Stated,App/Website Navigation,English,,gemini:gemini-3.5-flash-lite
+R05143,"Honestly Surprisingly good support today, refund processed without arguments.",Positive,Positive,Refund & Policy Disputes,Agent Helpfulness,English,,gemini:gemini-3.5-flash-lite
+R02776,@zomato @zomatocare Zomato notifications are hilarious 😂 best marketing team. Keep it up! #ZomatoFail order id 1425352029,Positive,Positive,No Specific Issue Stated,App/Website Navigation,English,,gemini:gemini-3.5-flash-lite
+R03240,"Honestly Surprisingly good support today, refund processed without arguments. ❤️",Positive,Positive,Refund & Policy Disputes,Agent Helpfulness,English,encoding_garbage,gemini:gemini-3.5-flash-lite
+R02309,"Q: Which is better, Zomato or Swiggy? A: sorry but app logs me out every other day and then the otp doesn't come. uninstalling.",Negative,Negative,Account & Login; Competitor Comparisons,App Stability & Bugs,English,"lowercase, whitespace",gemini:gemini-3.5-flash-lite
+R04923,"@zomato @zomatocare Khana basi tha, pet kharab ho gaya. 😤",Negative,Positive,Food Quality (Stale/Cold); Food Safety (Foreign Object),Food Quality (Stale/Cold),Hinglish,cross_posted_duplicate,gemini:gemini-3.5-flash-lite
+R04837,"refund abhi tak nahi aaya, 6 din ho gaye.",Negative,Positive,Refund & Policy Disputes,Refund & Policy Disputes,Hinglish,"typos, lowercase, whitespace",gemini:gemini-3.5-flash-lite
+R02352,Zomato notifications are hilarious 😂 best marketing team. Keep it up!,Positive,Positive,No Specific Issue Stated,App/Website Navigation,English,,gemini:gemini-3.5-flash-lite
+R05033,Not happy at all. Zomato has gone downhill. Fix this asap. Please bring back a cust care number.,Negative,Negative,Self-Service & Bot Effectiveness,No Specific Issue Stated,English,typos,gemini:gemini-3.5-flash-lite
+R00937,mast app hai 👍,Positive,Negative,No Specific Issue Stated,No Specific Issue Stated,Hinglish,typos,gemini:gemini-3.5-flash-lite
+R01968,Honestly Zomato notifications are hilarious 😂 best marketing team. #zomato,Positive,Positive,No Specific Issue Stated,App/Website Navigation,English,typos,gemini:gemini-3.5-flash-lite
+R02822,Updating my review: Zomato notifications are hilarious 😂 best marketing team.,Positive,Positive,No Specific Issue Stated,App/Website Navigation,English,,gemini:gemini-3.5-flash-lite
+R05109,"Love it. Support se baat karo toh sirf 'we understand your concern' bolte hai, solution zero.",Negative,Positive,Agent Helpfulness,Agent Helpfulness,Hinglish,,gemini:gemini-3.5-flash-lite
+R00950,"[r/kolkata] Refund abhi tak nahi aaya, 17 din ho gaye.",Negative,Positive,Refund & Policy Disputes,Refund & Policy Disputes,Hinglish,,gemini:gemini-3.5-flash-lite
+R03425,Rant: sab theek hai,Positive,Neutral,No Specific Issue Stated,No Specific Issue Stated,Hinglish,"lowercase, encoding_garbage",gemini:gemini-3.5-flash-lite
+R01412,"Love it. Support se baat karo toh sirf 'we understand your concern' bolte hai, solution zero.",Negative,Positive,Agent Helpfulness; Self-Service & Bot Effectiveness,Agent Helpfulness,Hinglish,,gemini:gemini-3.5-flash-lite
+R02025,Delivery boy ne bahut rude baat ki aur upar aane se mana kar diya.,Negative,Positive,Staff Professionalism,Staff Professionalism,Hinglish,,gemini:gemini-3.5-flash-lite
+R04114,"@zomato @zomatocare Khana basi tha, pet kharab ho gaya. 😤",Negative,Positive,Food Quality (Stale/Cold); Food Safety (Foreign Object),Food Quality (Stale/Cold),Hinglish,emoji,gemini:gemini-3.5-flash-lite
+R02082,Q: How do I get a refund from Zomato for a missing item? A: Honestly Great variety of restaurants and the food quality is consistently good. ❤️ email me at [email removed],Neutral,Positive,No Specific Issue Stated,Food Quality (Stale/Cold),English,line_break,gemini:gemini-3.5-flash-lite
+R00267,"@zomato @zomatocare Please show the full fee breakdown before I add items, not at the last step.",Neutral,Neutral,Fees & Surcharges,Feature Request,English,,gemini:gemini-3.5-flash-lite
+R05215,"Khana basi tha, pet kharab ho gaya. Is this happening to everyone or just me?",Negative,Positive,Food Safety (Foreign Object); Food Quality (Stale/Cold),Food Quality (Stale/Cold),Hinglish,typos,gemini:gemini-3.5-flash-lite
+R02437,"Customer care wale kuch help nahi karte, bas sorry bolte rehte hai.",Negative,Positive,Agent Helpfulness,Agent Helpfulness,Hinglish,,gemini:gemini-3.5-flash-lite
+R04983,APP LOGS ME OUT EVERY OTHER DAY AND THEN THE OTP DOESN'T COME. 1 STAR IS TOO MUCH.,Negative,Negative,Account & Login,App Stability & Bugs,English,"all_caps, line_break",gemini:gemini-3.5-flash-lite
+R00702,"ज़ोमैटो का ऐप अच्छा है, डिलीवरी भी जल्दी होती है। #zomato #fooddelivery",Positive,Positive,No Specific Issue Stated,Speed of Delivery,Hindi,,gemini:gemini-3.5-flash-lite
+R00036,Clean and easy app. Ordering takes less than a minute.,Positive,Positive,No Specific Issue Stated,App/Website Navigation,English,encoding_garbage,gemini:gemini-3.5-flash-lite
+R00977,delivery time 35 min dikhaya aur aaya 129 min mein. kya bakwas hai. order id 5300580842,Negative,Positive,Speed of Delivery,Speed of Delivery,Hinglish,lowercase,gemini:gemini-3.5-flash-lite
+R04525,Love it. Zomato notifications are hilarious 😂 best marketing team.,Positive,Positive,No Specific Issue Stated,App/Website Navigation,English,,gemini:gemini-3.5-flash-lite
+R01143,Zomato notifications are hilarious 😂 best marketing team.,Positive,Positive,No Specific Issue Stated,App/Website Navigation,English,typos,gemini:gemini-3.5-flash-lite
+R02223,[r/developersIndia] Honestly The new 'schedule order' feature is great for office lunch. Keep it up!,Positive,Positive,Feature Request,App/Website Navigation,English,,gemini:gemini-3.5-flash-lite
+R04491,@zomato @zomatocare PLEASE ADD AN OPTION TO CALL CUSTOMER CARE DIRECTLY INSTEAD OF ONLY CHAT. #ZomatoFail,Negative,Neutral,Self-Service & Bot Effectiveness,Feature Request,English,"typos, all_caps",gemini:gemini-3.5-flash-lite
+R01273,Very disappointed. Never using again. Switching to Swiggy.,Negative,Negative,Competitor Comparisons,No Specific Issue Stated,English,,gemini:gemini-3.5-flash-lite
+R03417,the new 'schedule order' feature is great for office lunch.,Positive,Positive,Feature Request,App/Website Navigation,English,lowercase,gemini:gemini-3.5-flash-lite
+R02730,"Have to say, Surprisingly good support today, refnd processed without arguments.",Positive,Positive,Refund & Policy Disputes,Agent Helpfulness,English,typos,gemini:gemini-3.5-flash-lite
+R01565,Good experience. Great variety of restaurants and the food quality is consistently good.,Positive,Positive,No Specific Issue Stated,Food Quality (Stale/Cold),English,,gemini:gemini-3.5-flash-lite
+R01033,"Q: Which is better, Zomato or Swiggy? A: Delivery boy ne bahut rude baat ki aur upar aane se mana kar diya.",Negative,Positive,Staff Professionalism,Staff Professionalism,Hinglish,,gemini:gemini-3.5-flash-lite
+R01929,Delivery boy ne bahut rude baat ki aur upar aane se mana kar diya.,Negative,Positive,Staff Professionalism,Staff Professionalism,Hinglish,,gemini:gemini-3.5-flash-lite
+R02820,"surprisingly good support today, refund processed without arguments. keep it up!",Positive,Positive,Refund & Policy Disputes,Agent Helpfulness,English,"lowercase, line_break",gemini:gemini-3.5-flash-lite
+R02617,delivery time 30 min dikhaya aur aaya 118 min mein. kya bakwas hai. #ZomatoFail,Negative,Positive,Speed of Delivery,Speed of Delivery,Hinglish,lowercase,gemini:gemini-3.5-flash-lite

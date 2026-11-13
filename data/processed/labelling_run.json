@@ -1,15 +1,21 @@
 {
-  "engine": "rules",
+  "engine": "gemini",
   "records_labelled": 4859,
   "usage": {
-    "calls": 0,
-    "input_tokens": 0,
-    "output_tokens": 0,
-    "failures": 0,
-    "by_model": {}
+    "calls": 186,
+    "input_tokens": 701333,
+    "output_tokens": 736546,
+    "failures": 58,
+    "by_model": {
+      "gemini-3.5-flash-lite": {
+        "calls": 186,
+        "input_tokens": 701333,
+        "output_tokens": 736546
+      }
+    }
   },
   "label_sources": {
-    "rules": 5042,
+    "gemini:gemini-3.5-flash-lite": 5042,
     "cleaning_rules": 195
   }
 }

@@ -1,371 +1,21 @@
 [
   {
-    "issue": "Speed of Delivery",
-    "source": "template",
-    "headline": "565 of 3293 negative reviews (17.2%) describe speed of delivery problems.",
-    "patterns": [
-      {
-        "name": "Keywords: minutes, great, job, great job",
-        "count": 390,
-        "record_ids": [
-          "R04470",
-          "R00480",
-          "R04535"
-        ],
-        "example": "ಡೆಲಿವರಿ ತುಂಬಾ ತಡವಾಗಿ ಬಂತು"
-      },
-      {
-        "name": "Keywords: love, waiting, paying platform, privilege waiting",
-        "count": 80,
-        "record_ids": [
-          "R00034",
-          "R00207",
-          "R00298"
-        ],
-        "example": "@zomatocare Love paying ₹14 platform fee for the privilege of waiting an hour. Thanks Zomato!! #zomato"
-      },
-      {
-        "name": "Keywords: priority, support, told, pay",
-        "count": 52,
-        "record_ids": [
-          "R00204",
-          "R00211",
-          "R03350"
-        ],
-        "example": "Very disappointed. I pay for Gold and was told I get priority support. Waited 71 minutes in the chat queue. What is the priority? 1 star is too much. #zomato"
-      },
-      {
-        "name": "Keywords: rain, rain rain, stuck, fee charged",
-        "count": 43,
-        "record_ids": [
-          "R00272",
-          "R00209",
-          "R00877"
-        ],
-        "example": "Order stuck for 95 minutes due to rain, rain fee still charged. #zomato"
-      }
-    ],
-    "hypotheses": [
-      {
-        "statement": "Estimated delivery times are set too optimistically, so ordinary delays feel like failures.",
-        "supporting_record_ids": [
-          "R01235",
-          "R05114"
-        ],
-        "label": "Hypothesis (starting template)"
-      },
-      {
-        "statement": "Rider supply drops in peak hours and bad weather, and dispatch does not adjust.",
-        "supporting_record_ids": [
-          "R02598",
-          "R01557"
-        ],
-        "label": "Hypothesis (starting template)"
-      },
-      {
-        "statement": "Restaurants mark food ready before it is, so riders wait and food goes cold.",
-        "supporting_record_ids": [
-          "R01252",
-          "R03656"
-        ],
-        "label": "Hypothesis (starting template)"
-      }
-    ],
-    "data_to_check": [
-      "Promised versus actual delivery time by hour, city and weather",
-      "Rider wait time at restaurants"
-    ],
-    "interview_questions": [
-      "Walk me through the last late order: when did you first realise it would be late?",
-      "What delay would you accept if the app told you upfront?"
-    ],
-    "opportunity": {
-      "title": "Honest, live delivery-time estimates with proactive delay alerts and automatic compensation rules",
-      "success_metric": "Share of feedback about speed of delivery falls for 2 months in a row"
-    },
-    "contradicting_evidence": "135 reviews are positive about this area.",
-    "verification": {
-      "numbers_verified": true,
-      "citations_verified": true,
-      "notes": [
-        "Built by code from the evidence pack."
-      ]
-    },
-    "evidence_pack": {
-      "issue": "Speed of Delivery",
-      "category": "Fulfillment & Logistics",
-      "analysed_feedback": 4859,
-      "negative_feedback_total": 3293,
-      "negative_mentions": 565,
-      "share_of_negative_pct": 17.2,
-      "positive_mentions": 135,
-      "churn_risk_mentions": 53,
-      "platforms": {
-        "Google Play": 214,
-        "Reddit": 79,
-        "X (Twitter)": 74,
-        "YouTube": 66,
-        "Apple App Store": 62,
-        "Quora": 25,
-        "Consumer Complaints Forum": 17,
-        "MouthShut": 14,
-        "LinkedIn": 8,
-        "News Site Comments": 6
-      },
-      "languages": {
-        "English": 455,
-        "Hindi": 33,
-        "Marathi": 33,
-        "Kannada": 32,
-        "Hinglish": 12
-      },
-      "monthly_negative_mentions": {
-        "2025-12": 51,
-        "2026-01": 65,
-        "2026-02": 55,
-        "2026-03": 49,
-        "2026-04": 53,
-        "2026-05": 37,
-        "2026-06": 29,
-        "2026-07": 77,
-        "2026-08": 49,
-        "2026-09": 35,
-        "2026-10": 49
-      },
-      "trend": {
-        "status": "Stable",
-        "earlier_months": [
-          "2026-06",
-          "2026-07",
-          "2026-08"
-        ],
-        "recent_months": [
-          "2026-09",
-          "2026-10"
-        ],
-        "earlier_rate_pct": 11.84,
-        "recent_rate_pct": 9.59,
-        "change_pct": -19.0
-      },
-      "rank": 1,
-      "sub_patterns": [
-        {
-          "pattern": "minutes, great, job, great job",
-          "count": 390,
-          "record_ids": [
-            "R04470",
-            "R00480",
-            "R04535"
-          ],
-          "example": "ಡೆಲಿವರಿ ತುಂಬಾ ತಡವಾಗಿ ಬಂತು"
-        },
-        {
-          "pattern": "love, waiting, paying platform, privilege waiting",
-          "count": 80,
-          "record_ids": [
-            "R00034",
-            "R00207",
-            "R00298"
-          ],
-          "example": "@zomatocare Love paying ₹14 platform fee for the privilege of waiting an hour. Thanks Zomato!! #zomato"
-        },
-        {
-          "pattern": "priority, support, told, pay",
-          "count": 52,
-          "record_ids": [
-            "R00204",
-            "R00211",
-            "R03350"
-          ],
-          "example": "Very disappointed. I pay for Gold and was told I get priority support. Waited 71 minutes in the chat queue. What is the priority? 1 star is too much. #zomato"
-        },
-        {
-          "pattern": "rain, rain rain, stuck, fee charged",
-          "count": 43,
-          "record_ids": [
-            "R00272",
-            "R00209",
-            "R00877"
-          ],
-          "example": "Order stuck for 95 minutes due to rain, rain fee still charged. #zomato"
-        }
-      ],
-      "co_occurring_issues": {
-        "Fees & Surcharges": 124,
-        "Order Tracking Accuracy": 61,
-        "Restaurant Acceptance Issues": 45,
-        "Food Quality (Stale/Cold)": 40
-      },
-      "quotes": [
-        {
-          "record_id": "R01235",
-          "platform": "Quora",
-          "date": "2026-05-19",
-          "text": "Q: Which is better, Zomato or Swiggy? A: Cart got cleared randomly twice while I was paying. On top of that, Order kept saying 'arriving in 5 mins' for 45 minutes. Very poor."
-        },
-        {
-          "record_id": "R05114",
-          "platform": "Quora",
-          "date": "2026-07-09",
-          "text": "Q: Why are Zomato orders always late? A: Order 116 minute late aaya, khana bilkul thanda tha."
-        },
-        {
-          "record_id": "R02598",
-          "platform": "Google Play",
-          "date": "2026-03-20",
-          "text": "Great job Zomato 👏👏 116 minutes for one ice cream."
-        },
-        {
-          "record_id": "R01557",
-          "platform": "Google Play",
-          "date": "2026-08-07",
-          "text": "Third time this month. Ordered at 8:30, got it at 10:05. Dinner ruined. On top of that, Order marked delivered but I never received it. Delivery partner not picking up calls. 😡😡"
-        },
-        {
-          "record_id": "R01252",
-          "platform": "LinkedIn",
-          "date": "2026-01-26",
-          "text": "Hot take: Very disappointed. Restaurant accepted my order, then cancelled after 40 minutes saying item not available. Never ordering again. #zomato"
-        },
-        {
-          "record_id": "R03656",
-          "platform": "Reddit",
-          "date": "2026-01-12",
-          "text": "Reply: Very disappointed. Order kept saying 'arriving in 5 mins' for 45 minutes. #ZomatoFail"
-        },
-        {
-          "record_id": "R03823",
-          "platform": "LinkedIn",
-          "date": "2025-12-29",
-          "text": "As a product person, Delivery time 35 min dikhaya aur aaya 128 min mein. Kya bakwas hai. contact: [email removed] / [phone removed] #zomato"
-        },
-        {
-          "record_id": "R03721",
-          "platform": "YouTube",
-          "date": "2026-09-14",
-          "text": "GREAT JOB ZOMATO 👏👏 132 MINUTES FOR ONE BURGER."
-        },
-        {
-          "record_id": "R01429",
-          "platform": "YouTube",
-          "date": "2026-03-11",
-          "text": "Honestly fed up. Restaurant accepted my order, then cancelled after 40 minutes saying item not available. Chatted with support for 40 minutes about my order, agent kept saying 'I understand your concern' and disconnected. Shame on you Zomato. ??"
-        },
-        {
-          "record_id": "R04418",
-          "platform": "X (Twitter)",
-          "date": "2026-01-07",
-          "text": "@zomato Love paying ₹10 platform fee for the privilege of waiting an hour. Thanks Zomato!! order id 2507650912"
-        },
-        {
-          "record_id": "R03817",
-          "platform": "Reddit",
-          "date": "2026-01-06",
-          "text": "Reply: not happy at all. chatted with support for 40 minutes about my order, agent kept saying 'i understand your concern' and disconnected. #zomatofail 😤"
-        },
-        {
-          "record_id": "R04516",
-          "platform": "X (Twitter)",
-          "date": "2026-01-18",
-          "text": "Delivery time 30 min dikhaya aur aaya 76 min mein. Kya bakwas hai. !!!"
-        },
-        {
-          "record_id": "R00863",
-          "platform": "Apple App Store",
-          "date": "2026-09-30",
-          "text": "ಡೆಲಿವರಿ ತುಂಬಾ ತಡವಾಗಿ ಬಂತು"
-        },
-        {
-          "record_id": "R03746",
-          "platform": "Consumer Complaints Forum",
-          "date": "2026-05-31",
-          "text": "ಡೆಲಿವರಿ ತುಂಬಾ ತಡವಾಗಿ ಬಂತು"
-        },
-        {
-          "record_id": "R01713",
-          "platform": "Apple App Store",
-          "date": "2026-03-19",
-          "text": "Not worth it. ಡೆಲಿವರಿ ತುಂಬಾ ತಡವಾಗಿ ಬಂತು"
-        },
-        {
-          "record_id": "R03559",
-          "platform": "MouthShut",
-          "date": "2026-04-17",
-          "text": "Very disappointed. Restaurant accepted my order, then cancelled after 40 mins saying item not available. Plus, Cash on delivery option now asks me to pay part of the amount online first. Then it isn't cash on delivery. Fix this asap."
-        },
-        {
-          "record_id": "R03380",
-          "platform": "News Site Comments",
-          "date": "2026-04-25",
-          "text": "Reader comment: love paying ₹8 platform fee for the privilege of waiting an hour. thanks zomato!!"
-        },
-        {
-          "record_id": "R03058",
-          "platform": "News Site Comments",
-          "date": "2026-08-18",
-          "text": "Great job Zomato 👏👏 92 minutes for one momos."
-        },
-        {
-          "record_id": "R02355",
-          "platform": "MouthShut",
-          "date": "2026-04-07",
-          "text": "restaurant accepted my order, then cancelled after 40 minutes saying item not available. 1 star is too much. !!!"
-        },
-        {
-          "record_id": "R03810",
-          "platform": "Consumer Complaints Forum",
-          "date": "NaT",
-          "text": "Sorry but Paid for extra cheese and extra raita, got neither. Restaurant accepted my order, then cancelled after 40 minutes saying item not available. Very poor."
-        }
-      ],
-      "contradicting_quotes": [
-        {
-          "record_id": "R01338",
-          "platform": "Google Play",
-          "text": "Have to say, Delivered in 15 minutes, food still hot. Impressed. 👍"
-        },
-        {
-          "record_id": "R03616",
-          "platform": "Google Play",
-          "text": "Always on time in my area. Never had a late order. Keep it up! my number is [phone removed] pls call."
-        },
-        {
-          "record_id": "R04800",
-          "platform": "YouTube",
-          "text": "Updating my review: Delivered in 18 minutes, food still hot. Impressed. Keep it up!"
-        },
-        {
-          "record_id": "R02755",
-          "platform": "YouTube",
-          "text": "Comment on 'I tried Zomato 10 minute food': Have to say, Delivered in 21 minutes, food still hot. Impressed. Will order again."
-        },
-        {
-          "record_id": "R03610",
-          "platform": "LinkedIn",
-          "text": "Hot take: Honestly Delivered in 14 minutes, food still hot. Impressed."
-        }
-      ],
-      "label_confidence_avg": 0.5,
-      "evidence_level": "High"
-    }
-  },
-  {
     "issue": "Gold Hidden Fees/Platform Charges",
-    "source": "template",
-    "headline": "193 of 3293 negative reviews (5.9%) describe gold hidden fees/platform charges problems. It is rising: 1.07% of feedback in 2026-06 to 2026-08 versus 15.41% in 2026-09 to 2026-10.",
+    "source": "gemini:gemini-3.5-flash-lite",
+    "headline": "3379 negative reviews describe the problem, representing 7.3 percent of negative feedback, and the trend is Rising.",
     "patterns": [
       {
-        "name": "Keywords: fee, delivery, free, free delivery",
-        "count": 67,
+        "name": "Charged extra fees despite having free delivery membership",
+        "count": 119,
         "record_ids": [
+          "R00257",
           "R02181",
-          "R00520",
-          "R01197"
+          "R00490"
         ],
-        "example": "zomato pls fix this. took gold for free delivery and i am still being charged platform fee and 'distance fee'. misleading. gold member for 2 years. support treats me the same as everyone else, so what exactly am i paying for? very poor."
+        "example": "Half the restaurants in my area show 'not delivering to your location' even though they are 3 km away. Plus, Took Gold for free delivery and I am still being charged platform fee and 'distance fee'. Misleading."
       },
       {
-        "name": "Keywords: want, membership, renewed reminder, reminder",
+        "name": "Membership renewed automatically without sending any reminder",
         "count": 44,
         "record_ids": [
           "R00157",
@@ -375,7 +25,7 @@
         "example": "Gold membership auto renewed without any reminder, ₹399 debited. I want a refund."
       },
       {
-        "name": "Keywords: agreed, auto renewal, agreed auto, renewal gold",
+        "name": "Subscription renewed automatically without prior agreement",
         "count": 42,
         "record_ids": [
           "R00078",
@@ -385,7 +35,7 @@
         "example": "Never agreed to auto renewal of Gold. ₹399 gone from my account."
       },
       {
-        "name": "Keywords: cancel, way, notification easy, renewed automatically",
+        "name": "Automatic renewal occurred without notice and cancellation is difficult",
         "count": 40,
         "record_ids": [
           "R00033",
@@ -397,85 +47,93 @@
     ],
     "hypotheses": [
       {
-        "statement": "Auto-renewal reminders are missing or easy to miss.",
+        "statement": "The membership checkout flow may obscure the default selection for automatic renewal, causing customers to be enrolled unwittingly.",
+        "supporting_record_ids": [
+          "R03963",
+          "R04276"
+        ],
+        "what_would_confirm_it": "Checkout funnel logs showing toggle placement rates and opt-out counts.",
+        "label": "Hypothesis (Gemini)"
+      },
+      {
+        "statement": "Reminder notifications for upcoming subscription renewals may fail to send due to scheduling errors in the notification service.",
+        "supporting_record_ids": [
+          "R01979",
+          "R01054"
+        ],
+        "what_would_confirm_it": "Notification dispatch logs showing failure rates for subscription reminder messages.",
+        "label": "Hypothesis (Gemini)"
+      },
+      {
+        "statement": "Free delivery benefits may exclude certain operational surcharges like distance or surge fees, which confuses customers expecting total fee waivers.",
         "supporting_record_ids": [
           "R01530",
-          "R02428"
+          "R05193"
         ],
-        "label": "Hypothesis (starting template)"
-      },
-      {
-        "statement": "Members do not understand the distance cap and fee exceptions in Gold.",
-        "supporting_record_ids": [
-          "R02455",
-          "R02217"
-        ],
-        "label": "Hypothesis (starting template)"
-      },
-      {
-        "statement": "Cancelling Gold is harder than buying it.",
-        "supporting_record_ids": [
-          "R02801",
-          "R03963"
-        ],
-        "label": "Hypothesis (starting template)"
+        "what_would_confirm_it": "Customer support ticket tags related to fee disputes alongside membership status records.",
+        "label": "Hypothesis (Gemini)"
       }
     ],
     "data_to_check": [
-      "Share of renewals with a reminder sent and opened",
-      "Refund requests in the week after renewal"
+      "Subscription auto-renewal opt-in conversion rates during checkout",
+      "Scheduled notification dispatch success and failure logs prior to renewal dates",
+      "Customer service contact volume regarding unexpected subscription renewals and delivery surcharges"
     ],
     "interview_questions": [
-      "What did you believe Gold included when you bought it?",
-      "How did you find out it had renewed?"
+      "Tell me about what you saw on the screen when you last purchased your membership.",
+      "Walk me through what happened when you realized your subscription had renewed.",
+      "Tell me about the last time you tried to find out why extra fees were added to your order.",
+      "Describe what you did when you tried to turn off automatic renewal in your account settings."
     ],
     "opportunity": {
-      "title": "Renewal reminder 3 days ahead, one-tap cancel, and a plain 'what Gold covers' screen",
-      "success_metric": "Share of feedback about gold hidden fees/platform charges falls for 2 months in a row"
+      "title": "Clear Membership Terms and Transparent Renewals",
+      "description": "Helps members understand fee exclusions upfront and gives them clear control over subscription renewals, so they can manage their spending without unexpected charges.",
+      "success_metric": "Decrease in unexpected auto-renewal complaints and increase in renewal management page interactions."
     },
-    "contradicting_evidence": "3 reviews are positive about this area.",
+    "contradicting_evidence": "There are no contradicting quotes or positive mentions in the evidence pack.",
     "verification": {
       "numbers_verified": true,
+      "headline_numbers_ok": true,
       "citations_verified": true,
-      "notes": [
-        "Built by code from the evidence pack."
-      ]
+      "notes": []
     },
     "evidence_pack": {
       "issue": "Gold Hidden Fees/Platform Charges",
       "category": "Value & Pricing",
-      "analysed_feedback": 4859,
-      "negative_feedback_total": 3293,
-      "negative_mentions": 193,
-      "share_of_negative_pct": 5.9,
-      "positive_mentions": 3,
-      "churn_risk_mentions": 18,
+      "analysed_feedback": 4839,
+      "negative_feedback_total": 3379,
+      "negative_mentions": 245,
+      "share_of_negative_pct": 7.3,
+      "positive_mentions": 0,
+      "churn_risk_mentions": 30,
       "platforms": {
-        "Google Play": 81,
-        "Reddit": 30,
-        "Apple App Store": 22,
-        "Quora": 16,
-        "X (Twitter)": 15,
-        "YouTube": 14,
-        "Consumer Complaints Forum": 9,
-        "MouthShut": 4,
-        "LinkedIn": 2
+        "Google Play": 97,
+        "Reddit": 33,
+        "X (Twitter)": 28,
+        "Apple App Store": 24,
+        "Quora": 22,
+        "YouTube": 21,
+        "Consumer Complaints Forum": 10,
+        "MouthShut": 6,
+        "LinkedIn": 3,
+        "News Site Comments": 1
       },
       "languages": {
-        "English": 193
+        "English": 233,
+        "Hinglish": 12
       },
       "monthly_negative_mentions": {
-        "2025-12": 7,
-        "2026-01": 9,
-        "2026-02": 5,
-        "2026-03": 5,
-        "2026-04": 9,
-        "2026-05": 7,
-        "2026-06": 3,
-        "2026-07": 4,
-        "2026-08": 7,
-        "2026-09": 126,
-        "2026-10": 9
+        "2025-12": 15,
+        "2026-01": 17,
+        "2026-02": 7,
+        "2026-03": 10,
+        "2026-04": 14,
+        "2026-05": 15,
+        "2026-06": 6,
+        "2026-07": 7,
+        "2026-08": 12,
+        "2026-09": 128,
+        "2026-10": 11
       },
       "trend": {
         "status": "Rising",
@@ -488,24 +146,24 @@
           "2026-09",
           "2026-10"
         ],
-        "earlier_rate_pct": 1.07,
-        "recent_rate_pct": 15.41,
-        "change_pct": 1341.0
+        "earlier_rate_pct": 1.92,
+        "recent_rate_pct": 15.94,
+        "change_pct": 731.0
       },
-      "rank": 2,
+      "rank": 1,
       "sub_patterns": [
         {
           "pattern": "fee, delivery, free, free delivery",
-          "count": 67,
+          "count": 119,
           "record_ids": [
+            "R00257",
             "R02181",
-            "R00520",
-            "R01197"
+            "R00490"
           ],
-          "example": "zomato pls fix this. took gold for free delivery and i am still being charged platform fee and 'distance fee'. misleading. gold member for 2 years. support treats me the same as everyone else, so what exactly am i paying for? very poor."
+          "example": "Half the restaurants in my area show 'not delivering to your location' even though they are 3 km away. Plus, Took Gold for free delivery and I am still being charged platform fee and 'distance fee'. Misleading."
         },
         {
-          "pattern": "want, membership, renewed reminder, reminder",
+          "pattern": "reminder, reminder debited, want, renewed reminder",
           "count": 44,
           "record_ids": [
             "R00157",
@@ -515,7 +173,7 @@
           "example": "Gold membership auto renewed without any reminder, ₹399 debited. I want a refund."
         },
         {
-          "pattern": "agreed, auto renewal, agreed auto, renewal gold",
+          "pattern": "renewal, renewal gold, agreed, gold gone",
           "count": 42,
           "record_ids": [
             "R00078",
@@ -525,7 +183,7 @@
           "example": "Never agreed to auto renewal of Gold. ₹399 gone from my account."
         },
         {
-          "pattern": "cancel, way, notification easy, renewed automatically",
+          "pattern": "cancel, way, way cancel, notification easy",
           "count": 40,
           "record_ids": [
             "R00033",
@@ -536,10 +194,10 @@
         }
       ],
       "co_occurring_issues": {
-        "Location & City Availability": 39,
-        "Price & Affordability": 4,
-        "Competitor Comparisons": 3,
-        "Checkout & Payment Process": 2
+        "Refund & Policy Disputes": 44,
+        "Fees & Surcharges": 21,
+        "Promotions & Loyalty": 16,
+        "Competitor Comparisons": 12
       },
       "quotes": [
         {
@@ -549,10 +207,10 @@
           "text": "Q: Why does Zomato not have a customer care number? A: Gold member but still paying ₹40 'surge delivery fee' when it rains. What's the point of Gold then? Shame on you Zomato."
         },
         {
-          "record_id": "R02428",
+          "record_id": "R01906",
           "platform": "Quora",
-          "date": "2025-12-03",
-          "text": "Q: Is Zomato Gold worth it in 2026? A: Payment was charged twice for the same order. Also, Customer support is useless. They ask for photos, then say 'we have escalated this' and nothing happens. #ZomatoFail"
+          "date": "2026-01-07",
+          "text": "Q: Why is Zomato so expensive now? A: Honestly fed up. Took Gold for free delivery and I am still being charged platform fee and 'distance fee'. Misleading. Plus, Found a hair in my butter chicken. Sent photos, got a ₹30 coupon. Disgusting. Uninstalling. Call me on [phone removed]."
         },
         {
           "record_id": "R02455",
@@ -579,10 +237,22 @@
           "text": "As a product person, never agreed to auto renewal of gold. ₹399 gone from my account. #zomato"
         },
         {
+          "record_id": "R04402",
+          "platform": "LinkedIn",
+          "date": "2026-04-23",
+          "text": "Hot take: Third time this month. Gold member but still paying ₹25 'surge delivery fee' when it rains. What's the point of Gold then? Plus, Delivery partner asked me to come down to the gate even though I live on the 3rd floor and paid delivery charges. 1 star is too much."
+        },
+        {
           "record_id": "R01979",
           "platform": "X (Twitter)",
           "date": "2026-09-15",
           "text": "Gold membership auto renewed without any reminder, ₹449 debited. I want a refnd. #ZomatoFail"
+        },
+        {
+          "record_id": "R00161",
+          "platform": "YouTube",
+          "date": "2026-05-02",
+          "text": "Cake came completely smashed. Plus, Gold says free delivery but only within 5 km. Most restaurants I order from are outside that. Feels like a trap."
         },
         {
           "record_id": "R01054",
@@ -591,16 +261,10 @@
           "text": "Gold membership auto renewed without any reminder, ₹449 debited. I want a refund."
         },
         {
-          "record_id": "R05087",
-          "platform": "YouTube",
-          "date": "2026-09-20",
-          "text": "Never agreed to auto renewal of Gold. ₹299 gone from my account."
-        },
-        {
-          "record_id": "R01896",
-          "platform": "LinkedIn",
-          "date": "2026-09-17",
-          "text": "Hot take: Gold membership auto renewed without any reminder, ₹399 debited. I want a refund. #zomato"
+          "record_id": "R05193",
+          "platform": "X (Twitter)",
+          "date": "2026-10-22",
+          "text": "@zomatocare NOT HAPPY AT ALL. TOOK GOLD FOR FREE DELIVERY AND I AM STILL BEING CHARGED PLATFORM FEE AND 'DISTANCE FEE'. MISLEADING. FIX THIS ASAP. #zomato #fooddelivery"
         },
         {
           "record_id": "R04276",
@@ -609,16 +273,16 @@
           "text": "Zomato Gold renewed automatically, no notification, no easy way to cancel. Is this happening to everyone or just me?"
         },
         {
-          "record_id": "R03956",
-          "platform": "X (Twitter)",
-          "date": "2026-09-18",
-          "text": "@zomatocare Gold membership auto renewed without any reminder, ₹449 debited. I want a refund."
-        },
-        {
           "record_id": "R02928",
           "platform": "Consumer Complaints Forum",
           "date": "2026-09-08",
           "text": "zomato gold renewed automatically, no notification, no easy way to cancel."
+        },
+        {
+          "record_id": "R00635",
+          "platform": "Apple App Store",
+          "date": "2026-07-07",
+          "text": "Hidden charges. Zomato doesn't serve my town properly, very few options after 10pm. Gold says free delivary but only within 7 km. Most restaurants I order from are outside that. Feels like a trap."
         },
         {
           "record_id": "R03213",
@@ -627,10 +291,10 @@
           "text": "Worst service. Unbelievable. Gold member but still paying ₹40 'surge delivery fee' when it rains. What's the point of Gold then? Also, After the latest update the app gets stuck on the splash screen. Shame on you Zomato. 😤"
         },
         {
-          "record_id": "R00595",
-          "platform": "Apple App Store",
-          "date": "2026-09-11",
-          "text": "Gold membership auto renewed without any reminder, ₹399 debited. I want a refund."
+          "record_id": "R02966",
+          "platform": "MouthShut",
+          "date": "NaT",
+          "text": "Gold member but still paying ₹30 'surge delivery fee' when it rains. What's the point of Gold then? Shame on you Zomato."
         },
         {
           "record_id": "R01275",
@@ -639,484 +303,171 @@
           "text": "Took Gold for free delivery and I am still being charged platform fee and 'distance fee'. Misleading. On top of that, OTP never arrives, cannot log in at all."
         },
         {
-          "record_id": "R00096",
-          "platform": "MouthShut",
-          "date": "2026-09-05",
-          "text": "Never agreed to auto renewal of Gold. ₹299 gone from my account. !!!"
+          "record_id": "R02130",
+          "platform": "News Site Comments",
+          "date": "2026-03-15",
+          "text": "third time this month. gold says free delivery but only within 7 km. most restaurants i order from are outside that. feels like a trap."
         },
         {
-          "record_id": "R00668",
+          "record_id": "R00556",
           "platform": "MouthShut",
-          "date": "2026-09-13",
-          "text": "GOLD MEMBERSHIP AUTO RENEWED WITHOUT ANY REMINDER, ₹299 DEBITED. I WANT A REFUND."
+          "date": "2026-05-08",
+          "text": "honestly fed up. gold says free delivery but only within 5 km. most restaurants i order from are outside that. feels like a trap. plus, estimated time was 25 minutes, food came after 91 minutes. cold and soggy. switching to swiggy."
         },
         {
           "record_id": "R00908",
           "platform": "Quora",
           "date": "2026-09-12",
           "text": "Q: Which is better, Zomato or Swiggy? A: Gold membership auto renewed without any reminder, ₹399 debited. I want a refund."
-        },
-        {
-          "record_id": "R04386",
-          "platform": "Quora",
-          "date": "2026-01-26",
-          "text": "Q: Why are Zomato orders always late? A: Worst experience ever. Gold says free delivery but only within 10 km. Most restaurants I order from are outside that. Feels like a trap. Also, Earlier there were good discounts, now nothing. No reason to stay loyal. Very poor. 😡😡"
-        }
-      ],
-      "contradicting_quotes": [
-        {
-          "record_id": "R02892",
-          "platform": "Quora",
-          "text": "Q: Is Zomato Gold worth it in 2026? A: New platform fee of ₹17 on every order. Daylight robbery. I'd love to see a direct call option for support."
-        },
-        {
-          "record_id": "R04402",
-          "platform": "LinkedIn",
-          "text": "Hot take: Third time this month. Gold member but still paying ₹25 'surge delivery fee' when it rains. What's the point of Gold then? Plus, Delivery partner asked me to come down to the gate even though I live on the 3rd floor and paid delivery charges. 1 star is too much."
-        },
-        {
-          "record_id": "R00063",
-          "platform": "YouTube",
-          "text": "Comment on 'Is Zomato Gold still worth it?': Platform fee, packaging fee, rain fee... khane se zyada toh charges hai yaar."
-        }
-      ],
-      "label_confidence_avg": 0.5,
-      "evidence_level": "High"
-    }
-  },
-  {
-    "issue": "Food Safety (Foreign Object)",
-    "source": "template",
-    "headline": "135 of 3293 negative reviews (4.1%) describe food safety (foreign object) problems.",
-    "patterns": [
-      {
-        "name": "Keywords: sent, sent photos, hair, got coupon",
-        "count": 37,
-        "record_ids": [
-          "R02838",
-          "R01430",
-          "R04787"
-        ],
-        "example": "@zomato Very disappointed. Found a hair in my thali. Sent photos, got a ₹30 coupon. Disgusting. #ZomatoFail #ZomatoFail"
-      },
-      {
-        "name": "Keywords: ticket, said, inside food, inside",
-        "count": 34,
-        "record_ids": [
-          "R00010",
-          "R00048",
-          "R00590"
-        ],
-        "example": "very disappointed. there was a plastic piece inside my food. zomato said 'restaurant will be informed' and closed the ticket. very poor."
-      },
-      {
-        "name": "Keywords: tha, tha pet, ho, ho gaya",
-        "count": 32,
-        "record_ids": [
-          "R00116",
-          "R00494",
-          "R01030"
-        ],
-        "example": "Khana basi tha, pet kharab ho gaya. 😭"
-      },
-      {
-        "name": "Keywords: issue, issue coupon, insect, health",
-        "count": 32,
-        "record_ids": [
-          "R01210",
-          "R00907",
-          "R01305"
-        ],
-        "example": "FOUND AN INSECT IN THE BURGER. THIS IS A HEALTH ISSUE, NOT A COUPON ISSUE. ADDRESS PIN KEEPS GOING TO THE WRONG LOCATION AND THE RIDER GETS LOST EVERY TIME. #ZOMATOFAIL"
-      }
-    ],
-    "hypotheses": [
-      {
-        "statement": "The issue is concentrated in a few cities, restaurants or app versions.",
-        "supporting_record_ids": [
-          "R01507",
-          "R01153"
-        ],
-        "label": "Hypothesis (starting template)"
-      },
-      {
-        "statement": "Customers' expectations were set by a promise the product does not keep.",
-        "supporting_record_ids": [
-          "R00273",
-          "R00845"
-        ],
-        "label": "Hypothesis (starting template)"
-      }
-    ],
-    "data_to_check": [
-      "Complaint rate by city, restaurant and app version"
-    ],
-    "interview_questions": [
-      "What did you expect to happen?",
-      "What happened instead?"
-    ],
-    "opportunity": {
-      "title": "Investigate the main pattern and design a targeted fix",
-      "success_metric": "Share of feedback about food safety (foreign object) falls for 2 months in a row"
-    },
-    "contradicting_evidence": "No reviews contradict this finding.",
-    "verification": {
-      "numbers_verified": true,
-      "citations_verified": true,
-      "notes": [
-        "Built by code from the evidence pack."
-      ]
-    },
-    "evidence_pack": {
-      "issue": "Food Safety (Foreign Object)",
-      "category": "Product & Service Quality",
-      "analysed_feedback": 4859,
-      "negative_feedback_total": 3293,
-      "negative_mentions": 135,
-      "share_of_negative_pct": 4.1,
-      "positive_mentions": 0,
-      "churn_risk_mentions": 27,
-      "platforms": {
-        "Google Play": 52,
-        "X (Twitter)": 20,
-        "Reddit": 19,
-        "Apple App Store": 16,
-        "Quora": 9,
-        "MouthShut": 6,
-        "YouTube": 6,
-        "Consumer Complaints Forum": 5,
-        "News Site Comments": 2
-      },
-      "languages": {
-        "English": 135
-      },
-      "monthly_negative_mentions": {
-        "2025-12": 11,
-        "2026-01": 11,
-        "2026-02": 20,
-        "2026-03": 5,
-        "2026-04": 9,
-        "2026-05": 13,
-        "2026-06": 13,
-        "2026-07": 12,
-        "2026-08": 6,
-        "2026-09": 13,
-        "2026-10": 18
-      },
-      "trend": {
-        "status": "Stable",
-        "earlier_months": [
-          "2026-06",
-          "2026-07",
-          "2026-08"
-        ],
-        "recent_months": [
-          "2026-09",
-          "2026-10"
-        ],
-        "earlier_rate_pct": 2.37,
-        "recent_rate_pct": 3.54,
-        "change_pct": 49.0
-      },
-      "rank": 3,
-      "sub_patterns": [
-        {
-          "pattern": "sent, sent photos, hair, got coupon",
-          "count": 37,
-          "record_ids": [
-            "R02838",
-            "R01430",
-            "R04787"
-          ],
-          "example": "@zomato Very disappointed. Found a hair in my thali. Sent photos, got a ₹30 coupon. Disgusting. #ZomatoFail #ZomatoFail"
-        },
-        {
-          "pattern": "ticket, said, inside food, inside",
-          "count": 34,
-          "record_ids": [
-            "R00010",
-            "R00048",
-            "R00590"
-          ],
-          "example": "very disappointed. there was a plastic piece inside my food. zomato said 'restaurant will be informed' and closed the ticket. very poor."
-        },
-        {
-          "pattern": "tha, tha pet, ho, ho gaya",
-          "count": 32,
-          "record_ids": [
-            "R00116",
-            "R00494",
-            "R01030"
-          ],
-          "example": "Khana basi tha, pet kharab ho gaya. 😭"
-        },
-        {
-          "pattern": "issue, issue coupon, insect, health",
-          "count": 32,
-          "record_ids": [
-            "R01210",
-            "R00907",
-            "R01305"
-          ],
-          "example": "FOUND AN INSECT IN THE BURGER. THIS IS A HEALTH ISSUE, NOT A COUPON ISSUE. ADDRESS PIN KEEPS GOING TO THE WRONG LOCATION AND THE RIDER GETS LOST EVERY TIME. #ZOMATOFAIL"
-        }
-      ],
-      "co_occurring_issues": {
-        "Promotions & Loyalty": 57,
-        "Food Quality (Stale/Cold)": 33,
-        "Order Accuracy (Missing/Wrong)": 5,
-        "Location & City Availability": 5
-      },
-      "quotes": [
-        {
-          "record_id": "R01507",
-          "platform": "Quora",
-          "date": "2026-05-15",
-          "text": "Q: Why does Zomato not have a customer care number? A: Not happy at all. Payment failed but money got debited. Order not placed. Found an insect in the butter chicken. This is a health issue, not a coupon issue. Disappointed 😡"
-        },
-        {
-          "record_id": "R01153",
-          "platform": "Quora",
-          "date": "2026-09-28",
-          "text": "Q: How do I get a refund from Zomato for a missing item? A: Unbelievable. Gold member for 2 years. Support treats me the same as everyone else, so what exactly am I paying for? On top of that, Found an insect in the butter chicken. This is a health issue, not a coupon issue. Uninstalling."
-        },
-        {
-          "record_id": "R00273",
-          "platform": "Google Play",
-          "date": "2026-03-24",
-          "text": "Found an insect in the ice cream. This is a health issue, not a coupon issue."
-        },
-        {
-          "record_id": "R00845",
-          "platform": "Google Play",
-          "date": "2026-04-10",
-          "text": "Not happy at all. There was a plastic piece inside my food. Zomato said 'restaurant will be informed' and closed the ticket. Also, Notifications are spam. 6 push notifications a day about offers I can't use. Uninstalling. 😤"
-        },
-        {
-          "record_id": "R04898",
-          "platform": "YouTube",
-          "date": "2026-09-01",
-          "text": "Found a hair in my momos. Sent photos, got a ₹50 coupon. Disgusting. Fix this asap."
-        },
-        {
-          "record_id": "R03888",
-          "platform": "YouTube",
-          "date": "2026-01-01",
-          "text": "Comment on 'Rating every Zomato fee': Khana basi tha, pet kharab ho gaya. Please bring back a cust care number."
-        },
-        {
-          "record_id": "R02717",
-          "platform": "X (Twitter)",
-          "date": "2026-02-18",
-          "text": "@zomato @zomatocare Khana basi tha, pet kharab ho gaya."
-        },
-        {
-          "record_id": "R03750",
-          "platform": "Reddit",
-          "date": "2026-06-24",
-          "text": "Reply: Found an insect in teh pasta. This is a health issue, not a coupon issue. Third time this week a restaurant cancelled my order after accepting it. Why show them as open? Very poor."
-        },
-        {
-          "record_id": "R04234",
-          "platform": "Reddit",
-          "date": "2026-02-18",
-          "text": "Khana basi tha, pet kharab ho gaya."
-        },
-        {
-          "record_id": "R04982",
-          "platform": "X (Twitter)",
-          "date": "2026-10-03",
-          "text": "@zomato @zomatocare found an insect in the pizza. this is a health issue, not a coupon issue. plus, raised a complaint 3 times, 3 different agents, 3 different answers. nobody owns the problem. shame on you zomato. please bring back a customer care number. #zomato #fooddelivery"
-        },
-        {
-          "record_id": "R02974",
-          "platform": "Apple App Store",
-          "date": "2026-01-20",
-          "text": "Terrible support. Found a hair in my paneer tikka. Sent photos, got a ₹30 coupon. Disgusting. Shame on you Zomato."
-        },
-        {
-          "record_id": "R01387",
-          "platform": "MouthShut",
-          "date": "2026-02-04",
-          "text": "khana basi tha, pet kharab ho gaya."
-        },
-        {
-          "record_id": "R00874",
-          "platform": "Apple App Store",
-          "date": "2026-02-02",
-          "text": "Worth it. Khana basi tha, pet kharab ho gaya."
-        },
-        {
-          "record_id": "R00010",
-          "platform": "MouthShut",
-          "date": "2026-07-16",
-          "text": "very disappointed. there was a plastic piece inside my food. zomato said 'restaurant will be informed' and closed the ticket. very poor."
-        },
-        {
-          "record_id": "R02195",
-          "platform": "Consumer Complaints Forum",
-          "date": "2025-12-03",
-          "text": "Found an insect in the paneer tikka. This is a health issue, not a coupon issue. Fix this asap."
-        },
-        {
-          "record_id": "R02418",
-          "platform": "Consumer Complaints Forum",
-          "date": "NaT",
-          "text": "Found a hair in my burger. Sent photos, got a ₹40 coupon. Disgusting. Shame on you Zomato."
-        },
-        {
-          "record_id": "R04320",
-          "platform": "News Site Comments",
-          "date": "2026-06-01",
-          "text": "Khana basi tha, pet kharab ho gaya."
-        },
-        {
-          "record_id": "R04846",
-          "platform": "News Site Comments",
-          "date": "2026-07-04",
-          "text": "Sorry but Veg oder and I received a non-veg item. This is unacceptable for a vegetarian family. On top of that, There was a plastic piece inside my food. Zomato said 'restraunt will be informed' and closed teh ticket. Never ordering again."
-        },
-        {
-          "record_id": "R01906",
-          "platform": "Quora",
-          "date": "2026-01-07",
-          "text": "Q: Why is Zomato so expensive now? A: Honestly fed up. Took Gold for free delivery and I am still being charged platform fee and 'distance fee'. Misleading. Plus, Found a hair in my butter chicken. Sent photos, got a ₹30 coupon. Disgusting. Uninstalling. Call me on [phone removed]."
-        },
-        {
-          "record_id": "R02676",
-          "platform": "Quora",
-          "date": "2026-01-28",
-          "text": "Q: How do I get a refund from Zomato for a missing item? A: sorry but found a hair in my sandwich. sent photos, got a ₹75 coupon. disgusting. uninstalling."
         }
       ],
       "contradicting_quotes": [],
-      "label_confidence_avg": 0.5,
+      "label_confidence_avg": 0.9,
       "evidence_level": "High"
     }
   },
   {
-    "issue": "Promotions & Loyalty",
-    "source": "template",
-    "headline": "330 of 3293 negative reviews (10.0%) describe promotions & loyalty problems.",
+    "issue": "Refund & Policy Disputes",
+    "source": "gemini:gemini-3.5-flash-lite",
+    "headline": "Out of 3379 negative reviews, 391 describe refund and policy disputes, accounting for 11.6 percent of negative feedback with a rising trend.",
     "patterns": [
       {
-        "name": "Keywords: offers, notifications, fake, increase price",
-        "count": 116,
+        "name": "Missing refunds not reaching bank accounts",
+        "count": 294,
         "record_ids": [
-          "R01660",
-          "R01350",
-          "R02761"
+          "R05188",
+          "R00480",
+          "R00483"
         ],
-        "example": "Honestly fed up. Offers are fake, they increase the price first and then give 'flat 50% off'."
+        "example": "रिफंड अभी तक नहीं मिला, कस्टमर केयर कोई जवाब नहीं देता।"
       },
       {
-        "name": "Keywords: coupon, issue, useless, bot",
-        "count": 96,
+        "name": "Account blocks triggered after requesting multiple refunds",
+        "count": 39,
         "record_ids": [
-          "R00093",
-          "R00260",
-          "R00958"
+          "R00219",
+          "R00361",
+          "R00399"
         ],
-        "example": "Honestly fed up. 'Priority support for Gold members' is a lie. Same bot, same loop, same useless coupon."
+        "example": "My account got blocked after I asked for refunds twice. Treating genuine customers like fraudsters."
       },
       {
-        "name": "Keywords: apply, crashes, apply coupon, app crashes",
-        "count": 73,
+        "name": "Gold membership auto renewed without prior reminders",
+        "count": 37,
         "record_ids": [
-          "R00532",
-          "R00122",
-          "R02699"
+          "R00157",
+          "R00418",
+          "R00595"
         ],
-        "example": "very disappointed. app crashes every time i try to apply a coupon. plus, coupons shown on the home page never apply at checkout. 'not applicable on this restaurant'. #zomatofail"
+        "example": "Gold membership auto renewed without any reminder, ₹399 debited. I want a refund."
       },
       {
-        "name": "Keywords: stay loyal, discounts reason, stay, earlier",
-        "count": 45,
+        "name": "Full charges applied for immediate cancellations",
+        "count": 21,
         "record_ids": [
-          "R00181",
-          "R00533",
-          "R00541"
+          "R02012",
+          "R03068",
+          "R03039"
         ],
-        "example": "Unbelievable. Earlier there were good discounts, now nothing. No reason to stay loyal. 1 star is too much. contact: [email removed] / [phone removed] 😡😡"
+        "example": "Honestly fed up. I cancelled within 1 minute and they still charged full amount saying 'restaurant has started preparing'. 1 star is too much."
       }
     ],
     "hypotheses": [
       {
-        "statement": "Coupons shown do not apply at checkout, which feels like bait.",
+        "statement": "Payment gateway or payout reconciliation delays could be causing processed refunds to take weeks to reflect in customer bank accounts.",
         "supporting_record_ids": [
-          "R01507",
-          "R04390"
+          "R02982",
+          "R02985"
         ],
-        "label": "Hypothesis (starting template)"
+        "what_would_confirm_it": "Logs from the payment processor showing timestamp gaps between internal status updates and actual bank transfer acknowledgments.",
+        "label": "Hypothesis (Gemini)"
       },
       {
-        "statement": "Discount depth fell, so loyal customers feel less rewarded.",
+        "statement": "Automated fraud detection rules could be overly sensitive, automatically blocking accounts that request refunds past a certain frequency threshold.",
         "supporting_record_ids": [
-          "R02616",
-          "R00254"
+          "R02532",
+          "R00664"
         ],
-        "label": "Hypothesis (starting template)"
+        "what_would_confirm_it": "Risk system configuration rules and the frequency of automated account suspensions triggered by consecutive support tickets.",
+        "label": "Hypothesis (Gemini)"
+      },
+      {
+        "statement": "Subscription management services might fail to trigger advance renewal notification emails due to scheduled job failures.",
+        "supporting_record_ids": [
+          "R01979",
+          "R01896",
+          "R00595"
+        ],
+        "what_would_confirm_it": "Notification dispatch logs for recurring subscription renewals indicating whether reminder emails were successfully queued and sent.",
+        "label": "Hypothesis (Gemini)"
       }
     ],
     "data_to_check": [
-      "Coupon apply failure rate",
-      "Average discount per order over time"
+      "Average payout settlement duration across different banking partners",
+      "Subscription renewal notification email delivery success rates",
+      "Automated account suspension rates tied to refund requests"
     ],
     "interview_questions": [
-      "Which offer did you expect to get?"
+      "Tell me about the last time you requested a refund and how you tracked its progress.",
+      "Walk me through what happened right before you noticed your subscription renewed.",
+      "Tell me about what you saw on your screen when you tried to cancel your recent order."
     ],
     "opportunity": {
-      "title": "Only show coupons that will apply to the current cart",
-      "success_metric": "Share of feedback about promotions & loyalty falls for 2 months in a row"
+      "title": "Streamline Refund Visibility and Subscription Transparency",
+      "description": "It helps customers seeking clarity on their money by providing real-time bank transfer tracking and advance renewal notifications before charges occur.",
+      "success_metric": "Decrease in refund support ticket volume and increase in successful automated subscription renewal satisfaction scores."
     },
-    "contradicting_evidence": "142 reviews are positive about this area.",
+    "contradicting_evidence": "The contradicting quotes and positive mentions show that some customers experience fast automated refunds within minutes and proactive delivery fee refunds for delayed orders.",
     "verification": {
       "numbers_verified": true,
+      "headline_numbers_ok": true,
       "citations_verified": true,
-      "notes": [
-        "Built by code from the evidence pack."
-      ]
+      "notes": []
     },
     "evidence_pack": {
-      "issue": "Promotions & Loyalty",
-      "category": "Value & Pricing",
-      "analysed_feedback": 4859,
-      "negative_feedback_total": 3293,
-      "negative_mentions": 330,
-      "share_of_negative_pct": 10.0,
-      "positive_mentions": 142,
-      "churn_risk_mentions": 63,
+      "issue": "Refund & Policy Disputes",
+      "category": "Customer Support & Resolution",
+      "analysed_feedback": 4839,
+      "negative_feedback_total": 3379,
+      "negative_mentions": 391,
+      "share_of_negative_pct": 11.6,
+      "positive_mentions": 163,
+      "churn_risk_mentions": 82,
       "platforms": {
-        "Google Play": 127,
-        "X (Twitter)": 58,
-        "Apple App Store": 42,
-        "Reddit": 40,
-        "YouTube": 24,
-        "Quora": 17,
-        "Consumer Complaints Forum": 13,
-        "LinkedIn": 4,
-        "MouthShut": 3,
-        "News Site Comments": 2
+        "Google Play": 129,
+        "Apple App Store": 68,
+        "Reddit": 57,
+        "X (Twitter)": 50,
+        "YouTube": 38,
+        "Quora": 25,
+        "Consumer Complaints Forum": 10,
+        "MouthShut": 6,
+        "News Site Comments": 5,
+        "LinkedIn": 3
       },
       "languages": {
-        "English": 309,
-        "Hinglish": 21
+        "English": 286,
+        "Hinglish": 39,
+        "Marathi": 33,
+        "Hindi": 31,
+        "Bengali": 1,
+        "Kannada": 1
       },
       "monthly_negative_mentions": {
-        "2025-12": 37,
-        "2026-01": 26,
-        "2026-02": 30,
-        "2026-03": 43,
-        "2026-04": 34,
-        "2026-05": 38,
-        "2026-06": 20,
-        "2026-07": 19,
-        "2026-08": 25,
-        "2026-09": 24,
-        "2026-10": 31
+        "2025-12": 32,
+        "2026-01": 33,
+        "2026-02": 35,
+        "2026-03": 32,
+        "2026-04": 33,
+        "2026-05": 33,
+        "2026-06": 24,
+        "2026-07": 30,
+        "2026-08": 45,
+        "2026-09": 58,
+        "2026-10": 30
       },
       "trend": {
-        "status": "Stable",
+        "status": "Rising",
         "earlier_months": [
           "2026-06",
           "2026-07",
@@ -1126,230 +477,230 @@
           "2026-09",
           "2026-10"
         ],
-        "earlier_rate_pct": 4.89,
-        "recent_rate_pct": 6.28,
-        "change_pct": 28.0
+        "earlier_rate_pct": 7.59,
+        "recent_rate_pct": 10.09,
+        "change_pct": 33.0
       },
-      "rank": 4,
+      "rank": 2,
       "sub_patterns": [
         {
-          "pattern": "offers, notifications, fake, increase price",
-          "count": 116,
+          "pattern": "refund, bank, received, missing",
+          "count": 294,
           "record_ids": [
-            "R01660",
-            "R01350",
-            "R02761"
+            "R05188",
+            "R00480",
+            "R00483"
           ],
-          "example": "Honestly fed up. Offers are fake, they increase the price first and then give 'flat 50% off'."
+          "example": "रिफंड अभी तक नहीं मिला, कस्टमर केयर कोई जवाब नहीं देता।"
         },
         {
-          "pattern": "coupon, issue, useless, bot",
-          "count": 96,
+          "pattern": "asked refunds, treating, twice treating, treating genuine",
+          "count": 39,
           "record_ids": [
-            "R00093",
-            "R00260",
-            "R00958"
+            "R00219",
+            "R00361",
+            "R00399"
           ],
-          "example": "Honestly fed up. 'Priority support for Gold members' is a lie. Same bot, same loop, same useless coupon."
+          "example": "My account got blocked after I asked for refunds twice. Treating genuine customers like fraudsters."
         },
         {
-          "pattern": "apply, crashes, apply coupon, app crashes",
-          "count": 73,
+          "pattern": "debited want, auto renewed, membership auto, reminder",
+          "count": 37,
           "record_ids": [
-            "R00532",
-            "R00122",
-            "R02699"
+            "R00157",
+            "R00418",
+            "R00595"
           ],
-          "example": "very disappointed. app crashes every time i try to apply a coupon. plus, coupons shown on the home page never apply at checkout. 'not applicable on this restaurant'. #zomatofail"
+          "example": "Gold membership auto renewed without any reminder, ₹399 debited. I want a refund."
         },
         {
-          "pattern": "stay loyal, discounts reason, stay, earlier",
-          "count": 45,
+          "pattern": "charged, cancelled minute, charged saying, minute charged",
+          "count": 21,
           "record_ids": [
-            "R00181",
-            "R00533",
-            "R00541"
+            "R02012",
+            "R03068",
+            "R03039"
           ],
-          "example": "Unbelievable. Earlier there were good discounts, now nothing. No reason to stay loyal. 1 star is too much. contact: [email removed] / [phone removed] 😡😡"
+          "example": "Honestly fed up. I cancelled within 1 minute and they still charged full amount saying 'restaurant has started preparing'. 1 star is too much."
         }
       ],
       "co_occurring_issues": {
-        "Food Safety (Foreign Object)": 57,
-        "App Stability & Bugs": 43,
-        "Premium/Gold Support Failure": 35,
-        "Checkout & Payment Process": 32
+        "Gold Hidden Fees/Platform Charges": 44,
+        "Competitor Comparisons": 43,
+        "Agent Helpfulness": 43,
+        "Account & Login": 42
       },
       "quotes": [
         {
-          "record_id": "R01507",
+          "record_id": "R02982",
           "platform": "Quora",
-          "date": "2026-05-15",
-          "text": "Q: Why does Zomato not have a customer care number? A: Not happy at all. Payment failed but money got debited. Order not placed. Found an insect in the butter chicken. This is a health issue, not a coupon issue. Disappointed 😡"
+          "date": "2025-12-22",
+          "text": "Q: Why does Zomato not have a customer care number? A: sorry but refund status shows 'processed' for 10 days but my bank has received nothing. very poor."
         },
         {
-          "record_id": "R04390",
+          "record_id": "R04573",
           "platform": "Quora",
-          "date": "2026-05-26",
-          "text": "Q: How do I get a refund from Zomato for a missing item? A: Honestly fed up. Offers are fake, they increase the price first and then give 'flat 50% off'."
-        },
-        {
-          "record_id": "R02616",
-          "platform": "LinkedIn",
-          "date": "2026-06-24",
-          "text": "sorry but coupons shown on the home page never apply at checkout. 'not applicable on this restraunt'. disappointed 😡"
-        },
-        {
-          "record_id": "R00254",
-          "platform": "Google Play",
           "date": "2026-01-10",
-          "text": "Worst experience ever. The gravy leaked all over the bag, packaging was terrible. Plus, App crashes every time I try to apply a coupon. 1 star is too much."
+          "text": "Q: How do I get a refund from Zomato for a missing item? A: Got a partial refund only after posting on social media. Why should we have to shame you publicly to get our money back? Very poor."
         },
         {
-          "record_id": "R04790",
+          "record_id": "R00487",
           "platform": "Google Play",
-          "date": "2026-01-06",
-          "text": "Gold lene ka koi fayda nahi, offers sab fake hai."
+          "date": "2026-05-20",
+          "text": "refund abhi tak nahi aaya, 24 din ho gaye."
         },
         {
-          "record_id": "R00958",
-          "platform": "LinkedIn",
-          "date": "2026-05-17",
-          "text": "Interesting case study from a product lens. 'Priority support for Gold members' is a lie. Same bot, same loop, same useless coupon. #zomato"
-        },
-        {
-          "record_id": "R01350",
-          "platform": "X (Twitter)",
-          "date": "2026-09-23",
-          "text": "Not happy at all. Offers are fake, they increase the price first and then give 'flat 50% off'.."
-        },
-        {
-          "record_id": "R01293",
-          "platform": "YouTube",
+          "record_id": "R02985",
+          "platform": "Google Play",
           "date": "2026-04-02",
-          "text": "unbelievable. 'priority support for gold members' is a lie. same bot, same loop, same useless coupon."
+          "text": "Zomato pls fix this. Refund status shows 'processed' for 6 days but my bank has received nothing. Never ordering again."
         },
         {
-          "record_id": "R04649",
-          "platform": "YouTube",
-          "date": "2026-07-12",
-          "text": "Third time this month. Coupons shown on the home page never apply at checkout. 'Not applicable on this restaurant'."
+          "record_id": "R03839",
+          "platform": "LinkedIn",
+          "date": "2026-07-02",
+          "text": "As a product person, रिफंड अभी तक नहीं मिला, कस्टमर केयर कोई जवाब नहीं देता। Curious what others think."
         },
         {
-          "record_id": "R01934",
+          "record_id": "R01979",
           "platform": "X (Twitter)",
-          "date": "2026-01-30",
-          "text": "Unbelievable. The chatbot offers a ₹40 coupon for everything and you cannot escalate to a human. #ZomatoFail"
+          "date": "2026-09-15",
+          "text": "Gold membership auto renewed without any reminder, ₹449 debited. I want a refnd. #ZomatoFail"
         },
         {
-          "record_id": "R04431",
+          "record_id": "R02532",
+          "platform": "YouTube",
+          "date": "2026-05-24",
+          "text": "Sorry but My account got blocked after I asked for refunds twice. Treating genuine customers like fraudsters. Very poor."
+        },
+        {
+          "record_id": "R00664",
+          "platform": "YouTube",
+          "date": "2026-10-11",
+          "text": "Why is there a 'small cart fee' on a ₹119 order? I am paying for a single meal. Plus, My account got blocked after I asked for refunds twice. Treating genuine customers like fraudsters."
+        },
+        {
+          "record_id": "R01896",
+          "platform": "LinkedIn",
+          "date": "2026-09-17",
+          "text": "Hot take: Gold membership auto renewed without any reminder, ₹399 debited. I want a refund. #zomato"
+        },
+        {
+          "record_id": "R04213",
+          "platform": "X (Twitter)",
+          "date": "2026-05-03",
+          "text": "Comment on 'Why food delivery got so expensive': रिफंड अभी तक नहीं मिला, कस्टमर केयर कोई जवाब नहीं देता।"
+        },
+        {
+          "record_id": "R03155",
           "platform": "Reddit",
-          "date": "2026-08-10",
-          "text": "WORST EXPERIENCE EVER. COUPONS SHOWN ON THE HOME PAGE NEVER APPLY AT CHECKOUT. 'NOT APPLICABLE ON THIS RESTAURANT'. SHAME ON YOU ZOMATO. Is this happening to everyone or just me?"
+          "date": "2026-08-29",
+          "text": "Not happy at all. I cancelled within 1 minute and they still charged full amount saying 'restaurant has started preparing'. Payment was charged twice for the same order."
         },
         {
-          "record_id": "R04787",
+          "record_id": "R03141",
           "platform": "Reddit",
-          "date": "2026-02-09",
-          "text": "Unbelievable. Found a hair in my dal makhani. Sent photos, got a ₹40 coupon. Disgusting. Shame on you Zomato. Is this happening to everyone or just me?"
+          "date": "2026-08-22",
+          "text": "Reply: रिफंड अभी तक नहीं मिला, कस्टमर केयर कोई जवाब नहीं देता।"
         },
         {
-          "record_id": "R03548",
+          "record_id": "R02630",
           "platform": "Apple App Store",
-          "date": "2025-12-07",
-          "text": "Worst experience ever. Gold member for 2 years. Support treats me the same as everyone else, so what exactly am I paying for? Plus, Coupons shown on the home page never apply at checkout. 'Not applicable on this restaurant'. #ZomatoFail"
+          "date": "2026-10-01",
+          "text": "Fix the app. रिफंड अभी तक नहीं मिला, कस्टमर केयर कोई जवाब नहीं देता।"
         },
         {
-          "record_id": "R01130",
+          "record_id": "R05168",
+          "platform": "Consumer Complaints Forum",
+          "date": "2026-04-04",
+          "text": "Cart got cleared randomly twice while I was paying. On top of that, Got a partial refund only after posting on social media. Why should we have to shame you publicly to get our money back? Shame on you Zomato."
+        },
+        {
+          "record_id": "R00595",
           "platform": "Apple App Store",
-          "date": "2026-03-17",
-          "text": "Late again. App crashes as soon as I apply a coupon after the new update (v19.1.2)."
+          "date": "2026-09-11",
+          "text": "Gold membership auto renewed without any reminder, ₹399 debited. I want a refund."
         },
         {
-          "record_id": "R03578",
+          "record_id": "R01624",
           "platform": "Consumer Complaints Forum",
-          "date": "2026-07-11",
-          "text": "Not happy at all. Status jumped from 'preparing' to 'delivered' without anyone coming to my door. Offers are fake, they increase teh price first and then give 'flat 50% off'. Very poor."
+          "date": "2026-09-15",
+          "text": "I cancelled within 1 minute and they still charged full amount saying 'restaurant has started preparing'. Switching to Swiggy."
         },
         {
-          "record_id": "R04708",
-          "platform": "News Site Comments",
-          "date": "2026-04-25",
-          "text": "Reader comment: Coupons shown on the home page never apply at checkout. 'Not applicable on this restaurant'. Prices on the app are 30-40% higher than dine-in. I will just go and pick it up myself. Never ordering again."
-        },
-        {
-          "record_id": "R01985",
-          "platform": "Consumer Complaints Forum",
-          "date": "2026-01-31",
-          "text": "Honestly fed up. Notifications are spam. 6 push notifications a day about offers I can't use. Never ordering again. 😭"
-        },
-        {
-          "record_id": "R00121",
+          "record_id": "R03520",
           "platform": "MouthShut",
-          "date": "2026-10-23",
-          "text": "Not happy at all. Status jumped from 'preparing' to 'delivered' without anyone coming to my door. Also, The chatbot offers a ₹100 coupon for everything and you cannot escalate to a human. #ZomatoFail"
+          "date": "2026-09-06",
+          "text": "very disappointed. swiggy refunds missing items instantly, zomato makes you fight for every rupee. switching. uninstalling."
         },
         {
-          "record_id": "R02007",
+          "record_id": "R04705",
+          "platform": "News Site Comments",
+          "date": "2026-07-17",
+          "text": "Sorry but Refund went to Zomato wallet instead of my bank account, and the credit expires in 24 hours. Shady. Gold member for 2 years. Support treats me the same as everyone else, so what exactly am I paying for? 1 star is too much."
+        },
+        {
+          "record_id": "R00528",
           "platform": "MouthShut",
           "date": "NaT",
-          "text": "Honestly fed up. Offers are fake, they increase the price first and then give 'flat 50% off'. UPI payment keeps timing out at checkout. Disappointed 😡"
+          "text": "डिलिव्हरी खूप उशिरा आली, पैसे परत मिळाले नाहीत"
         },
         {
-          "record_id": "R04746",
+          "record_id": "R01370",
           "platform": "News Site Comments",
-          "date": "2026-08-31",
-          "text": "Reader comment: third time this month. coupons shown on the home page never apply at checkout. 'not applicable on this restaurant'. disappointed 😡"
+          "date": "2026-07-17",
+          "text": "Reader comment: Refund abhi tak nahi aaya, 25 din ho gaye."
         }
       ],
       "contradicting_quotes": [
         {
-          "record_id": "R00933",
+          "record_id": "R00893",
           "platform": "Quora",
-          "text": "Q: Why are Zomato orders always late? A: The weekend offers are actually good, saved ₹75 today. Keep it up!"
+          "text": "Q: Why is Zomato so expensive now? A: Updating my review: Order got delayed and Zomato proactively refunded the delivery fee. Nice gesture. Will order again."
         },
         {
-          "record_id": "R00450",
+          "record_id": "R05027",
           "platform": "Google Play",
-          "text": "యాప్ బాగుంది, ఆఫర్స్ కూడా బాగున్నాయి"
+          "text": "Honestly Order got delayed and Zomato proactively refunded the delivery fee. Nice gesture. 👍"
         },
         {
-          "record_id": "R02160",
-          "platform": "LinkedIn",
-          "text": "Got a great discount on my first order. Will order again. #zomato"
-        },
-        {
-          "record_id": "R01039",
-          "platform": "LinkedIn",
-          "text": "honestly got a great discount on my first order. will order again. will order again. Curious what others think."
-        },
-        {
-          "record_id": "R01334",
+          "record_id": "R03229",
           "platform": "Google Play",
-          "text": "Got a great discount on my first order. Will order again. ❤️"
+          "text": "item was missing, raised it in the app and got a full refund in 2 minutes. great support. thanks zomato."
+        },
+        {
+          "record_id": "R04096",
+          "platform": "LinkedIn",
+          "text": "As a product person, Updating my review: Order got delayed and Zomato proactively refunded the delivery fee. Nice gesture. 👍"
+        },
+        {
+          "record_id": "R01245",
+          "platform": "LinkedIn",
+          "text": "Item was missing, raised it in the app and got a full refund in 2 minutes. Great support. Curious what others think."
         }
       ],
-      "label_confidence_avg": 0.5,
+      "label_confidence_avg": 0.9,
       "evidence_level": "High"
     }
   },
   {
-    "issue": "Fees & Surcharges",
-    "source": "template",
-    "headline": "438 of 3293 negative reviews (13.3%) describe fees & surcharges problems. It is declining: 24.06% of feedback earlier versus 3.08% recently.",
+    "issue": "Speed of Delivery",
+    "source": "gemini:gemini-3.5-flash-lite",
+    "headline": "A total of 3379 negative reviews describe delivery speed problems, representing 18.1 percent of negative feedback, and the trend is Declining.",
     "patterns": [
       {
-        "name": "Keywords: rain, increase, did, increase platform",
-        "count": 237,
+        "name": "Food arrived late and cold",
+        "count": 451,
         "record_ids": [
-          "R00071",
-          "R00129",
-          "R00285"
+          "R04387",
+          "R04818",
+          "R00139"
         ],
-        "example": "Did Zomato just increase the platform fee again? ₹15 per order now."
+        "example": "Rant: खाना बहुत देर से आया और ठंडा था। बहुत खराब सर्विस।"
       },
       {
-        "name": "Keywords: waiting hour, waiting, thanks, privilege waiting",
-        "count": 77,
+        "name": "Paid extra platform fees while waiting long durations",
+        "count": 79,
         "record_ids": [
           "R00034",
           "R00207",
@@ -1358,109 +709,120 @@
         "example": "@zomatocare Love paying ₹14 platform fee for the privilege of waiting an hour. Thanks Zomato!! #zomato"
       },
       {
-        "name": "Keywords: robbery, new platform, new, daylight robbery",
-        "count": 65,
+        "name": "Orders got stuck during bad weather while rain fees applied",
+        "count": 43,
         "record_ids": [
-          "R00065",
-          "R00082",
-          "R00201"
+          "R00272",
+          "R00209",
+          "R00877"
         ],
-        "example": "New platform fee of ₹15 on every order. Daylight robbery. 🤡 #ZomatoFail"
+        "example": "Order stuck for 95 minutes due to rain, rain fee still charged. #zomato"
       },
       {
-        "name": "Keywords: year, rd hike, rd, hike year",
-        "count": 59,
+        "name": "Heavy rain surcharges charged despite extreme delivery delays",
+        "count": 38,
         "record_ids": [
-          "R00011",
-          "R00023",
-          "R00130"
+          "R00359",
+          "R00405",
+          "R00689"
         ],
-        "example": "Platform fee hiked again to ₹17! This is the 3rd hike this year."
+        "example": "HEAVY RAIN IS NOT AN EXCUSE TO CHARGE RAIN FEE AND DELIVER 138 MINUTES LATE."
       }
     ],
     "hypotheses": [
       {
-        "statement": "Fee increases are noticed because they appear at checkout, after the customer has decided.",
+        "statement": "Estimated delivery time calculations may be overly optimistic during peak hours or adverse weather conditions, leading to frustrated customers.",
         "supporting_record_ids": [
-          "R00402",
-          "R00893"
+          "R05114",
+          "R03836",
+          "R04516"
         ],
-        "label": "Hypothesis (starting template)"
+        "what_would_confirm_it": "Compare predicted delivery timestamps with actual delivery timestamps segmented by weather condition logs.",
+        "label": "Hypothesis (Gemini)"
       },
       {
-        "statement": "Customers cannot see what each fee pays for, so every fee feels arbitrary.",
+        "statement": "Delivery partners may be experiencing batching issues or taking multiple orders simultaneously, causing significant delays and cold food.",
         "supporting_record_ids": [
-          "R03844",
-          "R05137"
+          "R05114",
+          "R03177",
+          "R03721"
         ],
-        "label": "Hypothesis (starting template)"
+        "what_would_confirm_it": "Review delivery partner dispatch logs and route histories showing multi-order assignments during delayed deliveries.",
+        "label": "Hypothesis (Gemini)"
       },
       {
-        "statement": "Small repeated hikes add up to a perceived betrayal more than the absolute amount does.",
+        "statement": "Additional fees like rain or platform fees applied during delayed orders may disproportionately trigger negative public complaints.",
         "supporting_record_ids": [
-          "R00884",
-          "R03245"
+          "R03836",
+          "R04418",
+          "R03380"
         ],
-        "label": "Hypothesis (starting template)"
+        "what_would_confirm_it": "Analyze customer support ticket volume regarding fee disputes correlated with late delivery orders.",
+        "label": "Hypothesis (Gemini)"
       }
     ],
     "data_to_check": [
-      "Checkout abandonment rate before and after each fee change",
-      "Order frequency of customers who complained"
+      "Average preparation time versus delivery transit time per zone",
+      "Percentage of orders exceeding estimated time of arrival during rain events",
+      "Customer support ticket categorization volume for fee disputes and late delivery"
     ],
     "interview_questions": [
-      "At which point did you notice the fee?",
-      "Which fee feels fair to you, and why?"
+      "Tell me about the last time you placed an order and noticed it took longer than expected.",
+      "Walk me through what you saw on the order tracking map while you were waiting for your delivery.",
+      "Tell me about what happened when you noticed extra fees added to your delayed order."
     ],
     "opportunity": {
-      "title": "Upfront fee breakdown on the restaurant page, with a fee cap or fee-free tier",
-      "success_metric": "Share of feedback about fees & surcharges falls for 2 months in a row"
+      "title": "Transparent Delivery Estimates and Proactive Fee Adjustments",
+      "description": "Helps hungry customers manage expectations by providing accurate delivery timelines during bad weather and automatically adjusting extra fees when delays occur.",
+      "success_metric": "Reduction in negative feedback mentions related to delivery speed and fee disputes"
     },
-    "contradicting_evidence": "48 reviews are positive about this area.",
+    "contradicting_evidence": "Some customers reported positive experiences where orders arrived hot within minutes or where support proactively refunded delivery fees after a delay.",
     "verification": {
       "numbers_verified": true,
+      "headline_numbers_ok": true,
       "citations_verified": true,
-      "notes": [
-        "Built by code from the evidence pack."
-      ]
+      "notes": []
     },
     "evidence_pack": {
-      "issue": "Fees & Surcharges",
-      "category": "Value & Pricing",
-      "analysed_feedback": 4859,
-      "negative_feedback_total": 3293,
-      "negative_mentions": 438,
-      "share_of_negative_pct": 13.3,
-      "positive_mentions": 48,
-      "churn_risk_mentions": 15,
+      "issue": "Speed of Delivery",
+      "category": "Fulfillment & Logistics",
+      "analysed_feedback": 4839,
+      "negative_feedback_total": 3379,
+      "negative_mentions": 611,
+      "share_of_negative_pct": 18.1,
+      "positive_mentions": 222,
+      "churn_risk_mentions": 40,
       "platforms": {
-        "Google Play": 187,
-        "X (Twitter)": 55,
-        "Reddit": 52,
-        "Apple App Store": 51,
-        "YouTube": 38,
-        "Consumer Complaints Forum": 19,
-        "Quora": 15,
-        "MouthShut": 14,
-        "LinkedIn": 4,
-        "News Site Comments": 3
+        "Google Play": 232,
+        "Apple App Store": 97,
+        "Reddit": 76,
+        "X (Twitter)": 73,
+        "YouTube": 52,
+        "Quora": 33,
+        "Consumer Complaints Forum": 15,
+        "MouthShut": 12,
+        "News Site Comments": 11,
+        "LinkedIn": 10
       },
       "languages": {
-        "English": 430,
-        "Hinglish": 8
+        "English": 501,
+        "Kannada": 33,
+        "Marathi": 33,
+        "Hindi": 31,
+        "Hinglish": 13
       },
       "monthly_negative_mentions": {
-        "2025-12": 20,
-        "2026-01": 16,
-        "2026-02": 12,
-        "2026-03": 7,
-        "2026-04": 16,
-        "2026-05": 13,
-        "2026-06": 192,
-        "2026-07": 102,
-        "2026-08": 21,
-        "2026-09": 11,
-        "2026-10": 16
+        "2025-12": 55,
+        "2026-01": 54,
+        "2026-02": 52,
+        "2026-03": 47,
+        "2026-04": 44,
+        "2026-05": 39,
+        "2026-06": 38,
+        "2026-07": 142,
+        "2026-08": 50,
+        "2026-09": 33,
+        "2026-10": 45
       },
       "trend": {
         "status": "Declining",
@@ -1473,25 +835,25 @@
           "2026-09",
           "2026-10"
         ],
-        "earlier_rate_pct": 24.06,
-        "recent_rate_pct": 3.08,
-        "change_pct": -87.0
+        "earlier_rate_pct": 17.64,
+        "recent_rate_pct": 8.94,
+        "change_pct": -49.0
       },
-      "rank": 5,
+      "rank": 3,
       "sub_patterns": [
         {
-          "pattern": "rain, increase, did, increase platform",
-          "count": 237,
+          "pattern": "minutes, late, great, job",
+          "count": 451,
           "record_ids": [
-            "R00071",
-            "R00129",
-            "R00285"
+            "R04387",
+            "R04818",
+            "R00139"
           ],
-          "example": "Did Zomato just increase the platform fee again? ₹15 per order now."
+          "example": "Rant: खाना बहुत देर से आया और ठंडा था। बहुत खराब सर्विस।"
         },
         {
-          "pattern": "waiting hour, waiting, thanks, privilege waiting",
-          "count": 77,
+          "pattern": "fee privilege, thanks, love paying, privilege waiting",
+          "count": 79,
           "record_ids": [
             "R00034",
             "R00207",
@@ -1500,8 +862,351 @@
           "example": "@zomatocare Love paying ₹14 platform fee for the privilege of waiting an hour. Thanks Zomato!! #zomato"
         },
         {
-          "pattern": "robbery, new platform, new, daylight robbery",
-          "count": 65,
+          "pattern": "rain, fee charged, stuck, rain rain",
+          "count": 43,
+          "record_ids": [
+            "R00272",
+            "R00209",
+            "R00877"
+          ],
+          "example": "Order stuck for 95 minutes due to rain, rain fee still charged. #zomato"
+        },
+        {
+          "pattern": "rain, charge, charge rain, minutes late",
+          "count": 38,
+          "record_ids": [
+            "R00359",
+            "R00405",
+            "R00689"
+          ],
+          "example": "HEAVY RAIN IS NOT AN EXCUSE TO CHARGE RAIN FEE AND DELIVER 138 MINUTES LATE."
+        }
+      ],
+      "co_occurring_issues": {
+        "Fees & Surcharges": 209,
+        "Food Quality (Stale/Cold)": 130,
+        "Refund & Policy Disputes": 40,
+        "Order Tracking Accuracy": 25
+      },
+      "quotes": [
+        {
+          "record_id": "R05114",
+          "platform": "Quora",
+          "date": "2026-07-09",
+          "text": "Q: Why are Zomato orders always late? A: Order 116 minute late aaya, khana bilkul thanda tha."
+        },
+        {
+          "record_id": "R03836",
+          "platform": "Quora",
+          "date": "2026-07-20",
+          "text": "Q: Is Zomato Gold worth it in 2026? A: Monsoon + Zomato = 2 hour delivary and a rain fee on top."
+        },
+        {
+          "record_id": "R02598",
+          "platform": "Google Play",
+          "date": "2026-03-20",
+          "text": "Great job Zomato 👏👏 116 minutes for one ice cream."
+        },
+        {
+          "record_id": "R01557",
+          "platform": "Google Play",
+          "date": "2026-08-07",
+          "text": "Third time this month. Ordered at 8:30, got it at 10:05. Dinner ruined. On top of that, Order marked delivered but I never received it. Delivery partner not picking up calls. 😡😡"
+        },
+        {
+          "record_id": "R03529",
+          "platform": "LinkedIn",
+          "date": "2026-01-04",
+          "text": "As a product person, Unbelievable. Ordered at 8:30, got it at 10:05. Dinner ruined. #productmanagement"
+        },
+        {
+          "record_id": "R03177",
+          "platform": "LinkedIn",
+          "date": "2026-09-10",
+          "text": "Wow, amazing service, my burger arrived cold AND late. Truly world class. #productmanagement"
+        },
+        {
+          "record_id": "R02315",
+          "platform": "YouTube",
+          "date": "2026-07-19",
+          "text": "Monsoon + Zomato = 2 hour delivery and a rain fee on top."
+        },
+        {
+          "record_id": "R03721",
+          "platform": "YouTube",
+          "date": "2026-09-14",
+          "text": "GREAT JOB ZOMATO 👏👏 132 MINUTES FOR ONE BURGER."
+        },
+        {
+          "record_id": "R04418",
+          "platform": "X (Twitter)",
+          "date": "2026-01-07",
+          "text": "@zomato Love paying ₹10 platform fee for the privilege of waiting an hour. Thanks Zomato!! order id 2507650912"
+        },
+        {
+          "record_id": "R01189",
+          "platform": "Reddit",
+          "date": "2026-04-09",
+          "text": "खाना बहुत देर से आया और ठंडा था। बहुत खराब सर्विस।"
+        },
+        {
+          "record_id": "R02434",
+          "platform": "Reddit",
+          "date": "2026-03-18",
+          "text": "great job zomato 👏👏 65 minutes for one burger."
+        },
+        {
+          "record_id": "R04516",
+          "platform": "X (Twitter)",
+          "date": "2026-01-18",
+          "text": "Delivery time 30 min dikhaya aur aaya 76 min mein. Kya bakwas hai. !!!"
+        },
+        {
+          "record_id": "R02184",
+          "platform": "Apple App Store",
+          "date": "2026-06-27",
+          "text": "Late again. Amazing, the bot closed my ticket again. 10/10 customer service 🙃 contact: [email removed] / [phone removed] 😡😡"
+        },
+        {
+          "record_id": "R00863",
+          "platform": "Apple App Store",
+          "date": "2026-09-30",
+          "text": "ಡೆಲಿವರಿ ತುಂಬಾ ತಡವಾಗಿ ಬಂತು"
+        },
+        {
+          "record_id": "R03746",
+          "platform": "Consumer Complaints Forum",
+          "date": "2026-05-31",
+          "text": "ಡೆಲಿವರಿ ತುಂಬಾ ತಡವಾಗಿ ಬಂತು"
+        },
+        {
+          "record_id": "R03380",
+          "platform": "News Site Comments",
+          "date": "2026-04-25",
+          "text": "Reader comment: love paying ₹8 platform fee for the privilege of waiting an hour. thanks zomato!!"
+        },
+        {
+          "record_id": "R03058",
+          "platform": "News Site Comments",
+          "date": "2026-08-18",
+          "text": "Great job Zomato 👏👏 92 minutes for one momos."
+        },
+        {
+          "record_id": "R03226",
+          "platform": "Consumer Complaints Forum",
+          "date": "NaT",
+          "text": "Wow, amazing service, my sandwich arrived cold AND late. Truly world class."
+        },
+        {
+          "record_id": "R00556",
+          "platform": "MouthShut",
+          "date": "2026-05-08",
+          "text": "honestly fed up. gold says free delivery but only within 5 km. most restaurants i order from are outside that. feels like a trap. plus, estimated time was 25 minutes, food came after 91 minutes. cold and soggy. switching to swiggy."
+        },
+        {
+          "record_id": "R04120",
+          "platform": "MouthShut",
+          "date": "NaT",
+          "text": "The rider on the map was not moving for 25 minutes and the app still showed 'on the way'. Never ordering again."
+        }
+      ],
+      "contradicting_quotes": [
+        {
+          "record_id": "R04339",
+          "platform": "Quora",
+          "text": "Q: How do I get a refund from Zomato for a missing item? A: updating my review: delivered in 20 minutes, food still hot. impressed. will order again."
+        },
+        {
+          "record_id": "R00893",
+          "platform": "Quora",
+          "text": "Q: Why is Zomato so expensive now? A: Updating my review: Order got delayed and Zomato proactively refunded the delivery fee. Nice gesture. Will order again."
+        },
+        {
+          "record_id": "R01338",
+          "platform": "Google Play",
+          "text": "Have to say, Delivered in 15 minutes, food still hot. Impressed. 👍"
+        },
+        {
+          "record_id": "R05027",
+          "platform": "Google Play",
+          "text": "Honestly Order got delayed and Zomato proactively refunded the delivery fee. Nice gesture. 👍"
+        },
+        {
+          "record_id": "R04096",
+          "platform": "LinkedIn",
+          "text": "As a product person, Updating my review: Order got delayed and Zomato proactively refunded the delivery fee. Nice gesture. 👍"
+        }
+      ],
+      "label_confidence_avg": 0.9,
+      "evidence_level": "High"
+    }
+  },
+  {
+    "issue": "Fees & Surcharges",
+    "source": "gemini:gemini-3.5-flash-lite",
+    "headline": "A total of 3379 negative reviews describe fees and surcharges, making up 17.9 percent of negative feedback, and the trend is Declining.",
+    "patterns": [
+      {
+        "name": "Charged a rain fee while orders arrived late",
+        "count": 334,
+        "record_ids": [
+          "R02572",
+          "R00624",
+          "R00439"
+        ],
+        "example": "Late again. Order stuck for 80 minutes due to rain, rain fee still charged."
+      },
+      {
+        "name": "Platform fees increased frequently across orders",
+        "count": 131,
+        "record_ids": [
+          "R00065",
+          "R00082",
+          "R00201"
+        ],
+        "example": "New platform fee of ₹15 on every order. Daylight robbery. 🤡 #ZomatoFail"
+      },
+      {
+        "name": "Paying platform fees while experiencing long delivery wait times",
+        "count": 80,
+        "record_ids": [
+          "R00034",
+          "R00207",
+          "R00298"
+        ],
+        "example": "@zomatocare Love paying ₹14 platform fee for the privilege of waiting an hour. Thanks Zomato!! #zomato"
+      },
+      {
+        "name": "Frequent platform fee hikes happening repeatedly",
+        "count": 59,
+        "record_ids": [
+          "R00011",
+          "R00023",
+          "R00130"
+        ],
+        "example": "Platform fee hiked again to ₹17! This is the 3rd hike this year."
+      }
+    ],
+    "hypotheses": [
+      {
+        "statement": "Automated surcharge algorithms may trigger rain fees during minor weather events or normal delivery delays, causing customer frustration.",
+        "supporting_record_ids": [
+          "R03836",
+          "R02849"
+        ],
+        "what_would_confirm_it": "Reviewing weather API trigger logs alongside surcharge application timestamps by city.",
+        "label": "Hypothesis (Gemini)"
+      },
+      {
+        "statement": "Frequent platform fee adjustments may be rolled out without clear advance communication, leading customers to perceive the increases as arbitrary.",
+        "supporting_record_ids": [
+          "R00884",
+          "R03245"
+        ],
+        "what_would_confirm_it": "Analyzing pricing update deployment schedules against customer support ticket spikes regarding billing.",
+        "label": "Hypothesis (Gemini)"
+      },
+      {
+        "statement": "Service level degradation during peak hours may amplify dissatisfaction with baseline platform and service charges.",
+        "supporting_record_ids": [
+          "R00402",
+          "R00920"
+        ],
+        "what_would_confirm_it": "Correlating average delivery time metrics with fee-related complaint volume per hour of day.",
+        "label": "Hypothesis (Gemini)"
+      }
+    ],
+    "data_to_check": [
+      "Surcharge trigger logs and local weather station data during flagged rain fee intervals",
+      "Customer support contact rates categorized by fee inquiries and complaints",
+      "Order conversion rates immediately following platform fee update rollouts"
+    ],
+    "interview_questions": [
+      "Tell me about the last time you noticed extra fees on your order summary before checking out.",
+      "Walk me through what happened the last time you paid a bad weather surcharge on an order.",
+      "Tell me about how you usually find out about changes to service or platform fees.",
+      "Walk me through what you did the last time an order took longer than expected while you had paid extra service charges."
+    ],
+    "opportunity": {
+      "title": "Transparent and Contextual Surcharges",
+      "description": "Helps customers understand why extra fees are applied and ensures charges align with actual delivery performance, reducing surprise and perceived unfairness.",
+      "success_metric": "Decrease in fee-related support contacts and negative reviews"
+    },
+    "contradicting_evidence": "The contradicting quotes show that some customers experienced proactive delivery fee refunds when their orders were delayed, indicating that compensatory processes do exist in certain cases. Additionally, one comment requests transparent fee breakdowns earlier in the checkout flow rather than objecting to the fees themselves.",
+    "verification": {
+      "numbers_verified": true,
+      "headline_numbers_ok": true,
+      "citations_verified": true,
+      "notes": []
+    },
+    "evidence_pack": {
+      "issue": "Fees & Surcharges",
+      "category": "Value & Pricing",
+      "analysed_feedback": 4839,
+      "negative_feedback_total": 3379,
+      "negative_mentions": 604,
+      "share_of_negative_pct": 17.9,
+      "positive_mentions": 4,
+      "churn_risk_mentions": 70,
+      "platforms": {
+        "Google Play": 232,
+        "Apple App Store": 87,
+        "Reddit": 79,
+        "X (Twitter)": 79,
+        "YouTube": 49,
+        "Quora": 28,
+        "Consumer Complaints Forum": 23,
+        "MouthShut": 14,
+        "News Site Comments": 7,
+        "LinkedIn": 6
+      },
+      "languages": {
+        "English": 589,
+        "Hinglish": 15
+      },
+      "monthly_negative_mentions": {
+        "2025-12": 38,
+        "2026-01": 31,
+        "2026-02": 34,
+        "2026-03": 19,
+        "2026-04": 30,
+        "2026-05": 27,
+        "2026-06": 202,
+        "2026-07": 131,
+        "2026-08": 35,
+        "2026-09": 18,
+        "2026-10": 26
+      },
+      "trend": {
+        "status": "Declining",
+        "earlier_months": [
+          "2026-06",
+          "2026-07",
+          "2026-08"
+        ],
+        "recent_months": [
+          "2026-09",
+          "2026-10"
+        ],
+        "earlier_rate_pct": 28.22,
+        "recent_rate_pct": 5.05,
+        "change_pct": -82.0
+      },
+      "rank": 4,
+      "sub_patterns": [
+        {
+          "pattern": "rain, rain fee, minutes, delivery",
+          "count": 334,
+          "record_ids": [
+            "R02572",
+            "R00624",
+            "R00439"
+          ],
+          "example": "Late again. Order stuck for 80 minutes due to rain, rain fee still charged."
+        },
+        {
+          "pattern": "increase platform, did increase, did, increase",
+          "count": 131,
           "record_ids": [
             "R00065",
             "R00082",
@@ -1510,7 +1215,17 @@
           "example": "New platform fee of ₹15 on every order. Daylight robbery. 🤡 #ZomatoFail"
         },
         {
-          "pattern": "year, rd hike, rd, hike year",
+          "pattern": "thanks, fee privilege, waiting hour, privilege",
+          "count": 80,
+          "record_ids": [
+            "R00034",
+            "R00207",
+            "R00298"
+          ],
+          "example": "@zomatocare Love paying ₹14 platform fee for the privilege of waiting an hour. Thanks Zomato!! #zomato"
+        },
+        {
+          "pattern": "year, fee hiked, hiked, hike year",
           "count": 59,
           "record_ids": [
             "R00011",
@@ -1521,23 +1236,23 @@
         }
       ],
       "co_occurring_issues": {
-        "Speed of Delivery": 124,
-        "Location & City Availability": 19,
-        "Item Condition & Packaging": 16,
-        "Order Accuracy (Missing/Wrong)": 6
+        "Speed of Delivery": 209,
+        "Competitor Comparisons": 46,
+        "Gold Hidden Fees/Platform Charges": 21,
+        "Agent Helpfulness": 15
       },
       "quotes": [
+        {
+          "record_id": "R03836",
+          "platform": "Quora",
+          "date": "2026-07-20",
+          "text": "Q: Is Zomato Gold worth it in 2026? A: Monsoon + Zomato = 2 hour delivary and a rain fee on top."
+        },
         {
           "record_id": "R00402",
           "platform": "Quora",
           "date": "2026-02-22",
           "text": "Q: Why is Zomato so expensive now? A: Love paying ₹14 platform fee for teh privilege of waiting an hour. Thanks Zomato!!"
-        },
-        {
-          "record_id": "R00893",
-          "platform": "Quora",
-          "date": "2026-07-20",
-          "text": "Q: Why is Zomato so expensive now? A: Updating my review: Order got delayed and Zomato proactively refunded the delivery fee. Nice gesture. Will order again."
         },
         {
           "record_id": "R03844",
@@ -1546,16 +1261,22 @@
           "text": "New platform fee of ₹17 on every order. Daylight robbery."
         },
         {
-          "record_id": "R05137",
+          "record_id": "R00982",
           "platform": "Google Play",
-          "date": "2026-05-17",
-          "text": "Love paying ₹10 platform fee for the privilege of waiting an hour. Thanks Zomato!!"
+          "date": "2025-12-16",
+          "text": "Very disappointed. Moving to ONDC/Magicpin, Zomato fees are out of control. Switching to Swiggy."
         },
         {
           "record_id": "R00884",
           "platform": "Reddit",
           "date": "2026-06-17",
           "text": "Reply: Did Zomato just increase the platform fee again? ₹17 per order now."
+        },
+        {
+          "record_id": "R02315",
+          "platform": "YouTube",
+          "date": "2026-07-19",
+          "text": "Monsoon + Zomato = 2 hour delivery and a rain fee on top."
         },
         {
           "record_id": "R03245",
@@ -1568,12 +1289,6 @@
           "platform": "YouTube",
           "date": "2026-06-13",
           "text": "Love paying ₹14 platform fee for the privilege of waiting an hour. Thanks Zomato!!"
-        },
-        {
-          "record_id": "R02187",
-          "platform": "YouTube",
-          "date": "2026-01-04",
-          "text": "NOT HAPPY AT ALL. PLATFORM FEE KEEPS INCREASING EVERY FEW MONTHS, NOW ₹10 PER ORDER. NOBODY ASKED FOR THIS. VERY POOR."
         },
         {
           "record_id": "R00920",
@@ -1606,10 +1321,22 @@
           "text": "PLATFORM FEE ₹14 + PACKAGING ₹25 + DELIVERY ₹25 + GST. THE FEES ARE MORE THAN THE FOOD AT THIS POINT."
         },
         {
+          "record_id": "R02938",
+          "platform": "News Site Comments",
+          "date": "2025-12-13",
+          "text": "Reader comment: Third time this month. Rain fee in a city where it barely drizzled. Every excuse to add a charge. On top of that, The new UI hides the search bar. Why change something that worked?"
+        },
+        {
           "record_id": "R04520",
           "platform": "MouthShut",
           "date": "2026-06-29",
           "text": "Har order pe naya charge laga dete ho, platform fee ab ₹8 ho gaya."
+        },
+        {
+          "record_id": "R01876",
+          "platform": "Apple App Store",
+          "date": "2026-03-25",
+          "text": "Worst service. Third time this month. Why is there a 'small cart fee' on a ₹89 order? I am paying for a single meal. contact: [email removed] / [phone removed] 😤"
         },
         {
           "record_id": "R00188",
@@ -1630,63 +1357,46 @@
           "text": "Reader comment: love paying ₹8 platform fee for the privilege of waiting an hour. thanks zomato!!"
         },
         {
-          "record_id": "R04446",
-          "platform": "Apple App Store",
-          "date": "2026-07-11",
-          "text": "Not worth it. Monsoon + Zomato = 2 hour delivery and a rain fee on top."
-        },
-        {
           "record_id": "R00613",
           "platform": "Consumer Complaints Forum",
           "date": "2026-06-11",
           "text": "Platform fee hiked again to ₹15! This is the 3rd hike this year."
-        },
-        {
-          "record_id": "R01715",
-          "platform": "News Site Comments",
-          "date": "2026-04-28",
-          "text": "Honestly fed up. Late night surcharge, distance fee, platform fee... I counted 6 different charges on one bill. #ZomatoFail"
         }
       ],
       "contradicting_quotes": [
         {
-          "record_id": "R03836",
-          "platform": "Quora",
-          "text": "Q: Is Zomato Gold worth it in 2026? A: Monsoon + Zomato = 2 hour delivary and a rain fee on top."
-        },
-        {
-          "record_id": "R05027",
+          "record_id": "R03919",
           "platform": "Google Play",
-          "text": "Honestly Order got delayed and Zomato proactively refunded the delivery fee. Nice gesture. 👍"
+          "text": "Please show the full fee breakdown before I add items, not at the last step."
         },
         {
-          "record_id": "R04096",
-          "platform": "LinkedIn",
-          "text": "As a product person, Updating my review: Order got delayed and Zomato proactively refunded the delivery fee. Nice gesture. 👍"
+          "record_id": "R03909",
+          "platform": "X (Twitter)",
+          "text": "Honestly Order got delayed and Zomato proactively refunded the delivery fee. Nice gesture. #ZomatoFail order id 4997805305"
         },
         {
-          "record_id": "R04478",
-          "platform": "Google Play",
-          "text": "Have to say, Order got delayed and Zomato proactively refunded the delivery fee. Nice gesture."
-        },
-        {
-          "record_id": "R04068",
+          "record_id": "R01900",
           "platform": "YouTube",
-          "text": "Order got delayed and Zomato proactively refunded the delivery fee. Nice gesture. Keep it up!"
+          "text": "HAVE TO SAY, ORDER GOT DELAYED AND ZOMATO PROACTIVELY REFUNDED THE DELIVERY FEE. NICE GESTURE."
+        },
+        {
+          "record_id": "R02915",
+          "platform": "News Site Comments",
+          "text": "have to say, order got delayed and zomato proactively refunded the delivery fee. nice gesture."
         }
       ],
-      "label_confidence_avg": 0.5,
+      "label_confidence_avg": 0.9,
       "evidence_level": "High"
     }
   },
   {
     "issue": "Account & Login",
-    "source": "template",
-    "headline": "128 of 3293 negative reviews (3.9%) describe account & login problems.",
+    "source": "gemini:gemini-3.5-flash-lite",
+    "headline": "A total of 147 negative reviews representing 4.4 percent of negative feedback describe account and login issues, showing a rising trend.",
     "patterns": [
       {
-        "name": "Keywords: otp arrives, log, arrives log, arrives",
-        "count": 61,
+        "name": "One-time password never arrives preventing login",
+        "count": 64,
         "record_ids": [
           "R00669",
           "R00678",
@@ -1695,8 +1405,8 @@
         "example": "Sorry but OTP never arrives, cannot log in at all. Also, Status jumped from 'preparing' to 'delivered' without anyone coming to my door. Very poor."
       },
       {
-        "name": "Keywords: twice treating, treating genuine, treating, refunds twice",
-        "count": 45,
+        "name": "Account blocked after asking for refunds",
+        "count": 55,
         "record_ids": [
           "R00219",
           "R00361",
@@ -1705,17 +1415,17 @@
         "example": "My account got blocked after I asked for refunds twice. Treating genuine customers like fraudsters."
       },
       {
-        "name": "Keywords: app, logs, otp doesn, doesn",
-        "count": 18,
+        "name": "Frequent forced logouts followed by login failure",
+        "count": 24,
         "record_ids": [
-          "R01142",
-          "R01841",
-          "R02045"
+          "R00938",
+          "R02045",
+          "R01841"
         ],
-        "example": "@zomato @zomatocare Not happy at all. App logs me out every other day and then the OTP doesn't come. Disappointed 😡"
+        "example": "Sorry but App logs me out every other day and then the OTP doesn't come. #ZomatoFail Is this happening to everyone or just me?"
       },
       {
-        "name": "Keywords: gold, years support, treats, treats exactly",
+        "name": "Loyal members experience poor support and login failures",
         "count": 4,
         "record_ids": [
           "R04369",
@@ -1727,80 +1437,98 @@
     ],
     "hypotheses": [
       {
-        "statement": "The issue is concentrated in a few cities, restaurants or app versions.",
+        "statement": "SMS gateway delivery failures or network timeouts may prevent one-time passwords from reaching customers during login attempts.",
         "supporting_record_ids": [
           "R02309",
-          "R01846"
+          "R01846",
+          "R02203"
         ],
-        "label": "Hypothesis (starting template)"
+        "what_would_confirm_it": "SMS delivery success rates and API latency logs from the authentication service provider during peak hours.",
+        "label": "Hypothesis (Gemini)"
       },
       {
-        "statement": "Customers' expectations were set by a promise the product does not keep.",
+        "statement": "Automated fraud detection rules may be overly aggressive, automatically blocking accounts after a low threshold of refund requests.",
         "supporting_record_ids": [
-          "R02203",
-          "R02532"
+          "R02532",
+          "R00664",
+          "R02063"
         ],
-        "label": "Hypothesis (starting template)"
+        "what_would_confirm_it": "Risk engine trigger logs showing the exact rule IDs and threshold counts that caused customer accounts to be suspended.",
+        "label": "Hypothesis (Gemini)"
+      },
+      {
+        "statement": "App session token expiration policies may be misconfigured, causing recurring forced logouts on client devices.",
+        "supporting_record_ids": [
+          "R02309",
+          "R03115",
+          "R02883"
+        ],
+        "what_would_confirm_it": "Client-side crash and session management logs indicating token revocation frequency across mobile operating systems.",
+        "label": "Hypothesis (Gemini)"
       }
     ],
     "data_to_check": [
-      "Complaint rate by city, restaurant and app version"
+      "SMS gateway delivery failure rates and carrier-specific drop logs",
+      "Fraud detection system rule execution logs for account blocks",
+      "Client session token expiration and refresh failure error rates"
     ],
     "interview_questions": [
-      "What did you expect to happen?",
-      "What happened instead?"
+      "Tell me about the last time you tried to log in and what happened on your screen.",
+      "Walk me through what you did right before your account became blocked.",
+      "How often do you find yourself needing to re-enter your details to access the app?",
+      "What steps did you take when the verification code failed to show up?"
     ],
     "opportunity": {
-      "title": "Investigate the main pattern and design a targeted fix",
-      "success_metric": "Share of feedback about account & login falls for 2 months in a row"
+      "title": "Streamline Authentication and Account Recovery",
+      "description": "Helps customers access their accounts reliably without experiencing unexpected logouts or missing verification codes, and prevents wrongful account blocks.",
+      "success_metric": "Increase successful login rate on first attempt and reduce account lockout complaints."
     },
-    "contradicting_evidence": "No reviews contradict this finding.",
+    "contradicting_evidence": "There are no contradicting quotes or positive mentions in the evidence pack.",
     "verification": {
       "numbers_verified": true,
+      "headline_numbers_ok": true,
       "citations_verified": true,
-      "notes": [
-        "Built by code from the evidence pack."
-      ]
+      "notes": []
     },
     "evidence_pack": {
       "issue": "Account & Login",
       "category": "Ease of Use & Digital Experience",
-      "analysed_feedback": 4859,
-      "negative_feedback_total": 3293,
-      "negative_mentions": 128,
-      "share_of_negative_pct": 3.9,
+      "analysed_feedback": 4839,
+      "negative_feedback_total": 3379,
+      "negative_mentions": 147,
+      "share_of_negative_pct": 4.4,
       "positive_mentions": 0,
-      "churn_risk_mentions": 37,
+      "churn_risk_mentions": 41,
       "platforms": {
-        "Google Play": 54,
-        "X (Twitter)": 17,
-        "Reddit": 15,
+        "Google Play": 62,
+        "X (Twitter)": 18,
+        "Reddit": 17,
+        "Apple App Store": 14,
         "YouTube": 13,
-        "Apple App Store": 12,
-        "Consumer Complaints Forum": 7,
-        "Quora": 5,
-        "LinkedIn": 2,
+        "Quora": 9,
+        "Consumer Complaints Forum": 8,
+        "LinkedIn": 3,
         "MouthShut": 2,
         "News Site Comments": 1
       },
       "languages": {
-        "English": 128
+        "English": 147
       },
       "monthly_negative_mentions": {
-        "2025-12": 10,
-        "2026-01": 16,
-        "2026-02": 5,
-        "2026-03": 9,
-        "2026-04": 13,
-        "2026-05": 15,
-        "2026-06": 8,
+        "2025-12": 11,
+        "2026-01": 18,
+        "2026-02": 6,
+        "2026-03": 13,
+        "2026-04": 14,
+        "2026-05": 20,
+        "2026-06": 9,
         "2026-07": 6,
         "2026-08": 13,
-        "2026-09": 11,
-        "2026-10": 18
+        "2026-09": 12,
+        "2026-10": 21
       },
       "trend": {
-        "status": "Stable",
+        "status": "Rising",
         "earlier_months": [
           "2026-06",
           "2026-07",
@@ -1810,15 +1538,15 @@
           "2026-09",
           "2026-10"
         ],
-        "earlier_rate_pct": 2.06,
-        "recent_rate_pct": 3.31,
-        "change_pct": 60.0
+        "earlier_rate_pct": 2.15,
+        "recent_rate_pct": 3.78,
+        "change_pct": 76.0
       },
-      "rank": 6,
+      "rank": 5,
       "sub_patterns": [
         {
-          "pattern": "otp arrives, log, arrives log, arrives",
-          "count": 61,
+          "pattern": "arrives, arrives log, otp arrives, log",
+          "count": 64,
           "record_ids": [
             "R00669",
             "R00678",
@@ -1827,8 +1555,8 @@
           "example": "Sorry but OTP never arrives, cannot log in at all. Also, Status jumped from 'preparing' to 'delivered' without anyone coming to my door. Very poor."
         },
         {
-          "pattern": "twice treating, treating genuine, treating, refunds twice",
-          "count": 45,
+          "pattern": "twice treating, blocked asked, fraudsters, like fraudsters",
+          "count": 55,
           "record_ids": [
             "R00219",
             "R00361",
@@ -1837,17 +1565,17 @@
           "example": "My account got blocked after I asked for refunds twice. Treating genuine customers like fraudsters."
         },
         {
-          "pattern": "app, logs, otp doesn, doesn",
-          "count": 18,
+          "pattern": "app, app logs, doesn come, day",
+          "count": 24,
           "record_ids": [
-            "R01142",
-            "R01841",
-            "R02045"
+            "R00938",
+            "R02045",
+            "R01841"
           ],
-          "example": "@zomato @zomatocare Not happy at all. App logs me out every other day and then the OTP doesn't come. Disappointed 😡"
+          "example": "Sorry but App logs me out every other day and then the OTP doesn't come. #ZomatoFail Is this happening to everyone or just me?"
         },
         {
-          "pattern": "gold, years support, treats, treats exactly",
+          "pattern": "years support, years, treats exactly, exactly paying",
           "count": 4,
           "record_ids": [
             "R04369",
@@ -1858,10 +1586,10 @@
         }
       ],
       "co_occurring_issues": {
-        "Refund & Policy Disputes": 39,
-        "Item Condition & Packaging": 5,
-        "Self-Service & Bot Effectiveness": 5,
-        "Price & Affordability": 4
+        "Refund & Policy Disputes": 42,
+        "Competitor Comparisons": 10,
+        "Food Quality (Stale/Cold)": 7,
+        "App Stability & Bugs": 7
       },
       "quotes": [
         {
@@ -1907,6 +1635,12 @@
           "text": "Q: Is Zomato Gold worth it in 2026? A: honestly fed up. my account got blocked after i asked for refunds twice. treating genuine customers like fraudsters. never ordering again."
         },
         {
+          "record_id": "R03115",
+          "platform": "LinkedIn",
+          "date": "2026-05-15",
+          "text": "Hot take: App logs me out every other day and then the OTP doesn't come. Never ordering again."
+        },
+        {
           "record_id": "R02074",
           "platform": "Reddit",
           "date": "2026-06-04",
@@ -1919,12 +1653,6 @@
           "text": "Reply: OTP never arrives, cannot log in at all."
         },
         {
-          "record_id": "R00544",
-          "platform": "LinkedIn",
-          "date": "2026-01-06",
-          "text": "As a product person, Very disappointed. My account got blocked after I asked for refunds twice. Treating genuine customers like fraudsters. Also, Half the restaurants in my area show 'not delivering to your location' even though they are 3 km away. #zomato"
-        },
-        {
           "record_id": "R00890",
           "platform": "X (Twitter)",
           "date": "2026-06-29",
@@ -1935,6 +1663,12 @@
           "platform": "Apple App Store",
           "date": "2026-08-19",
           "text": "gold member for 2 years. support treats me the same as everyone else, so what exactly am i paying for? plus, my account got blocked after i asked for refunds twice. treating genuine customers like fraudsters. never ordering again. 😭"
+        },
+        {
+          "record_id": "R01275",
+          "platform": "Consumer Complaints Forum",
+          "date": "2026-03-22",
+          "text": "Took Gold for free delivery and I am still being charged platform fee and 'distance fee'. Misleading. On top of that, OTP never arrives, cannot log in at all."
         },
         {
           "record_id": "R02159",
@@ -1953,12 +1687,6 @@
           "platform": "Consumer Complaints Forum",
           "date": "NaT",
           "text": "OTP never arrives, cannot log in at all. On top of that, Platform fee keeps increasing every few months, now ₹10 per order. Nobody asked for this."
-        },
-        {
-          "record_id": "R02466",
-          "platform": "Consumer Complaints Forum",
-          "date": "2026-01-28",
-          "text": "Zomato pls fix this. Bot closed my ticket automatically saying 'issue resolved'. It was NOT resolved. Also, App logs me out every other day and then the OTP doesn't come. 1 star is too much."
         },
         {
           "record_id": "R02296",
@@ -1986,142 +1714,134 @@
         }
       ],
       "contradicting_quotes": [],
-      "label_confidence_avg": 0.5,
+      "label_confidence_avg": 0.9,
       "evidence_level": "High"
     }
   },
   {
-    "issue": "Refund & Policy Disputes",
-    "source": "template",
-    "headline": "275 of 3293 negative reviews (8.4%) describe refund & policy disputes problems.",
+    "issue": "Food Safety (Foreign Object)",
+    "source": "gemini:gemini-3.5-flash-lite",
+    "headline": "Out of 3379 negative feedback records, 178 describe food safety issues involving foreign objects or spoiled items, accounting for 5.3 percent of negative feedback with a stable trend.",
     "patterns": [
       {
-        "name": "Keywords: refund, days, received, restaurant",
-        "count": 191,
+        "name": "Finding hair in meals and receiving small value coupons",
+        "count": 72,
         "record_ids": [
-          "R00149",
-          "R00220",
-          "R00480"
+          "R02838",
+          "R01430",
+          "R02103"
         ],
-        "example": "डिलिव्हरी खूप उशिरा आली, पैसे परत मिळाले नाहीत #zomato"
+        "example": "@zomato Very disappointed. Found a hair in my thali. Sent photos, got a ₹30 coupon. Disgusting. #ZomatoFail #ZomatoFail"
       },
       {
-        "name": "Keywords: treating, twice treating, treating genuine, refunds twice",
-        "count": 38,
+        "name": "Finding plastic pieces in meals while support closes tickets automatically",
+        "count": 42,
         "record_ids": [
-          "R00219",
-          "R00361",
-          "R00399"
+          "R00010",
+          "R00048",
+          "R00590"
         ],
-        "example": "My account got blocked after I asked for refunds twice. Treating genuine customers like fraudsters."
+        "example": "very disappointed. there was a plastic piece inside my food. zomato said 'restaurant will be informed' and closed the ticket. very poor."
       },
       {
-        "name": "Keywords: went, went wallet, wallet instead, shady",
-        "count": 24,
+        "name": "Finding insects in food and receiving low value coupons",
+        "count": 35,
         "record_ids": [
-          "R00308",
-          "R01181",
-          "R01002"
+          "R00907",
+          "R01305",
+          "R04808"
         ],
-        "example": "sorry but refund went to zomato wallet instead of my bank account, and the credit expires in 24 hours. shady. disappointed 😡 Is this happening to everyone or just me?"
+        "example": "found an insect in the rolls. this is a health issue, not a coupon issue. 😡😡 #ZomatoFail"
       },
       {
-        "name": "Keywords: refunds missing, swiggy refunds, rupee switching, rupee",
-        "count": 22,
+        "name": "Consuming stale food leading to physical illness",
+        "count": 29,
         "record_ids": [
-          "R01113",
-          "R00687",
-          "R01346"
+          "R00494",
+          "R01030",
+          "R01652"
         ],
-        "example": "Zomato pls fix this. Swiggy refunds missing items instantly, Zomato makes you fight for every rupee. Switching. Very poor."
+        "example": "Good experience. Khana basi tha, pet kharab ho gaya."
       }
     ],
     "hypotheses": [
       {
-        "statement": "Refund processing takes longer than customers are told.",
+        "statement": "Partner restaurants may lack proper hygiene controls during meal preparation, leading to foreign objects or spoiled items reaching customers.",
         "supporting_record_ids": [
-          "R02982",
-          "R04573"
+          "R01507",
+          "R00273"
         ],
-        "label": "Hypothesis (starting template)"
+        "what_would_confirm_it": "Restaurant audit logs and historical health inspection scores linked to specific merchant IDs.",
+        "label": "Hypothesis (Gemini)"
       },
       {
-        "statement": "Refund status messages are unclear, so customers chase support.",
+        "statement": "Automated support workflows may be prematurely closing customer service tickets after issuing low value compensation without investigating food safety reports.",
         "supporting_record_ids": [
-          "R00487",
-          "R02985"
+          "R00845",
+          "R03415"
         ],
-        "label": "Hypothesis (starting template)"
-      },
-      {
-        "statement": "Refunds to the in-app wallet instead of the bank feel like a trap.",
-        "supporting_record_ids": [
-          "R03839",
-          "R02532"
-        ],
-        "label": "Hypothesis (starting template)"
+        "what_would_confirm_it": "Customer support routing logs showing automatic ticket closures and refund issuance rules.",
+        "label": "Hypothesis (Gemini)"
       }
     ],
     "data_to_check": [
-      "Actual refund completion time by payment method",
-      "Support contacts per refund"
+      "Support ticket categorization logs for foreign object reports",
+      "Merchant quality ratings and historical complaint rates per restaurant",
+      "Automated resolution rule configurations for safety complaints"
     ],
     "interview_questions": [
-      "What did the app tell you would happen to your money?",
-      "Where did you expect the refund to go?"
+      "Tell me about the last time you found something unexpected in your delivery order and what you did next.",
+      "Walk me through what happened when you contacted support about your meal.",
+      "What specific response or resolution did you expect from the support team when you submitted your photos?"
     ],
     "opportunity": {
-      "title": "Refund tracker with a promised date, and the customer's choice of bank or wallet",
-      "success_metric": "Share of feedback about refund & policy disputes falls for 2 months in a row"
+      "title": "Streamlined Safety Incident Resolution",
+      "description": "Helps customers who receive contaminated or spoiled food by ensuring their safety reports trigger immediate human review, proper merchant investigations, and appropriate resolutions instead of automated dismissals.",
+      "success_metric": "Increase in safety ticket resolution satisfaction score and decrease in repeat complaints per merchant."
     },
-    "contradicting_evidence": "88 reviews are positive about this area.",
+    "contradicting_evidence": "There are no contradicting quotes or positive mentions in the evidence pack.",
     "verification": {
       "numbers_verified": true,
+      "headline_numbers_ok": true,
       "citations_verified": true,
-      "notes": [
-        "Built by code from the evidence pack."
-      ]
+      "notes": []
     },
     "evidence_pack": {
-      "issue": "Refund & Policy Disputes",
-      "category": "Customer Support & Resolution",
-      "analysed_feedback": 4859,
-      "negative_feedback_total": 3293,
-      "negative_mentions": 275,
-      "share_of_negative_pct": 8.4,
-      "positive_mentions": 88,
-      "churn_risk_mentions": 56,
+      "issue": "Food Safety (Foreign Object)",
+      "category": "Product & Service Quality",
+      "analysed_feedback": 4839,
+      "negative_feedback_total": 3379,
+      "negative_mentions": 178,
+      "share_of_negative_pct": 5.3,
+      "positive_mentions": 0,
+      "churn_risk_mentions": 39,
       "platforms": {
-        "Google Play": 91,
-        "Apple App Store": 48,
-        "X (Twitter)": 39,
-        "Reddit": 36,
-        "YouTube": 31,
-        "Quora": 14,
-        "Consumer Complaints Forum": 5,
-        "News Site Comments": 5,
-        "MouthShut": 4,
-        "LinkedIn": 2
+        "Google Play": 64,
+        "Reddit": 27,
+        "X (Twitter)": 25,
+        "Apple App Store": 22,
+        "Quora": 11,
+        "YouTube": 10,
+        "Consumer Complaints Forum": 9,
+        "MouthShut": 7,
+        "News Site Comments": 2,
+        "LinkedIn": 1
       },
       "languages": {
-        "English": 175,
-        "Hinglish": 35,
-        "Marathi": 33,
-        "Hindi": 31,
-        "Kannada": 1
+        "English": 178
       },
       "monthly_negative_mentions": {
-        "2025-12": 29,
-        "2026-01": 25,
-        "2026-02": 21,
-        "2026-03": 27,
-        "2026-04": 28,
-        "2026-05": 25,
-        "2026-06": 19,
-        "2026-07": 21,
-        "2026-08": 37,
-        "2026-09": 15,
-        "2026-10": 26
+        "2025-12": 19,
+        "2026-01": 14,
+        "2026-02": 27,
+        "2026-03": 8,
+        "2026-04": 11,
+        "2026-05": 19,
+        "2026-06": 16,
+        "2026-07": 15,
+        "2026-08": 9,
+        "2026-09": 14,
+        "2026-10": 19
       },
       "trend": {
         "status": "Stable",
@@ -2134,333 +1854,323 @@
           "2026-09",
           "2026-10"
         ],
-        "earlier_rate_pct": 5.88,
-        "recent_rate_pct": 4.68,
-        "change_pct": -20.0
+        "earlier_rate_pct": 3.07,
+        "recent_rate_pct": 3.78,
+        "change_pct": 23.0
       },
-      "rank": 7,
+      "rank": 6,
       "sub_patterns": [
         {
-          "pattern": "refund, days, received, restaurant",
-          "count": 191,
+          "pattern": "got, sent, sent photos, photos",
+          "count": 72,
           "record_ids": [
-            "R00149",
-            "R00220",
-            "R00480"
+            "R02838",
+            "R01430",
+            "R02103"
           ],
-          "example": "डिलिव्हरी खूप उशिरा आली, पैसे परत मिळाले नाहीत #zomato"
+          "example": "@zomato Very disappointed. Found a hair in my thali. Sent photos, got a ₹30 coupon. Disgusting. #ZomatoFail #ZomatoFail"
         },
         {
-          "pattern": "treating, twice treating, treating genuine, refunds twice",
-          "count": 38,
+          "pattern": "ticket, said, plastic, piece",
+          "count": 42,
           "record_ids": [
-            "R00219",
-            "R00361",
-            "R00399"
+            "R00010",
+            "R00048",
+            "R00590"
           ],
-          "example": "My account got blocked after I asked for refunds twice. Treating genuine customers like fraudsters."
+          "example": "very disappointed. there was a plastic piece inside my food. zomato said 'restaurant will be informed' and closed the ticket. very poor."
         },
         {
-          "pattern": "went, went wallet, wallet instead, shady",
-          "count": 24,
+          "pattern": "issue, issue coupon, health issue, insect",
+          "count": 35,
           "record_ids": [
-            "R00308",
-            "R01181",
-            "R01002"
+            "R00907",
+            "R01305",
+            "R04808"
           ],
-          "example": "sorry but refund went to zomato wallet instead of my bank account, and the credit expires in 24 hours. shady. disappointed 😡 Is this happening to everyone or just me?"
+          "example": "found an insect in the rolls. this is a health issue, not a coupon issue. 😡😡 #ZomatoFail"
         },
         {
-          "pattern": "refunds missing, swiggy refunds, rupee switching, rupee",
-          "count": 22,
+          "pattern": "tha, tha pet, pet, pet kharab",
+          "count": 29,
           "record_ids": [
-            "R01113",
-            "R00687",
-            "R01346"
+            "R00494",
+            "R01030",
+            "R01652"
           ],
-          "example": "Zomato pls fix this. Swiggy refunds missing items instantly, Zomato makes you fight for every rupee. Switching. Very poor."
+          "example": "Good experience. Khana basi tha, pet kharab ho gaya."
         }
       ],
       "co_occurring_issues": {
-        "Account & Login": 39,
-        "Order Accuracy (Missing/Wrong)": 38,
-        "Speed of Delivery": 37,
-        "Order Tracking Accuracy": 19
+        "Food Quality (Stale/Cold)": 44,
+        "Agent Helpfulness": 35,
+        "Refund & Policy Disputes": 18,
+        "Competitor Comparisons": 9
       },
       "quotes": [
         {
-          "record_id": "R02982",
+          "record_id": "R01507",
           "platform": "Quora",
-          "date": "2025-12-22",
-          "text": "Q: Why does Zomato not have a customer care number? A: sorry but refund status shows 'processed' for 10 days but my bank has received nothing. very poor."
+          "date": "2026-05-15",
+          "text": "Q: Why does Zomato not have a customer care number? A: Not happy at all. Payment failed but money got debited. Order not placed. Found an insect in the butter chicken. This is a health issue, not a coupon issue. Disappointed 😡"
         },
         {
-          "record_id": "R04573",
+          "record_id": "R01733",
           "platform": "Quora",
-          "date": "2026-01-10",
-          "text": "Q: How do I get a refund from Zomato for a missing item? A: Got a partial refund only after posting on social media. Why should we have to shame you publicly to get our money back? Very poor."
+          "date": "2026-02-04",
+          "text": "Q: How do I get a refund from Zomato for a missing item? A: Khana basi tha, pet kharab ho gaya."
         },
         {
-          "record_id": "R00487",
-          "platform": "Google Play",
-          "date": "2026-05-20",
-          "text": "refund abhi tak nahi aaya, 24 din ho gaye."
-        },
-        {
-          "record_id": "R02985",
-          "platform": "Google Play",
-          "date": "2026-04-02",
-          "text": "Zomato pls fix this. Refund status shows 'processed' for 6 days but my bank has received nothing. Never ordering again."
-        },
-        {
-          "record_id": "R03839",
+          "record_id": "R00927",
           "platform": "LinkedIn",
-          "date": "2026-07-02",
-          "text": "As a product person, रिफंड अभी तक नहीं मिला, कस्टमर केयर कोई जवाब नहीं देता। Curious what others think."
+          "date": "2026-06-20",
+          "text": "Hot take: Zomato pls fix this. Found an insect in the pizza. This is a health issue, not a coupon issue. Switching to Swiggy. #zomato"
         },
         {
-          "record_id": "R02532",
+          "record_id": "R00273",
+          "platform": "Google Play",
+          "date": "2026-03-24",
+          "text": "Found an insect in the ice cream. This is a health issue, not a coupon issue."
+        },
+        {
+          "record_id": "R00845",
+          "platform": "Google Play",
+          "date": "2026-04-10",
+          "text": "Not happy at all. There was a plastic piece inside my food. Zomato said 'restaurant will be informed' and closed the ticket. Also, Notifications are spam. 6 push notifications a day about offers I can't use. Uninstalling. 😤"
+        },
+        {
+          "record_id": "R03415",
           "platform": "YouTube",
-          "date": "2026-05-24",
-          "text": "Sorry but My account got blocked after I asked for refunds twice. Treating genuine customers like fraudsters. Very poor."
+          "date": "2026-03-09",
+          "text": "Unbelievable. There was a plastic piece inside my food. Zomato said 'restaurant will be informed' and closed the ticket. Also, Live tracking is fake. Rider was shown near my building but he was actually at another restaurant. Switching to Swiggy."
         },
         {
-          "record_id": "R00664",
+          "record_id": "R04898",
           "platform": "YouTube",
-          "date": "2026-10-11",
-          "text": "Why is there a 'small cart fee' on a ₹119 order? I am paying for a single meal. Plus, My account got blocked after I asked for refunds twice. Treating genuine customers like fraudsters."
+          "date": "2026-09-01",
+          "text": "Found a hair in my momos. Sent photos, got a ₹50 coupon. Disgusting. Fix this asap."
         },
         {
-          "record_id": "R03637",
-          "platform": "LinkedIn",
-          "date": "2026-08-10",
-          "text": "As a product person, डिलिव्हरी खूप उशिरा आली, पैसे परत मिळाले नाहीत Curious what others think."
-        },
-        {
-          "record_id": "R04213",
+          "record_id": "R02717",
           "platform": "X (Twitter)",
-          "date": "2026-05-03",
-          "text": "Comment on 'Why food delivery got so expensive': रिफंड अभी तक नहीं मिला, कस्टमर केयर कोई जवाब नहीं देता।"
+          "date": "2026-02-18",
+          "text": "@zomato @zomatocare Khana basi tha, pet kharab ho gaya."
         },
         {
-          "record_id": "R03242",
+          "record_id": "R03750",
+          "platform": "Reddit",
+          "date": "2026-06-24",
+          "text": "Reply: Found an insect in teh pasta. This is a health issue, not a coupon issue. Third time this week a restaurant cancelled my order after accepting it. Why show them as open? Very poor."
+        },
+        {
+          "record_id": "R03938",
+          "platform": "Reddit",
+          "date": "2026-01-16",
+          "text": "Not happy at all. cake tasted like it was made yesterday. Got stomach upset after eating. Very poor."
+        },
+        {
+          "record_id": "R04982",
           "platform": "X (Twitter)",
-          "date": "2026-02-11",
-          "text": "@zomatocare refund abhi tak nahi aaya, 19 din ho gaye. #zomato"
+          "date": "2026-10-03",
+          "text": "@zomato @zomatocare found an insect in the pizza. this is a health issue, not a coupon issue. plus, raised a complaint 3 times, 3 different agents, 3 different answers. nobody owns the problem. shame on you zomato. please bring back a customer care number. #zomato #fooddelivery"
         },
         {
-          "record_id": "R03141",
-          "platform": "Reddit",
-          "date": "2026-08-22",
-          "text": "Reply: रिफंड अभी तक नहीं मिला, कस्टमर केयर कोई जवाब नहीं देता।"
-        },
-        {
-          "record_id": "R05194",
-          "platform": "Reddit",
-          "date": "2025-12-29",
-          "text": "Reply: Paisa wallet mein daal diya, bank mein refund chahiye tha."
-        },
-        {
-          "record_id": "R01945",
-          "platform": "Apple App Store",
-          "date": "2026-03-17",
-          "text": "No refund. Since updating to 19.1.2 the app crashes on the payment page. Can't order anything."
-        },
-        {
-          "record_id": "R04396",
-          "platform": "Apple App Store",
-          "date": "2026-08-19",
-          "text": "gold member for 2 years. support treats me the same as everyone else, so what exactly am i paying for? plus, my account got blocked after i asked for refunds twice. treating genuine customers like fraudsters. never ordering again. 😭"
-        },
-        {
-          "record_id": "R05168",
+          "record_id": "R01974",
           "platform": "Consumer Complaints Forum",
-          "date": "2026-04-04",
-          "text": "Cart got cleared randomly twice while I was paying. On top of that, Got a partial refund only after posting on social media. Why should we have to shame you publicly to get our money back? Shame on you Zomato."
-        },
-        {
-          "record_id": "R03520",
-          "platform": "MouthShut",
-          "date": "2026-09-06",
-          "text": "very disappointed. swiggy refunds missing items instantly, zomato makes you fight for every rupee. switching. uninstalling."
-        },
-        {
-          "record_id": "R04705",
-          "platform": "News Site Comments",
-          "date": "2026-07-17",
-          "text": "Sorry but Refund went to Zomato wallet instead of my bank account, and the credit expires in 24 hours. Shady. Gold member for 2 years. Support treats me the same as everyone else, so what exactly am I paying for? 1 star is too much."
-        },
-        {
-          "record_id": "R00197",
-          "platform": "Consumer Complaints Forum",
-          "date": "2026-06-06",
-          "text": "Refund abhi tak nahi aaya, 17 din ho gaye. Please bring back a customer care number."
-        },
-        {
-          "record_id": "R00528",
-          "platform": "MouthShut",
           "date": "NaT",
-          "text": "डिलिव्हरी खूप उशिरा आली, पैसे परत मिळाले नाहीत"
+          "text": "sorry but there was a plastic piece inside my food. zomato said 'restaurant will be informed' and closed the ticket. shame on you zomato."
         },
         {
-          "record_id": "R01370",
+          "record_id": "R02974",
+          "platform": "Apple App Store",
+          "date": "2026-01-20",
+          "text": "Terrible support. Found a hair in my paneer tikka. Sent photos, got a ₹30 coupon. Disgusting. Shame on you Zomato."
+        },
+        {
+          "record_id": "R02890",
+          "platform": "Apple App Store",
+          "date": "2026-08-10",
+          "text": "Hidden charges. Sorry but butter chicken tasted like it was made yesterday. Got stomach upset after eating. Never ordering again."
+        },
+        {
+          "record_id": "R00737",
+          "platform": "MouthShut",
+          "date": "2026-02-06",
+          "text": "Worst experience ever. cake tasted like it was made yesterday. Got stomach upset after eating."
+        },
+        {
+          "record_id": "R00010",
+          "platform": "MouthShut",
+          "date": "2026-07-16",
+          "text": "very disappointed. there was a plastic piece inside my food. zomato said 'restaurant will be informed' and closed the ticket. very poor."
+        },
+        {
+          "record_id": "R02195",
+          "platform": "Consumer Complaints Forum",
+          "date": "2025-12-03",
+          "text": "Found an insect in the paneer tikka. This is a health issue, not a coupon issue. Fix this asap."
+        },
+        {
+          "record_id": "R04320",
           "platform": "News Site Comments",
-          "date": "2026-07-17",
-          "text": "Reader comment: Refund abhi tak nahi aaya, 25 din ho gaye."
+          "date": "2026-06-01",
+          "text": "Khana basi tha, pet kharab ho gaya."
+        },
+        {
+          "record_id": "R04846",
+          "platform": "News Site Comments",
+          "date": "2026-07-04",
+          "text": "Sorry but Veg oder and I received a non-veg item. This is unacceptable for a vegetarian family. On top of that, There was a plastic piece inside my food. Zomato said 'restraunt will be informed' and closed teh ticket. Never ordering again."
+        },
+        {
+          "record_id": "R01153",
+          "platform": "Quora",
+          "date": "2026-09-28",
+          "text": "Q: How do I get a refund from Zomato for a missing item? A: Unbelievable. Gold member for 2 years. Support treats me the same as everyone else, so what exactly am I paying for? On top of that, Found an insect in the butter chicken. This is a health issue, not a coupon issue. Uninstalling."
         }
       ],
-      "contradicting_quotes": [
-        {
-          "record_id": "R05027",
-          "platform": "Google Play",
-          "text": "Honestly Order got delayed and Zomato proactively refunded the delivery fee. Nice gesture. 👍"
-        },
-        {
-          "record_id": "R04096",
-          "platform": "LinkedIn",
-          "text": "As a product person, Updating my review: Order got delayed and Zomato proactively refunded the delivery fee. Nice gesture. 👍"
-        },
-        {
-          "record_id": "R04478",
-          "platform": "Google Play",
-          "text": "Have to say, Order got delayed and Zomato proactively refunded the delivery fee. Nice gesture."
-        },
-        {
-          "record_id": "R01672",
-          "platform": "YouTube",
-          "text": "Honestly Surprisingly good support today, refnd processed without arguments. ❤️"
-        },
-        {
-          "record_id": "R02393",
-          "platform": "YouTube",
-          "text": "Comment on 'Zomato hidden charges exposed': Updating my review: Surprisingly good support today, refund processed without arguments. ❤️ my number is [phone removed] pls call."
-        }
-      ],
-      "label_confidence_avg": 0.5,
+      "contradicting_quotes": [],
+      "label_confidence_avg": 0.9,
       "evidence_level": "High"
     }
   },
   {
     "issue": "Competitor Comparisons",
-    "source": "template",
-    "headline": "136 of 3293 negative reviews (4.1%) describe competitor comparisons problems.",
+    "source": "gemini:gemini-3.5-flash-lite",
+    "headline": "A total of 3379 negative reviews describe competitor comparisons, representing 6.8 percent of negative feedback, and the trend is stable.",
     "patterns": [
       {
-        "name": "Keywords: switching swiggy, switching, using, using switching",
-        "count": 63,
+        "name": "Switching platforms due to delivery and packaging issues",
+        "count": 123,
         "record_ids": [
+          "R00194",
           "R00449",
-          "R00589",
-          "R00728"
+          "R00589"
         ],
-        "example": "Third time this month. worst Switching to Swiggy."
+        "example": "Sorry but Seal on teh package was broken when it arrived. How do I know nobody tampered with it? Switching to Swiggy."
       },
       {
-        "name": "Keywords: ondc magicpin, magicpin fees, magicpin, moving",
-        "count": 34,
+        "name": "Leaving for competitors over difficult refund processes",
+        "count": 38,
+        "record_ids": [
+          "R00948",
+          "R00687",
+          "R01346"
+        ],
+        "example": "Sorry but Seal on teh package was broken when it arrived. How do I know nobody tampered with it? Also, Swiggy refunds missing items instantly, Zomato makes you fight for every rupee. Switching. Very poor."
+      },
+      {
+        "name": "Moving to alternative platforms because fees are too high",
+        "count": 38,
         "record_ids": [
           "R00118",
           "R00598",
-          "R02032"
+          "R01567"
         ],
         "example": "Moving to ONDC/Magicpin, Zomato fees are out of control."
       },
       {
-        "name": "Keywords: expensive, compared, compared swiggy, swiggy expensive",
-        "count": 20,
+        "name": "Finding identical orders more expensive than on competitors",
+        "count": 32,
         "record_ids": [
           "R01042",
-          "R01520",
+          "R02459",
           "R02470"
         ],
         "example": "Sorry but Compared the same order on Swiggy and Zomato, Zomato was ₹59 more expensive. Disappointed 😡"
-      },
-      {
-        "name": "Keywords: better swiggy, better, test mumbai, test",
-        "count": 19,
-        "record_ids": [
-          "R03041",
-          "R00210",
-          "R01033"
-        ],
-        "example": "Q: Which is better, Zomato or Swiggy? A: ಡೆಲಿವರಿ ತುಂಬಾ ತಡವಾಗಿ ಬಂತು"
       }
     ],
     "hypotheses": [
       {
-        "statement": "Customers compare final prices across apps for the same order.",
+        "statement": "Customers may encounter higher basket totals than competitors due to differing restaurant commission structures or additional platform fees passed on selectively.",
         "supporting_record_ids": [
-          "R00327",
-          "R00908"
+          "R03766",
+          "R01042",
+          "R00017"
         ],
-        "label": "Hypothesis (starting template)"
+        "what_would_confirm_it": "Comparing item-level catalog prices, packaging fees, and taxes between platforms for identical carts at checkout.",
+        "label": "Hypothesis (Gemini)"
       },
       {
-        "statement": "Faster refunds at competitors are a switching trigger.",
+        "statement": "Customers could face friction during dispute resolution because automated support flows deflect missing item complaints back to the restaurant.",
         "supporting_record_ids": [
-          "R01042",
-          "R00982"
+          "R04950",
+          "R04221",
+          "R03520"
         ],
-        "label": "Hypothesis (starting template)"
+        "what_would_confirm_it": "Reviewing chat logs to measure the frequency of automated chatbot deflection versus agent escalation on missing item reports.",
+        "label": "Hypothesis (Gemini)"
+      },
+      {
+        "statement": "Customers may experience sudden increases in service charges or delivery fees that make alternatives like open networks or rival apps appear more economical.",
+        "supporting_record_ids": [
+          "R00982",
+          "R04434"
+        ],
+        "what_would_confirm_it": "Analyzing historical fee additions per order across user segments and geographical zones.",
+        "label": "Hypothesis (Gemini)"
       }
     ],
     "data_to_check": [
-      "Price gap to competitors for top dishes",
-      "Churn of customers who mention competitors"
+      "Cart price variance logs comparing competitor basket totals for identical merchant items",
+      "Customer support escalation rates and refund approval times for missing or damaged items",
+      "Platform fee and surge charge breakdown per order over time"
     ],
     "interview_questions": [
-      "What made you check the other app?"
+      "Tell me about the last time you compared prices on multiple delivery apps before placing an order.",
+      "Walk me through what happened when you tried to report a missing or incorrect item to customer support.",
+      "Tell me about a time you decided to use an alternative delivery service instead of this app.",
+      "Walk me through what you saw on the checkout screen regarding fees and discounts before you completed your last order."
     ],
     "opportunity": {
-      "title": "Price-parity monitoring and a matching refund promise",
-      "success_metric": "Share of feedback about competitor comparisons falls for 2 months in a row"
+      "title": "Transparent Pricing and Frictionless Refunds",
+      "description": "Helps price-sensitive and dissatisfied customers by ensuring competitive basket costs and instant, hassle-free resolutions for missing items, reducing churn to rival platforms.",
+      "success_metric": "Customer churn rate and competitor-mention support tickets"
     },
-    "contradicting_evidence": "4 reviews are positive about this area.",
+    "contradicting_evidence": "There are no contradicting quotes or positive mentions in the evidence pack.",
     "verification": {
       "numbers_verified": true,
+      "headline_numbers_ok": true,
       "citations_verified": true,
-      "notes": [
-        "Built by code from the evidence pack."
-      ]
+      "notes": []
     },
     "evidence_pack": {
       "issue": "Competitor Comparisons",
       "category": "Competitor Comparisons",
-      "analysed_feedback": 4859,
-      "negative_feedback_total": 3293,
-      "negative_mentions": 136,
-      "share_of_negative_pct": 4.1,
-      "positive_mentions": 4,
-      "churn_risk_mentions": 104,
+      "analysed_feedback": 4839,
+      "negative_feedback_total": 3379,
+      "negative_mentions": 231,
+      "share_of_negative_pct": 6.8,
+      "positive_mentions": 0,
+      "churn_risk_mentions": 197,
       "platforms": {
-        "Google Play": 51,
-        "Apple App Store": 22,
-        "Quora": 17,
-        "Reddit": 15,
-        "YouTube": 12,
-        "X (Twitter)": 11,
-        "News Site Comments": 3,
+        "Google Play": 79,
+        "Reddit": 39,
+        "Apple App Store": 31,
+        "X (Twitter)": 30,
+        "Quora": 21,
+        "YouTube": 17,
+        "News Site Comments": 4,
+        "MouthShut": 4,
         "Consumer Complaints Forum": 3,
-        "LinkedIn": 1,
-        "MouthShut": 1
+        "LinkedIn": 3
       },
       "languages": {
-        "English": 133,
-        "Hinglish": 2,
+        "English": 230,
         "Kannada": 1
       },
       "monthly_negative_mentions": {
-        "2025-12": 16,
-        "2026-01": 17,
-        "2026-02": 19,
-        "2026-03": 7,
-        "2026-04": 14,
-        "2026-05": 18,
-        "2026-06": 11,
-        "2026-07": 9,
-        "2026-08": 6,
-        "2026-09": 9,
-        "2026-10": 8
+        "2025-12": 22,
+        "2026-01": 21,
+        "2026-02": 30,
+        "2026-03": 20,
+        "2026-04": 23,
+        "2026-05": 27,
+        "2026-06": 17,
+        "2026-07": 20,
+        "2026-08": 19,
+        "2026-09": 16,
+        "2026-10": 13
       },
       "trend": {
         "status": "Stable",
@@ -2473,71 +2183,71 @@
           "2026-09",
           "2026-10"
         ],
-        "earlier_rate_pct": 1.99,
-        "recent_rate_pct": 1.94,
-        "change_pct": -2.0
+        "earlier_rate_pct": 4.29,
+        "recent_rate_pct": 3.33,
+        "change_pct": -23.0
       },
-      "rank": 8,
+      "rank": 7,
       "sub_patterns": [
         {
-          "pattern": "switching swiggy, switching, using, using switching",
-          "count": 63,
+          "pattern": "switching swiggy, delivery, restaurant, fee",
+          "count": 123,
           "record_ids": [
+            "R00194",
             "R00449",
-            "R00589",
-            "R00728"
+            "R00589"
           ],
-          "example": "Third time this month. worst Switching to Swiggy."
+          "example": "Sorry but Seal on teh package was broken when it arrived. How do I know nobody tampered with it? Switching to Swiggy."
         },
         {
-          "pattern": "ondc magicpin, magicpin fees, magicpin, moving",
-          "count": 34,
+          "pattern": "rupee, swiggy refunds, refunds missing, makes fight",
+          "count": 38,
+          "record_ids": [
+            "R00948",
+            "R00687",
+            "R01346"
+          ],
+          "example": "Sorry but Seal on teh package was broken when it arrived. How do I know nobody tampered with it? Also, Swiggy refunds missing items instantly, Zomato makes you fight for every rupee. Switching. Very poor."
+        },
+        {
+          "pattern": "ondc magicpin, fees control, control, magicpin fees",
+          "count": 38,
           "record_ids": [
             "R00118",
             "R00598",
-            "R02032"
+            "R01567"
           ],
           "example": "Moving to ONDC/Magicpin, Zomato fees are out of control."
         },
         {
           "pattern": "expensive, compared, compared swiggy, swiggy expensive",
-          "count": 20,
+          "count": 32,
           "record_ids": [
             "R01042",
-            "R01520",
+            "R02459",
             "R02470"
           ],
           "example": "Sorry but Compared the same order on Swiggy and Zomato, Zomato was ₹59 more expensive. Disappointed 😡"
-        },
-        {
-          "pattern": "better swiggy, better, test mumbai, test",
-          "count": 19,
-          "record_ids": [
-            "R03041",
-            "R00210",
-            "R01033"
-          ],
-          "example": "Q: Which is better, Zomato or Swiggy? A: ಡೆಲಿವರಿ ತುಂಬಾ ತಡವಾಗಿ ಬಂತು"
         }
       ],
       "co_occurring_issues": {
-        "Price & Affordability": 24,
-        "Staff Professionalism": 7,
-        "Promotions & Loyalty": 7,
-        "Fees & Surcharges": 5
+        "Fees & Surcharges": 46,
+        "Price & Affordability": 44,
+        "Refund & Policy Disputes": 43,
+        "Gold Hidden Fees/Platform Charges": 12
       },
       "quotes": [
         {
-          "record_id": "R00327",
+          "record_id": "R04950",
           "platform": "Quora",
-          "date": "2026-02-24",
-          "text": "Q: Which is better, Zomato or Swiggy? A: paid for extra cheese and extra raita, got neither. also, ordering food online has become a luxury. a simple dinner for two costs ₹910 now. very poor."
+          "date": "2026-01-16",
+          "text": "Q: How do I get a refund from Zomato for a missing item? A: Worst experience ever. 2 items missing from my order. Restaurant says they packed it, rider says sealed bag. Nobody takes responsibility. Switching to Swiggy."
         },
         {
-          "record_id": "R00908",
+          "record_id": "R03766",
           "platform": "Quora",
-          "date": "2026-09-12",
-          "text": "Q: Which is better, Zomato or Swiggy? A: Gold membership auto renewed without any reminder, ₹399 debited. I want a refund."
+          "date": "2026-01-19",
+          "text": "Q: Why is Zomato so expensive now? A: Zomato pls fix this. Compared the same order on Swiggy and Zomato, Zomato was ₹71 more expensive. Switching to Swiggy."
         },
         {
           "record_id": "R01042",
@@ -2546,46 +2256,46 @@
           "text": "Sorry but Compared the same order on Swiggy and Zomato, Zomato was ₹59 more expensive. Disappointed 😡"
         },
         {
+          "record_id": "R00927",
+          "platform": "LinkedIn",
+          "date": "2026-06-20",
+          "text": "Hot take: Zomato pls fix this. Found an insect in the pizza. This is a health issue, not a coupon issue. Switching to Swiggy. #zomato"
+        },
+        {
+          "record_id": "R04221",
+          "platform": "Google Play",
+          "date": "2025-12-08",
+          "text": "Swiggy refunds missing items instantly, Zomato makes you fight for every rupee. Switching. 1 star is too much."
+        },
+        {
           "record_id": "R00982",
           "platform": "Google Play",
           "date": "2025-12-16",
           "text": "Very disappointed. Moving to ONDC/Magicpin, Zomato fees are out of control. Switching to Swiggy."
         },
         {
-          "record_id": "R04817",
-          "platform": "Google Play",
-          "date": "2026-03-16",
-          "text": "Not happy at all. Prices on the app are 30-40% higher than dine-in. I will just go and pick it up myself. Switching to Swiggy."
-        },
-        {
-          "record_id": "R00073",
-          "platform": "YouTube",
-          "date": "2026-06-13",
-          "text": "Comment on 'Zomato vs Swiggy price test in Mumbai': Did Zomato just increase the platform fee again? ₹17 per order now."
-        },
-        {
-          "record_id": "R04957",
-          "platform": "YouTube",
-          "date": "2026-01-30",
-          "text": "Comment on 'Zomato vs Swiggy price test in Mumbai': Please show the full fee breakdown before I add items, not at the last step."
-        },
-        {
-          "record_id": "R00763",
+          "record_id": "R04012",
           "platform": "LinkedIn",
-          "date": "2026-02-05",
-          "text": "Hot take: not happy at all. cash on delivery option now asks me to pay part of the amount online first. then it isn't cash on delivery. also, moving to ondc/magicpin, zomato fees are out of control. uninstalling. !!! #productmanagement"
+          "date": "2026-04-27",
+          "text": "Interesting case study from a product lens. sorry but app crashes every time i try to apply a coupon. switching to swiggy. #productmanagement"
         },
         {
-          "record_id": "R03859",
+          "record_id": "R00017",
+          "platform": "YouTube",
+          "date": "2026-08-25",
+          "text": "Comment on 'Zomato delivery partner for a day': Third time this month. Compared the same order on Swiggy and Zomato, Zomato was ₹42 more expensive. Very poor."
+        },
+        {
+          "record_id": "R04099",
+          "platform": "YouTube",
+          "date": "2026-09-01",
+          "text": "Worst experience ever. The chatbot offers a ₹20 coupon for everything and you cannot escalate to a human. On top of that, Order kept saying 'arriving in 5 mins' for 45 minutes. Switching to Swiggy."
+        },
+        {
+          "record_id": "R03040",
           "platform": "Reddit",
-          "date": "2026-04-26",
-          "text": "worst experience ever. order kept saying 'arriving in 5 mins' for 45 minutes. switching to swiggy. Is this happening to everyone or just me?"
-        },
-        {
-          "record_id": "R01569",
-          "platform": "X (Twitter)",
-          "date": "2026-05-22",
-          "text": "worst Switching to Swiggy. #ZomatoFail"
+          "date": "2026-02-26",
+          "text": "Reply: Restaurant accepted my order, then cancelled after 40 minutes saying item not available. Zomato doesn't serve my town properly, very few options after 10pm. Switching to Swiggy."
         },
         {
           "record_id": "R03482",
@@ -2606,6 +2316,12 @@
           "text": "Agent told me the restaurant is responsible and Zomato can't do anything. Then why am I paying you fees? Switching to Swiggy."
         },
         {
+          "record_id": "R02647",
+          "platform": "X (Twitter)",
+          "date": "2026-04-27",
+          "text": "Sorry but Offers are fake, they increase the price first and then give 'flat 50% off'. Switching to Swiggy."
+        },
+        {
           "record_id": "R01323",
           "platform": "Apple App Store",
           "date": "2025-12-28",
@@ -2616,6 +2332,12 @@
           "platform": "MouthShut",
           "date": "2026-07-19",
           "text": "Never using again. Switching to Swiggy."
+        },
+        {
+          "record_id": "R03520",
+          "platform": "MouthShut",
+          "date": "2026-09-06",
+          "text": "very disappointed. swiggy refunds missing items instantly, zomato makes you fight for every rupee. switching. uninstalling."
         },
         {
           "record_id": "R04434",
@@ -2634,43 +2356,339 @@
           "platform": "Consumer Complaints Forum",
           "date": "2025-12-31",
           "text": "refund went to zomato wallet instead of my bank account, and the credit expires in 24 hours. shady. switching to swiggy."
-        },
-        {
-          "record_id": "R00621",
-          "platform": "Quora",
-          "date": "2025-12-03",
-          "text": "Q: Which is better, Zomato or Swiggy? A: Zomato pls fix this. Seal on the package was broken when it arrived. How do I know nobody tampered with it? Uninstalling."
-        },
-        {
-          "record_id": "R03766",
-          "platform": "Quora",
-          "date": "2026-01-19",
-          "text": "Q: Why is Zomato so expensive now? A: Zomato pls fix this. Compared the same order on Swiggy and Zomato, Zomato was ₹71 more expensive. Switching to Swiggy."
         }
       ],
-      "contradicting_quotes": [
+      "contradicting_quotes": [],
+      "label_confidence_avg": 0.9,
+      "evidence_level": "High"
+    }
+  },
+  {
+    "issue": "Checkout & Payment Process",
+    "source": "gemini:gemini-3.5-flash-lite",
+    "headline": "A total of 184 negative reviews describe Checkout & Payment Process issues, representing 5.4 percent of negative feedback, and the trend is Stable.",
+    "patterns": [
+      {
+        "name": "Charged twice or had shopping cart cleared",
+        "count": 80,
+        "record_ids": [
+          "R03946",
+          "R01277",
+          "R01061"
+        ],
+        "example": "Not happy at all. Payment was charged twice for the same order. Also, Cart got cleared randomly twice while I was paying. Fix this asap."
+      },
+      {
+        "name": "Money debited from account when payment failed",
+        "count": 42,
+        "record_ids": [
+          "R00008",
+          "R00957",
+          "R03411"
+        ],
+        "example": "very disappointed. payment failed but money got debited. order not placed. disappointed 😡"
+      },
+      {
+        "name": "UPI payment times out during checkout",
+        "count": 32,
+        "record_ids": [
+          "R00607",
+          "R00822",
+          "R01632"
+        ],
+        "example": "Disappointed. Worst experience ever. UPI payment keeps timing out at checkout. #ZomatoFail"
+      },
+      {
+        "name": "App crashes on the payment page",
+        "count": 30,
+        "record_ids": [
+          "R00070",
+          "R00167",
+          "R00230"
+        ],
+        "example": "@zomatocare Since updating to 19.1.2 the app crashes on the payment page. Can't order anything. 😡😡 #ZomatoFail"
+      }
+    ],
+    "hypotheses": [
+      {
+        "statement": "Gateway timeout thresholds may be set too low, causing transactions to drop and fail while banks still process the debit.",
+        "supporting_record_ids": [
+          "R04696",
+          "R03411",
+          "R02462"
+        ],
+        "what_would_confirm_it": "Payment gateway error logs showing high frequency of gateway timeout responses immediately preceding customer debit events.",
+        "label": "Hypothesis (Gemini)"
+      },
+      {
+        "statement": "Recent app version updates may contain memory management defects that trigger sudden crashes specifically on the checkout screen.",
+        "supporting_record_ids": [
+          "R05063",
+          "R05141",
+          "R00070",
+          "R01945"
+        ],
+        "what_would_confirm_it": "Crash analytics reports showing a spike in uncaught exceptions tied to the payment activity class following version releases.",
+        "label": "Hypothesis (Gemini)"
+      },
+      {
+        "statement": "State management scripts may reset session tokens during slow network conditions, resulting in cleared shopping carts.",
+        "supporting_record_ids": [
+          "R01235",
+          "R03524",
+          "R05168"
+        ],
+        "what_would_confirm_it": "Frontend telemetry tracking user session expiration events during the active checkout state.",
+        "label": "Hypothesis (Gemini)"
+      }
+    ],
+    "data_to_check": [
+      "Payment gateway error logs for timeout rates by provider",
+      "Application crash rate metrics segmented by app version and screen name",
+      "API failure rates and latency metrics during the checkout flow"
+    ],
+    "interview_questions": [
+      "Tell me about the last time you tried to pay for an order and what happened on your screen.",
+      "Walk me through what you saw when your payment went through or failed.",
+      "What did you do after your cart cleared or the app closed unexpectedly?"
+    ],
+    "opportunity": {
+      "title": "Reliable Checkout and Payment Processing",
+      "description": "It helps customers trying to pay for food by ensuring their transactions complete securely without unexpected app crashes, cleared carts, or duplicate charges.",
+      "success_metric": "Successful checkout conversion rate"
+    },
+    "contradicting_evidence": "There are no contradicting quotes or positive mentions in the evidence pack.",
+    "verification": {
+      "numbers_verified": true,
+      "headline_numbers_ok": true,
+      "citations_verified": true,
+      "notes": []
+    },
+    "evidence_pack": {
+      "issue": "Checkout & Payment Process",
+      "category": "Ease of Use & Digital Experience",
+      "analysed_feedback": 4839,
+      "negative_feedback_total": 3379,
+      "negative_mentions": 184,
+      "share_of_negative_pct": 5.4,
+      "positive_mentions": 0,
+      "churn_risk_mentions": 37,
+      "platforms": {
+        "Google Play": 83,
+        "X (Twitter)": 24,
+        "Reddit": 23,
+        "Apple App Store": 19,
+        "YouTube": 11,
+        "Quora": 9,
+        "MouthShut": 6,
+        "Consumer Complaints Forum": 5,
+        "LinkedIn": 2,
+        "News Site Comments": 2
+      },
+      "languages": {
+        "English": 184
+      },
+      "monthly_negative_mentions": {
+        "2025-12": 15,
+        "2026-01": 15,
+        "2026-02": 19,
+        "2026-03": 49,
+        "2026-04": 22,
+        "2026-05": 10,
+        "2026-06": 5,
+        "2026-07": 5,
+        "2026-08": 17,
+        "2026-09": 8,
+        "2026-10": 16
+      },
+      "trend": {
+        "status": "Stable",
+        "earlier_months": [
+          "2026-06",
+          "2026-07",
+          "2026-08"
+        ],
+        "recent_months": [
+          "2026-09",
+          "2026-10"
+        ],
+        "earlier_rate_pct": 2.07,
+        "recent_rate_pct": 2.75,
+        "change_pct": 33.0
+      },
+      "rank": 8,
+      "sub_patterns": [
         {
-          "record_id": "R01619",
+          "pattern": "twice, charged, payment charged, charged twice",
+          "count": 80,
+          "record_ids": [
+            "R03946",
+            "R01277",
+            "R01061"
+          ],
+          "example": "Not happy at all. Payment was charged twice for the same order. Also, Cart got cleared randomly twice while I was paying. Fix this asap."
+        },
+        {
+          "pattern": "debited placed, debited, money got, got debited",
+          "count": 42,
+          "record_ids": [
+            "R00008",
+            "R00957",
+            "R03411"
+          ],
+          "example": "very disappointed. payment failed but money got debited. order not placed. disappointed 😡"
+        },
+        {
+          "pattern": "keeps, upi, timing checkout, timing",
+          "count": 32,
+          "record_ids": [
+            "R00607",
+            "R00822",
+            "R01632"
+          ],
+          "example": "Disappointed. Worst experience ever. UPI payment keeps timing out at checkout. #ZomatoFail"
+        },
+        {
+          "pattern": "app crashes, payment page, crashes, crashes payment",
+          "count": 30,
+          "record_ids": [
+            "R00070",
+            "R00167",
+            "R00230"
+          ],
+          "example": "@zomatocare Since updating to 19.1.2 the app crashes on the payment page. Can't order anything. 😡😡 #ZomatoFail"
+        }
+      ],
+      "co_occurring_issues": {
+        "App Stability & Bugs": 34,
+        "Agent Helpfulness": 10,
+        "Speed of Delivery": 8,
+        "Refund & Policy Disputes": 7
+      },
+      "quotes": [
+        {
+          "record_id": "R04696",
+          "platform": "Quora",
+          "date": "2026-04-10",
+          "text": "Q: Why is Zomato so expensive now? A: Payment failed but money got debited. Order not placed. Never ordering again."
+        },
+        {
+          "record_id": "R01235",
+          "platform": "Quora",
+          "date": "2026-05-19",
+          "text": "Q: Which is better, Zomato or Swiggy? A: Cart got cleared randomly twice while I was paying. On top of that, Order kept saying 'arriving in 5 mins' for 45 minutes. Very poor."
+        },
+        {
+          "record_id": "R05063",
+          "platform": "Google Play",
+          "date": "2026-03-16",
+          "text": "Since updating to 19.1.2 the app crashes on the payment page. Can't order anything."
+        },
+        {
+          "record_id": "R05141",
+          "platform": "Google Play",
+          "date": "2026-03-10",
+          "text": "SINCE UPDATING TO 19.1.0 THE APP CRASHES ON THE PAYMENT PAGE. CAN'T ORDER ANYTHING."
+        },
+        {
+          "record_id": "R03411",
+          "platform": "LinkedIn",
+          "date": "2026-03-12",
+          "text": "Very disappointed. Payment failed but money got debited. Order not placed. Fix this asap."
+        },
+        {
+          "record_id": "R03861",
           "platform": "YouTube",
-          "text": "Comment on 'Zomato vs Swiggy price test in Mumbai': zomato notifications are hilarious 😂 best marketing team. ❤️"
+          "date": "2026-07-02",
+          "text": "Comment on 'I tried Zomato 10 minute food': Payment failed but money got debited. Order not placed. Disappointed 😡"
         },
         {
-          "record_id": "R01708",
-          "platform": "Quora",
-          "text": "Q: Is Zomato Gold worth it in 2026? A: compared the same order on swiggy and zomato, zomato was ₹45 more expensive. shame on you zomato."
+          "record_id": "R04107",
+          "platform": "YouTube",
+          "date": "2025-12-11",
+          "text": "Comment on 'Is Zomato Gold still worth it?': Sorry but Why is there a 'small cart fee' on a ₹99 order? I am paying for a single meal. Plus, Payment failed but money got debited. Order not placed. Shame on you Zomato."
         },
         {
-          "record_id": "R04498",
-          "platform": "Quora",
-          "text": "Q: Which is better, Zomato or Swiggy? A: Have to say, Gold is totally worth it for me, I order 4-5 times a week and save a lot on delivery. Thanks Zomato."
+          "record_id": "R00763",
+          "platform": "LinkedIn",
+          "date": "2026-02-05",
+          "text": "Hot take: not happy at all. cash on delivery option now asks me to pay part of the amount online first. then it isn't cash on delivery. also, moving to ondc/magicpin, zomato fees are out of control. uninstalling. !!! #productmanagement"
         },
         {
-          "record_id": "R04559",
-          "platform": "Quora",
-          "text": "Q: Which is better, Zomato or Swiggy? A: యాప్ బాగుంది, ఆఫర్స్ కూడా బాగున్నాయి"
+          "record_id": "R03155",
+          "platform": "Reddit",
+          "date": "2026-08-29",
+          "text": "Not happy at all. I cancelled within 1 minute and they still charged full amount saying 'restaurant has started preparing'. Payment was charged twice for the same order."
+        },
+        {
+          "record_id": "R01953",
+          "platform": "Reddit",
+          "date": "2026-08-08",
+          "text": "Anyone else? Sorry but UPI payment keeps timing out at checkout. Plus, Rider was rude and demanded extra money for 'long distance'. 1 star is too much."
+        },
+        {
+          "record_id": "R00070",
+          "platform": "X (Twitter)",
+          "date": "2026-03-20",
+          "text": "@zomatocare Since updating to 19.1.2 the app crashes on the payment page. Can't order anything. 😡😡 #ZomatoFail"
+        },
+        {
+          "record_id": "R01945",
+          "platform": "Apple App Store",
+          "date": "2026-03-17",
+          "text": "No refund. Since updating to 19.1.2 the app crashes on the payment page. Can't order anything."
+        },
+        {
+          "record_id": "R00336",
+          "platform": "MouthShut",
+          "date": "NaT",
+          "text": "zomato pls fix this. payment was charged twice for the same order."
+        },
+        {
+          "record_id": "R03524",
+          "platform": "X (Twitter)",
+          "date": "2026-03-12",
+          "text": "@zomatocare very disappointed. cart got cleared randomly twice while i was paying. #ZomatoFail"
+        },
+        {
+          "record_id": "R02438",
+          "platform": "Apple App Store",
+          "date": "2025-12-16",
+          "text": "Late again. Zomato pls fix this. The delivary partner picked up my oder and went to deliver 2 other orders first. Batching is ruining the experience. On top of that, Payment was charged twice for the same order. #ZomatoFail"
+        },
+        {
+          "record_id": "R05032",
+          "platform": "Consumer Complaints Forum",
+          "date": "NaT",
+          "text": "Worst experience ever. UPI payment keeps timing out at checkout."
+        },
+        {
+          "record_id": "R03559",
+          "platform": "MouthShut",
+          "date": "2026-04-17",
+          "text": "Very disappointed. Restaurant accepted my order, then cancelled after 40 mins saying item not available. Plus, Cash on delivery option now asks me to pay part of the amount online first. Then it isn't cash on delivery. Fix this asap."
+        },
+        {
+          "record_id": "R05168",
+          "platform": "Consumer Complaints Forum",
+          "date": "2026-04-04",
+          "text": "Cart got cleared randomly twice while I was paying. On top of that, Got a partial refund only after posting on social media. Why should we have to shame you publicly to get our money back? Shame on you Zomato."
+        },
+        {
+          "record_id": "R00822",
+          "platform": "News Site Comments",
+          "date": "2026-05-02",
+          "text": "Third time this month. UPI payment keeps timing out at checkout. Disappointed 😡"
+        },
+        {
+          "record_id": "R02462",
+          "platform": "News Site Comments",
+          "date": "2026-10-12",
+          "text": "Reader comment: Zomato pls fix this. Payment failed but money got debited. Order not placed. Never ordering again."
         }
       ],
-      "label_confidence_avg": 0.5,
+      "contradicting_quotes": [],
+      "label_confidence_avg": 0.9,
       "evidence_level": "High"
     }
   }
