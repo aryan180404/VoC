@@ -26,6 +26,8 @@ POS = "#3f78b0"       # soft blue
 NEU = "#b9c0c8"
 GOOD = "#3f8a68"
 WARN = "#b5852a"
+AI = "#6a5fa8"         # muted violet: marks text Gemini wrote, used nowhere else
+AI_SOFT = "#efedf7"
 
 SENT_COLORS = {"Negative": NEG, "Neutral": NEU, "Positive": POS}
 SERIES = ["#2a78d6", "#eb6834", "#1baf7a", "#eda100", "#e87ba4", "#008300", "#6250d6", "#e34948"]
@@ -62,9 +64,9 @@ section[data-testid="stSidebar"] .stRadio [role="radiogroup"] label:has(input:fo
 .side-data {{ font-size: 0.78rem; color: {INK_3}; line-height: 1.55; }}
 
 /* Page header */
-.page-title {{ font-size: 1.55rem; font-weight: 600; color: {INK}; line-height: 1.25; margin: 0 0 6px 0; letter-spacing: -0.005em; }}
-.page-sub {{ color: {INK_2}; font-size: 0.95rem; line-height: 1.55; max-width: 68ch; margin-bottom: 20px; }}
-.section-title {{ font-size: 1rem; font-weight: 600; color: {INK}; margin: 26px 0 6px 0; }}
+.page-title {{ font-size: 1.6rem; font-weight: 600; color: {INK}; line-height: 1.25; margin: 0 0 6px 0; letter-spacing: -0.015em; text-wrap: balance; }}
+.page-sub {{ color: {INK_2}; font-size: 0.95rem; line-height: 1.55; max-width: 68ch; margin-bottom: 20px; text-wrap: pretty; }}
+.section-title {{ font-size: 1rem; font-weight: 600; color: {INK}; margin: 26px 0 6px 0; text-wrap: balance; }}
 .section-note {{ font-size: 0.85rem; color: {INK_3}; margin: 0 0 10px 0; max-width: 72ch; }}
 
 /* Panels */
@@ -153,8 +155,12 @@ button[data-testid="stBaseButton-primary"], button[data-testid="stBaseButton-pri
   background: {ACCENT} !important; color: #ffffff !important; border-color: {ACCENT} !important; }}
 .stButton button[kind="primary"]:hover, button[data-testid="stBaseButton-primary"]:hover {{ background: #285f63 !important; color: #fff !important; }}
 button:focus-visible {{ outline: 2px solid #9fc0c2 !important; outline-offset: 1px; }}
-div[data-testid="stAlert"] {{ border-radius: 8px; background: #eaf2f6 !important; border: 1px solid #d4e3ec !important; }}
-div[data-testid="stAlert"] p, div[data-testid="stAlert"] div {{ color: {INK} !important; }}
+/* Notice boxes: quiet tint plus a side rail, one tint per meaning */
+[data-testid="stAlertContainer"] {{ border-radius: 0 8px 8px 0 !important; border-left: 3px solid #7aa6c2 !important; background: #edf3f7 !important; }}
+[data-testid="stAlertContainer"]:has([data-testid="stAlertContentWarning"]) {{ border-left-color: {WARN} !important; background: #f8f2e4 !important; }}
+[data-testid="stAlertContainer"]:has([data-testid="stAlertContentError"]) {{ border-left-color: {NEG} !important; background: #f8ebe8 !important; }}
+[data-testid="stAlertContainer"]:has([data-testid="stAlertContentSuccess"]) {{ border-left-color: {GOOD} !important; background: #e9f3ee !important; }}
+[data-testid="stAlertContainer"] p, [data-testid="stAlertContainer"] div {{ color: {INK} !important; font-size: 0.9rem; }}
 /* text, number, date, select and multiselect inputs */
 [data-baseweb="input"], [data-baseweb="base-input"], [data-baseweb="textarea"], [data-baseweb="select"] > div,
 .stDateInput > div > div, .stTextInput > div > div, .stNumberInput > div > div {{
@@ -184,8 +190,26 @@ div[data-testid="stExpander"] summary:hover p {{ color: {ACCENT} !important; }}
   background: {ACCENT_SOFT} !important; color: {ACCENT} !important; border-radius: 8px; }}
 [data-testid="stChatMessageContent"] p, [data-testid="stChatMessageContent"] li {{ color: {INK} !important; line-height: 1.6; }}
 [data-testid="stSpinner"] p, [data-testid="stSpinner"] div {{ color: {INK_2} !important; }}
-.stButton button {{ height: auto; min-height: 42px; padding-top: 8px; padding-bottom: 8px; }}
-.stButton button p {{ white-space: normal !important; line-height: 1.35; }}
+.stButton button, .stDownloadButton button {{ height: auto; min-height: 42px; padding-top: 8px; padding-bottom: 8px; }}
+.stButton button p, .stDownloadButton button p {{ white-space: normal !important; overflow: visible !important; text-overflow: clip !important; line-height: 1.35; }}
+
+/* Numbers line up in every panel, table and badge */
+.stats, .facts, .badge, .rel-value, .quote-meta, .headline-meta, .kpi-note, .score-num, table {{ font-variant-numeric: tabular-nums; }}
+/* Long text never breaks the layout */
+.quote-text, .rank-why, .alert-body, .headline-text, [data-testid="stChatMessageContent"] {{ overflow-wrap: anywhere; }}
+.rank-row > div, .kpi, .rel {{ min-width: 0; }}
+.rank-title {{ overflow-wrap: anywhere; }}
+/* Keyboard focus is always visible */
+summary:focus-visible, a:focus-visible, [role="radio"]:focus-visible, [tabindex]:focus-visible {{ outline: 2px solid #9fc0c2 !important; outline-offset: 2px; border-radius: 4px; }}
+/* Touch */
+button, summary, label, [role="radio"], input, textarea {{ touch-action: manipulation; -webkit-tap-highlight-color: rgba(47, 111, 115, 0.12); }}
+/* AI marker: only on text Gemini wrote */
+.b-ai {{ background: {AI_SOFT}; color: {AI}; }}
+.ai-note {{ font-size: 0.78rem; color: {AI}; }}
+@media (prefers-reduced-motion: reduce) {{
+  *, *::before, *::after {{ animation-duration: 0.01ms !important; animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important; scroll-behavior: auto !important; }}
+}}
 @media (max-width: 900px) {{
   .stats, .rel-grid {{ grid-template-columns: repeat(2, 1fr) !important; }}
   .kpi, .rel {{ border-left: none; border-top: 1px solid {LINE}; }}
@@ -205,12 +229,12 @@ def inject() -> None:
 
 
 def page_header(title: str, subtitle: str = "") -> None:
-    st.markdown(f"<div class='page-title'>{e(title)}</div>"
+    st.markdown(f"<div class='page-title' role='heading' aria-level='1'>{e(title)}</div>"
                 + (f"<div class='page-sub'>{e(subtitle)}</div>" if subtitle else ""), unsafe_allow_html=True)
 
 
 def section(title: str, note: str = "") -> None:
-    st.markdown(f"<div class='section-title'>{e(title)}</div>" + (f"<div class='section-note'>{e(note)}</div>" if note else ""),
+    st.markdown(f"<div class='section-title' role='heading' aria-level='2'>{e(title)}</div>" + (f"<div class='section-note'>{e(note)}</div>" if note else ""),
                 unsafe_allow_html=True)
 
 
